@@ -1,0 +1,443 @@
+/* ==========================================================================
+   DRAWER — painel lateral reutilizável
+   ========================================================================== */
+
+.drawer-root {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.drawer-root.is-active {
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.drawer-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 28, 42, 0.38);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 600ms ease;
+}
+
+.drawer-root.is-active .drawer-backdrop {
+  opacity: 1;
+}
+
+.drawer-root.is-closing .drawer-backdrop {
+  opacity: 0;
+}
+
+/* Painel — 78% da largura */
+.drawer-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 78vw;
+  max-width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  background: #f7f8f9;
+  box-shadow: 8px 0 40px rgba(0, 0, 0, 0.12);
+  transform: translateX(-100%);
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 10001;
+  will-change: transform;
+}
+
+.drawer-root.is-open .drawer-panel {
+  transform: translateX(0);
+}
+
+.drawer-panel__scroll {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.drawer-panel__inner {
+  padding: clamp(28px, 4vw, 48px) clamp(24px, 5vw, 56px) clamp(40px, 5vw, 64px);
+}
+
+.drawer-panel--no-hero .drawer-panel__inner {
+  padding-top: clamp(40px, 6vw, 68px);
+}
+
+/* Botão fechar — centralizado nos 22% à direita */
+.drawer-close {
+  position: fixed;
+  top: 50%;
+  left: 89vw;
+  transform: translate(-50%, -50%);
+  z-index: 10002;
+  width: 52px;
+  height: 52px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #333;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 300ms ease, transform 300ms ease, background 0.2s ease;
+}
+
+.drawer-root.is-open .drawer-close {
+  opacity: 1;
+  visibility: visible;
+}
+
+.drawer-root.is-closing .drawer-close {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.drawer-close:hover {
+  background: #f0f0f0;
+}
+
+.drawer-close:focus-visible {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 3px;
+}
+
+/* Revelação sequencial */
+.drawer-reveal {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(14px);
+}
+
+.drawer-reveal.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition:
+    opacity 480ms ease,
+    transform 480ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 480ms;
+}
+
+.drawer-root.is-hiding-content .drawer-reveal {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(10px) !important;
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease,
+    visibility 220ms;
+}
+
+/* Imagem principal */
+.drawer-hero {
+  margin: 0 0 clamp(28px, 4vw, 40px);
+}
+
+.drawer-hero__frame {
+  display: block;
+  margin: 0 auto;
+  max-width: 92%;
+  transform: rotate(-1.8deg);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 74, 102, 0.12);
+  clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+}
+
+.drawer-hero__frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(52vh, 520px);
+  object-fit: contain;
+  object-position: center;
+  background: #eef1f3;
+}
+
+/* Cabeçalho */
+.drawer-header {
+  max-width: 640px;
+  margin-bottom: 22px;
+}
+
+.drawer-header__id {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--brand-blue-dark);
+  margin-bottom: 10px;
+}
+
+.drawer-header__title {
+  font-size: clamp(28px, 3.2vw, 38px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--brand-blue-deepest);
+  margin-bottom: 0;
+}
+
+.drawer-subtitle-block {
+  max-width: 640px;
+  margin-bottom: 28px;
+}
+
+.drawer-subtitle-block__role {
+  font-size: 15px;
+  font-weight: 500;
+  color: #777;
+  margin-bottom: 14px;
+}
+
+.drawer-subtitle-block__line {
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--brand-blue);
+  margin-bottom: 18px;
+}
+
+.drawer-subtitle-block__lead {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.drawer-subtitle-block__text {
+  font-size: 15px;
+  line-height: 1.72;
+  color: #555;
+}
+
+/* Meta bar — abaixo da imagem */
+.drawer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  padding: 22px 0;
+  margin-bottom: clamp(28px, 4vw, 40px);
+  border-top: 1px solid #e2e5e8;
+  border-bottom: 1px solid #e2e5e8;
+}
+
+.drawer-meta__item {
+  flex: 1 1 0;
+  min-width: 120px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 8px clamp(12px, 2vw, 24px);
+  border-right: 1px solid #e2e5e8;
+}
+
+.drawer-meta__item:last-child {
+  border-right: 0;
+}
+
+.drawer-meta__icon {
+  flex-shrink: 0;
+  color: var(--brand-blue-dark);
+  margin-top: 2px;
+}
+
+.drawer-meta__label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 4px;
+}
+
+.drawer-meta__value {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #222;
+}
+
+/* Corpo — duas colunas */
+.drawer-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(32px, 5vw, 56px);
+  align-items: start;
+}
+
+.drawer-section__heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--brand-blue-deepest);
+  margin-bottom: 18px;
+}
+
+.drawer-section__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--brand-blue);
+  flex-shrink: 0;
+}
+
+.drawer-section__text p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #555;
+  margin-bottom: 14px;
+}
+
+.drawer-section__text p:last-child {
+  margin-bottom: 0;
+}
+
+.drawer-quote {
+  margin-top: 28px;
+  padding: 22px 24px;
+  background: var(--brand-blue-light);
+  border-left: 3px solid var(--brand-blue);
+  border-radius: 0 8px 8px 0;
+}
+
+.drawer-quote__icon {
+  color: var(--brand-blue-dark);
+  margin-bottom: 10px;
+}
+
+.drawer-quote__text {
+  font-size: 14px;
+  line-height: 1.7;
+  font-style: italic;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.drawer-quote__author {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--brand-blue-deepest);
+}
+
+.drawer-principles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.drawer-principles__item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.drawer-principles__icon {
+  flex-shrink: 0;
+  color: var(--brand-blue-dark);
+  margin-top: 2px;
+}
+
+.drawer-principles__title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 4px;
+}
+
+.drawer-principles__text {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #666;
+}
+
+body.drawer-open {
+  overflow: hidden;
+}
+
+body.drawer-open .page-nav {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .drawer-panel {
+    width: 78vw;
+  }
+
+  .drawer-close {
+    left: 89vw;
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+  }
+
+  .drawer-body {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .drawer-meta__item {
+    flex: 1 1 50%;
+    border-right: 0;
+    border-bottom: 1px solid #e2e5e8;
+    padding-bottom: 16px;
+    margin-bottom: 8px;
+  }
+
+  .drawer-meta__item:nth-child(odd) {
+    border-right: 1px solid #e2e5e8;
+  }
+
+  .drawer-meta__item:nth-last-child(-n+2) {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .drawer-panel__inner {
+    padding: 20px 18px 36px;
+  }
+
+  .drawer-hero__frame {
+    max-width: 100%;
+    transform: rotate(-1.2deg);
+  }
+
+  .drawer-meta {
+    flex-direction: column;
+  }
+
+  .drawer-meta__item {
+    flex: 1 1 100%;
+    border-right: 0 !important;
+    border-bottom: 1px solid #e2e5e8;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .drawer-meta__item:last-child {
+    border-bottom: 0;
+  }
+}

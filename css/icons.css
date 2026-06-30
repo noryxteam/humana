@@ -1,0 +1,124 @@
+/* ==========================================================================
+   ICONS — Lucide / React Icons via bundle
+   ========================================================================== */
+
+.humana-icon {
+  display: block;
+  flex-shrink: 0;
+  color: currentColor;
+}
+
+[data-icon]:not([data-icon-mounted='true']) {
+  min-width: 1em;
+  min-height: 1em;
+}
+
+[data-icon] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+.humana-icon--brand {
+  stroke-width: 0;
+}
+
+.services-card__icon {
+  color: #007eb3;
+}
+
+.services-card__icon .humana-icon {
+  width: 26px;
+  height: 26px;
+}
+
+.diferenciais__icon {
+  color: #007eb3;
+}
+
+.diferenciais__icon .humana-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.clients-header__badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.clients-header__badge-icon .humana-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.stats-bar__icon .humana-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.mission-content__badge-icon .humana-icon,
+.mission-content__feature-icon .humana-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.mission-content__btn-arrow .humana-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.mission-card__badge-icon .humana-icon,
+.mission-card__stat-icon .humana-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.mission-card__stat-icon--solid .humana-icon {
+  color: #fff;
+}
+
+.blog-card__date-icon .humana-icon,
+.blog-card__read-more-icon .humana-icon,
+.blog-section__btn-icon .humana-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.page-nav__link-icon .humana-icon,
+.page-nav__cta-icon .humana-icon,
+.hero__cta-icon .humana-icon {
+  width: 16px;
+  height: 16px;
+  color: #fff;
+}
+
+.page-nav__link-icon .humana-icon {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.blurb__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  min-width: 64px;
+  color: #007eb3;
+}
+
+.blurb__icon .humana-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.blurb__icon .humana-icon--brand {
+  width: 36px;
+  height: 36px;
+  color: #25d366;
+}
+
+.blurb--address .blurb__icon {
+  color: #007eb3;
+}

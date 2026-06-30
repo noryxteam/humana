@@ -1,0 +1,52 @@
+/* Páginas legais — escala alinhada ao site */
+
+.legal-page {
+  padding: 36px 0 48px;
+}
+
+.legal-page__inner {
+  width: min(1080px, calc(100% - 40px));
+  margin: 0 auto;
+  max-width: 720px;
+}
+
+.legal-page__title {
+  margin: 0 0 10px;
+  font-family: "Montserrat", "Open Sans", sans-serif;
+  font-size: clamp(22px, 2.6vw, 28px);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #0b2840;
+}
+
+.legal-page__intro {
+  margin: 0 0 28px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #666;
+}
+
+.legal-page__section {
+  margin-bottom: 22px;
+}
+
+.legal-page__section h2 {
+  margin: 0 0 8px;
+  font-family: "Montserrat", "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0b2840;
+}
+
+.legal-page__section p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #666;
+}
+
+@media (max-width: 767px) {
+  .legal-page__inner {
+    width: min(1080px, calc(100% - 32px));
+  }
+}

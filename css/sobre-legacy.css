@@ -1,0 +1,375 @@
+/* ==========================================================================
+   SOBRE — página A empresa
+   ========================================================================== */
+
+.sobre-main {
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-top: 29px;
+}
+
+.sobre-legacy .btn--legacy {
+  background-color: #51d2af;
+  color: #000;
+}
+
+.sobre-legacy .btn--legacy:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  opacity: 1;
+}
+
+/* Cards informativos */
+.sobre-cards {
+  padding: 0 0 40px;
+  background: #fff;
+}
+
+.info-card {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  max-width: 1080px;
+  margin: 40px auto 0;
+  background-color: #deefff;
+  box-shadow: 6px 6px 18px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.info-card:first-child {
+  margin-top: 0;
+}
+
+.info-card__content {
+  width: 50%;
+  padding: 29px 29px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-card__media {
+  width: 50%;
+  min-height: 304px;
+  background-size: cover;
+  background-position: center;
+}
+
+.info-card__label {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.info-card__title {
+  font-weight: 600;
+  font-size: 31px;
+  line-height: 1.5em;
+  color: #000;
+  margin-bottom: 12px;
+}
+
+.info-card__text {
+  font-size: 22px;
+  line-height: 1.8em;
+  color: #000;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.info-card__inline-img {
+  display: none;
+  margin-bottom: 31px;
+  text-align: center;
+}
+
+.info-card__inline-img img {
+  width: 86%;
+  margin: 0 auto;
+}
+
+.btn--sm {
+  font-size: 14px;
+  padding: 10px 60px;
+  align-self: flex-start;
+}
+
+.info-card--reverse {
+  flex-direction: row-reverse;
+}
+
+.info-card--reverse .info-card__media {
+  min-height: 343px;
+}
+
+.info-card:not(.info-card--reverse) .info-card__media {
+  min-height: 304px;
+}
+
+.info-card:nth-child(3) .info-card__content,
+.info-card:nth-child(3) .info-card__media {
+  min-height: 343px;
+}
+
+/* Bases da Empresa — estilo pilares (referência visual) */
+.sobre-bases {
+  --bases-accent: #213349;
+  --bases-accent-hover: #2c425c;
+  background: #fff;
+  padding: 0;
+  font-family: "Montserrat", "Open Sans", sans-serif;
+}
+
+.bases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  min-height: 520px;
+}
+
+.bases-card {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.bases-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.72) 100%);
+  transition: background 0.3s ease;
+  z-index: 0;
+}
+
+.bases-card:hover::before {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.88) 100%);
+}
+
+.bases-card__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 520px;
+  padding: clamp(36px, 4vw, 56px) clamp(28px, 3.5vw, 44px);
+}
+
+.bases-card--missao {
+  background-image: url("../assets/images/sobre/missao.jpg");
+}
+
+.bases-card--visao {
+  background-image: url("../assets/images/sobre/visao.jpg");
+}
+
+.bases-card--valores {
+  background-image: url("../assets/images/sobre/valores.jpg");
+}
+
+.bases-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.bases-card__icon .humana-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.bases-card__icon--mint,
+.bases-card__icon--blue {
+  background: var(--bases-accent);
+  color: #fff;
+}
+
+.bases-card__title {
+  margin: 0 0 14px;
+  font-size: clamp(26px, 2.4vw, 34px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #fff;
+}
+
+.bases-card__text {
+  margin: 0 0 24px;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: clamp(14px, 1.05vw, 15px);
+  font-weight: 400;
+  line-height: 1.7;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.bases-card__text strong {
+  font-weight: 700;
+  color: #fff;
+}
+
+.bases-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 11px 22px;
+  border: 0;
+  border-radius: 0;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.bases-card__cta--mint,
+.bases-card__cta--blue {
+  background: var(--bases-accent);
+  color: #fff;
+}
+
+.bases-card__cta--mint:hover,
+.bases-card__cta--blue:hover {
+  background: var(--bases-accent-hover);
+}
+
+/* Barra navy antes do contato */
+.sobre-navy-bar {
+  background-color: #1b3a6b;
+  padding: 12px 0;
+}
+
+.sobre-navy-bar .container {
+  display: flex;
+  align-items: center;
+}
+
+.sobre-navy-bar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sobre-navy-bar__mark {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.sobre-navy-bar__copy {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
+.sobre-navy-bar__name {
+  font-family: "Montserrat", "Open Sans", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.sobre-navy-bar__tag {
+  font-family: "Montserrat", "Open Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Contato sobre */
+.sobre-contato-title {
+  background: #e0e0e0;
+  padding: 19px 0 18px;
+}
+
+.sobre-contato-title h2 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 36px;
+  color: #000;
+  margin-top: 50px;
+}
+
+.sobre-contato-title .divider {
+  width: 80%;
+  max-width: 1080px;
+  margin: 10px auto 0;
+}
+
+.sobre-contato-body {
+  background: #e0e0e0;
+  padding: 11px 0 30px;
+}
+
+.footer-map {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 22px;
+  border: 0;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .info-card__content,
+  .info-card__media {
+    width: 100%;
+  }
+
+  .info-card__media {
+    min-height: 280px !important;
+    order: -1;
+  }
+
+  .info-card--reverse .info-card__media {
+    order: -1;
+  }
+
+  .info-card__inline-img {
+    display: block;
+  }
+
+  .info-card__media--hide-mobile {
+    display: none;
+  }
+
+  .bases-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bases-card__content {
+    min-height: 420px;
+    padding: 36px 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .info-card {
+    width: 90%;
+  }
+
+  .info-card__text {
+    font-size: 21px;
+  }
+}
+
+@media (min-width: 981px) {
+  .info-card__inline-img {
+    display: none !important;
+  }
+}

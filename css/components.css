@@ -1,0 +1,244 @@
+/* ==========================================================================
+   COMPONENTS — botões, cards, carrossel, blog, formulário
+   ========================================================================== */
+
+.btn {
+  display: inline-block;
+  padding: 10px 60px;
+  background-color: #00aeef;
+  color: #fff;
+  border: 0;
+  border-radius: 0;
+  letter-spacing: 2px;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1.7em;
+  cursor: pointer;
+  transition: all 300ms ease 0ms;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn--hero {
+  margin-top: 20px;
+}
+
+.btn--outline {
+  background-color: transparent;
+  color: #007eb3;
+  border: 2px solid #007eb3;
+  padding: 10px 32px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-top: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn--outline:hover {
+  background-color: #0096cc;
+  color: #fff;
+  opacity: 1;
+}
+
+/* Service cards */
+.service-card {
+  background-color: #deefff;
+  padding: 36px 20px 28px;
+  margin-top: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-2px);
+}
+
+.service-card__icon-wrap {
+  width: 100%;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.service-card__icon {
+  width: auto;
+  max-width: 55%;
+  max-height: 110px;
+  height: auto;
+  margin: 0;
+  object-fit: contain;
+}
+
+.service-card__title {
+  font-weight: 700;
+  font-size: 23px;
+  color: #000;
+  width: 90%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  line-height: 1.3em;
+  flex-shrink: 0;
+}
+
+.service-card__text {
+  font-size: 17px;
+  color: #000;
+  width: 90%;
+  margin: 0;
+  text-align: center;
+  line-height: 1.7em;
+}
+
+/* Logo carousel */
+.logo-carousel {
+  position: relative;
+  padding: 12px 24px 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-carousel__viewport {
+  overflow: hidden;
+  flex: 1;
+}
+
+.logo-carousel__track {
+  display: flex;
+  transition: transform 500ms ease;
+  gap: 12px;
+}
+
+.logo-carousel__slide {
+  flex: 0 0 calc(20% - 10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-carousel__slide img {
+  max-height: 80px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-carousel__nav {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #aaa;
+  background: transparent;
+  color: #aaa;
+  font-size: 22px;
+  line-height: 28px;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.logo-carousel__nav:hover {
+  background-color: #0096cc;
+  color: #fff;
+  border-color: #0096cc;
+}
+
+/* Blog grid — estilos em sections.css */
+
+/* Contact form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 22px 15px;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 16px;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 0;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form .btn {
+  margin-top: 15px;
+  align-self: flex-start;
+}
+
+/* Blurb (WhatsApp / endereço) */
+.blurb {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 9px;
+}
+
+.blurb__icon img {
+  width: 64px;
+  height: 64px;
+}
+
+.blurb__title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.5em;
+  color: #666;
+}
+
+.blurb--clickable {
+  cursor: pointer;
+}
+
+.blurb--clickable:hover .blurb__title {
+  color: #2ea3f2;
+}
+
+.blurb--address .blurb__icon {
+  color: #0c71c3;
+  font-size: 32px;
+  line-height: 1;
+  width: 64px;
+  text-align: center;
+}
+
+.blurb__description {
+  font-size: 17px;
+  line-height: 1.7em;
+  color: #666;
+  margin-top: 8px;
+}
+
+.contact-phones-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 9px;
+}
+
+.contact-phones-row .blurb {
+  flex: 1;
+  min-width: 200px;
+}

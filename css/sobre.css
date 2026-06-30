@@ -1,0 +1,1073 @@
+/* ==========================================================================
+   SOBRE — página A empresa
+   ========================================================================== */
+
+/* Intro — banner full-width (proporção imagem 1704×923) */
+.empresa-intro {
+  width: 100%;
+  overflow: hidden;
+  background: #0b2840;
+}
+
+.empresa-intro__layout {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.empresa-intro__banner {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 72% center;
+}
+
+.empresa-intro__content {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: min(50%, 680px);
+  height: 100%;
+  padding: clamp(28px, 4.5vw, 56px) clamp(24px, 3vw, 40px) clamp(28px, 4.5vw, 56px) clamp(36px, 5.5vw, 80px);
+  box-sizing: border-box;
+}
+
+.empresa-intro__label {
+  margin: 0 0 14px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--brand-blue);
+}
+
+.empresa-intro__title {
+  margin: 0 0 16px;
+  max-width: 13.5em;
+  font-size: clamp(22px, 2.6vw, 36px);
+  font-weight: 700;
+  line-height: 1.22;
+  color: #fff;
+}
+
+.empresa-intro__line {
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-bottom: 18px;
+  background: var(--brand-blue);
+}
+
+.empresa-intro__text {
+  margin: 0 0 14px;
+  max-width: 34em;
+  font-size: clamp(13px, 1.05vw, 15px);
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.empresa-intro__text:last-child {
+  margin-bottom: 0;
+}
+
+/* Intro — texto aparecendo em sequência */
+.empresa-intro--js .empresa-intro__content > * {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.empresa-intro--js.is-playing .empresa-intro__content > * {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.empresa-intro--js.is-playing .empresa-intro__content > *:nth-child(1) {
+  transition-delay: 0.08s;
+}
+
+.empresa-intro--js.is-playing .empresa-intro__content > *:nth-child(2) {
+  transition-delay: 0.22s;
+}
+
+.empresa-intro--js.is-playing .empresa-intro__content > *:nth-child(3) {
+  transition-delay: 0.36s;
+}
+
+.empresa-intro--js.is-playing .empresa-intro__content > *:nth-child(4) {
+  transition-delay: 0.5s;
+}
+
+.empresa-intro--js.is-playing .empresa-intro__content > *:nth-child(5) {
+  transition-delay: 0.64s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .empresa-intro--js .empresa-intro__content > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Blocos alternados — cards longos horizontais */
+.empresa-blocks {
+  padding: 16px 0 64px;
+  background: #fff;
+}
+
+.empresa-blocks__inner {
+  width: 94%;
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.empresa-block {
+  position: relative;
+  display: grid;
+  align-items: stretch;
+  min-height: 300px;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 74, 102, 0.1);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.05),
+    0 8px 18px rgba(0, 40, 60, 0.1),
+    0 22px 44px rgba(0, 40, 60, 0.14),
+    0 36px 72px rgba(0, 40, 60, 0.1);
+  color: inherit;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.empresa-block::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.empresa-block:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.06),
+    0 14px 28px rgba(0, 40, 60, 0.12),
+    0 32px 56px rgba(0, 40, 60, 0.18),
+    0 48px 88px rgba(0, 40, 60, 0.12);
+}
+
+.empresa-block--media-left {
+  grid-template-columns: 40% 60%;
+  height: 300px;
+  min-height: 300px;
+  max-height: 300px;
+}
+
+.empresa-block--media-left .empresa-block__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(88px, 11vw, 120px);
+  gap: clamp(12px, 2vw, 20px);
+  align-items: center;
+  height: 100%;
+  min-height: 0;
+  padding: 32px clamp(14px, 2vw, 22px) 32px clamp(24px, 3vw, 36px);
+}
+
+.empresa-block--media-left .empresa-block__body {
+  order: 1;
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.empresa-block--media-left .empresa-block__aside {
+  order: 2;
+  align-self: center;
+}
+
+.empresa-block--media-left .empresa-block__label-row--under {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.empresa-block--media-left .empresa-block__label-line {
+  display: block;
+  width: 36px;
+  height: 2px;
+  background: var(--brand-blue);
+}
+
+.empresa-block--media-left .empresa-block__label {
+  margin-bottom: 0;
+}
+
+.empresa-block--media-left .empresa-block__label::after {
+  display: none;
+}
+
+.empresa-block--media-left .empresa-block__title {
+  max-width: none;
+  margin-bottom: 12px;
+  min-height: 0;
+}
+
+.empresa-block--media-left .empresa-block__text {
+  padding-right: 0;
+  margin-bottom: 18px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  flex-shrink: 1;
+}
+
+.empresa-block--media-left .empresa-block__media {
+  height: 100%;
+  min-height: 0;
+}
+
+.empresa-block--media-left .empresa-block__media img {
+  min-height: 0;
+  border-radius: 14px 0 0 14px;
+}
+
+.empresa-block--media-left .empresa-block__cta {
+  border-radius: 3px;
+}
+
+.empresa-block--reverse .empresa-block__media {
+  order: 2;
+}
+
+.empresa-block--reverse .empresa-block__content {
+  order: 1;
+}
+
+.empresa-block--reverse {
+  grid-template-columns: 62% 38%;
+}
+
+.empresa-block--reverse .empresa-block__content {
+  display: grid;
+  grid-template-columns: clamp(88px, 11vw, 120px) minmax(0, 1fr);
+  gap: clamp(16px, 2.5vw, 28px);
+  align-items: center;
+  padding: 32px clamp(28px, 3.5vw, 44px) 32px clamp(20px, 2.5vw, 32px);
+}
+
+.empresa-block__aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  padding: 8px 0;
+}
+
+.empresa-block__aside .empresa-block__index {
+  position: static;
+  font-size: clamp(80px, 10vw, 118px);
+  font-weight: 700;
+  letter-spacing: -3px;
+  line-height: 0.9;
+  color: rgba(0, 174, 239, 0.14);
+  pointer-events: none;
+  user-select: none;
+}
+
+.empresa-block__aside .empresa-block__deco-ring {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  margin-top: 10px;
+  border: 1px solid #d5dde3;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--brand-blue-dark);
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+.empresa-block__aside .empresa-block__deco {
+  position: static;
+  color: var(--brand-blue-dark);
+}
+
+.empresa-block__aside .empresa-block__deco .humana-icon {
+  width: 26px;
+  height: 26px;
+}
+
+.empresa-block--reverse .empresa-block__body {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.empresa-block--reverse .empresa-block__label-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.empresa-block--reverse .empresa-block__label-line {
+  display: block;
+  width: 36px;
+  height: 2px;
+  background: var(--brand-blue);
+}
+
+.empresa-block--reverse .empresa-block__label {
+  margin-bottom: 0;
+}
+
+.empresa-block--reverse .empresa-block__label::after {
+  display: none;
+}
+
+.empresa-block--reverse .empresa-block__title {
+  max-width: none;
+  margin-bottom: 12px;
+}
+
+.empresa-block--reverse .empresa-block__text {
+  padding-right: 0;
+  max-width: 38em;
+}
+
+.empresa-block--reverse .empresa-block__media img {
+  border-radius: 0 14px 14px 0;
+}
+
+.empresa-block__media {
+  margin: 0;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.empresa-block__media img {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.45s ease;
+}
+
+.empresa-block:hover .empresa-block__media img {
+  transform: scale(1.03);
+}
+
+.empresa-block__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 36px clamp(32px, 4.5vw, 52px) 36px clamp(28px, 3.5vw, 44px);
+  background: #fff;
+  overflow: hidden;
+}
+
+.empresa-block__index {
+  position: absolute;
+  top: 18px;
+  right: clamp(24px, 3vw, 40px);
+  font-size: clamp(72px, 9vw, 108px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -2px;
+  color: rgba(0, 174, 239, 0.11);
+  pointer-events: none;
+  user-select: none;
+}
+
+.empresa-block__deco {
+  position: absolute;
+  right: clamp(28px, 3.5vw, 48px);
+  bottom: 22px;
+  color: rgba(0, 126, 179, 0.28);
+  pointer-events: none;
+}
+
+.empresa-block__label {
+  position: relative;
+  z-index: 1;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--brand-blue-dark);
+  margin-bottom: 14px;
+}
+
+.empresa-block__label::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 2px;
+  margin-top: 8px;
+  background: var(--brand-blue);
+}
+
+.empresa-block__title {
+  position: relative;
+  z-index: 1;
+  font-weight: 700;
+  font-size: clamp(24px, 2.4vw, 30px);
+  line-height: 1.25;
+  color: #111;
+  margin-bottom: 14px;
+  max-width: 16ch;
+}
+
+.empresa-block__text {
+  position: relative;
+  z-index: 1;
+  font-size: 15px;
+  line-height: 1.68;
+  color: #666;
+  margin-bottom: 22px;
+  max-width: 34em;
+  padding-right: clamp(48px, 8vw, 80px);
+}
+
+.empresa-block__cta {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  padding: 11px 32px;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: var(--brand-blue);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #fff;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.empresa-block__cta:hover {
+  background: var(--brand-blue-hover);
+  color: #fff;
+}
+
+/* Cards — entrada alternada no scroll */
+.empresa-blocks--js .empresa-block {
+  opacity: 0;
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
+  will-change: transform, opacity;
+}
+
+.empresa-blocks--js .empresa-block:nth-child(odd) {
+  transform: translate3d(-80px, 0, 0);
+}
+
+.empresa-blocks--js .empresa-block:nth-child(even) {
+  transform: translate3d(80px, 0, 0);
+}
+
+.empresa-blocks--js .empresa-block.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.empresa-blocks--js .empresa-block.is-visible:hover {
+  transform: translate3d(0, -5px, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .empresa-blocks--js .empresa-block {
+    opacity: 1;
+    transform: none;
+    transition: box-shadow 0.35s ease;
+    will-change: auto;
+  }
+}
+
+/* Missão, Visão e Valores — três cards */
+.empresa-pilares {
+  width: 100%;
+  background: #666;
+}
+
+.empresa-pilares__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  width: 100%;
+}
+
+.empresa-pilar {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: #666;
+}
+
+.empresa-pilar__media {
+  margin: 0;
+  overflow: hidden;
+}
+
+.empresa-pilar__media img {
+  display: block;
+  width: 100%;
+  height: clamp(200px, 22vw, 280px);
+  object-fit: cover;
+  object-position: center;
+}
+
+.empresa-pilar__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: clamp(28px, 3.5vw, 40px) clamp(24px, 3vw, 36px) clamp(32px, 3.5vw, 44px);
+  background: #666;
+}
+
+.empresa-pilar__title {
+  margin: 0 0 16px;
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #fff;
+}
+
+.empresa-pilar__text {
+  margin: 0 0 28px;
+  flex: 1;
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.65;
+  color: #fff;
+}
+
+.empresa-pilar__text strong {
+  font-weight: 700;
+}
+
+.empresa-pilar__cta {
+  align-self: flex-start;
+  margin: 0;
+  padding: 12px 28px;
+  border: 0;
+  border-radius: 0;
+  background: #66ddaa;
+  color: #111;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.empresa-pilar__cta:hover {
+  background: #5fd19f;
+}
+
+/* Nossa Trajetória — timeline horizontal premium */
+.empresa-timeline {
+  background: linear-gradient(105deg, #001f33 0%, #001528 45%, #000d1a 100%);
+}
+
+.empresa-timeline__inner {
+  width: 94%;
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(240px, 30%) minmax(0, 70%);
+  gap: clamp(28px, 4vw, 48px);
+  align-items: center;
+  padding: clamp(48px, 6vw, 72px) 0;
+}
+
+.empresa-timeline__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.empresa-timeline__label-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.empresa-timeline__label-line {
+  display: block;
+  width: 40px;
+  height: 3px;
+  border-radius: 2px;
+  background: #00aeef;
+}
+
+.empresa-timeline__label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #00aeef;
+  margin: 0;
+}
+
+.empresa-timeline__title {
+  font-size: clamp(24px, 2.4vw, 32px);
+  font-weight: 800;
+  line-height: 1.25;
+  color: #ffffff;
+  margin: 0 0 16px;
+  max-width: 12em;
+  letter-spacing: -0.02em;
+}
+
+.empresa-timeline__text {
+  margin: 0 0 24px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #cccccc;
+  max-width: 22em;
+}
+
+.empresa-timeline__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 8px;
+  background: #00aeef;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.empresa-timeline__cta:hover {
+  background: #33c1f5;
+  color: #fff;
+}
+
+.empresa-timeline__cta-icon {
+  display: flex;
+  color: #fff;
+}
+
+.empresa-timeline__track {
+  position: relative;
+  padding-top: 8px;
+  min-width: 0;
+  perspective: 1400px;
+  perspective-origin: 20% 40%;
+}
+
+.empresa-timeline__line {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.empresa-timeline__milestones {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+  transform-style: preserve-3d;
+}
+
+.empresa-timeline__item {
+  position: relative;
+  padding: 36px clamp(10px, 1.2vw, 16px) 0;
+  min-width: 0;
+  transform-style: preserve-3d;
+}
+
+.empresa-timeline__card {
+  transform-style: preserve-3d;
+  transform-origin: left center;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+.empresa-timeline--js .empresa-timeline__milestones:not(.is-prepared) .empresa-timeline__card {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.empresa-timeline--js .empresa-timeline__milestones:not(.is-playing) .empresa-timeline__card {
+  transition: none;
+}
+
+.empresa-timeline--js .empresa-timeline__milestones.is-playing .empresa-timeline__card {
+  transition:
+    transform 0.95s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.55s ease,
+    filter 0.7s ease;
+}
+
+.empresa-timeline--js .empresa-timeline__milestones.is-prepared .empresa-timeline__item:not(.is-revealed) .empresa-timeline__card {
+  opacity: 0;
+  visibility: visible;
+  transform: translate3d(var(--stack-x, 0), var(--stack-y, 6px), var(--stack-z, -90px)) rotateY(var(--stack-rotate, -16deg)) scale(0.9);
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.empresa-timeline__item.is-revealed .empresa-timeline__card {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) rotateY(0deg) scale(1);
+  filter: blur(0);
+}
+
+.empresa-timeline__item.is-revealed {
+  z-index: calc(5 + var(--item-index, 0));
+}
+
+.empresa-timeline__item:not(:last-child) {
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.empresa-timeline__dot {
+  position: absolute;
+  top: 8px;
+  left: clamp(10px, 1.2vw, 16px);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #00aeef;
+  z-index: 2;
+  box-shadow: 0 0 0 4px #001528;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.35s ease;
+}
+
+.empresa-timeline__item.is-revealed .empresa-timeline__dot {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.empresa-timeline__icon-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0 0 14px;
+}
+
+.empresa-timeline__year-bg {
+  font-size: clamp(44px, 4vw, 58px);
+  font-weight: 800;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -0.03em;
+}
+
+.empresa-timeline__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #00aeef;
+  flex-shrink: 0;
+}
+
+.empresa-timeline__year {
+  margin: 0 0 6px;
+  font-size: clamp(20px, 1.8vw, 26px);
+  font-weight: 800;
+  line-height: 1;
+  color: #00aeef;
+  letter-spacing: -0.02em;
+}
+
+.empresa-timeline__event {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #ffffff;
+}
+
+.empresa-timeline__desc {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.55;
+  color: #cccccc;
+  max-width: 15em;
+  padding-right: 4px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .empresa-intro__content {
+    width: min(58%, 520px);
+    padding-left: clamp(24px, 4vw, 48px);
+  }
+
+  .empresa-intro__title {
+    max-width: none;
+    font-size: clamp(18px, 2.4vw, 28px);
+  }
+
+  .empresa-block--media-left {
+    height: auto;
+    max-height: none;
+    grid-template-columns: 1fr;
+  }
+
+  .empresa-pilares__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .empresa-pilar__media img {
+    height: 240px;
+  }
+
+  .empresa-block--media-left .empresa-block__text {
+    display: block;
+    -webkit-line-clamp: unset;
+    overflow: visible;
+    padding-right: 0;
+  }
+
+  .empresa-block--media-left .empresa-block__media img {
+    border-radius: 0;
+  }
+
+  .empresa-block,
+  .empresa-block--reverse {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    height: auto;
+    max-height: none;
+  }
+
+  .empresa-block__media,
+  .empresa-block--reverse .empresa-block__media {
+    order: -1;
+    min-height: 240px;
+  }
+
+  .empresa-block__content,
+  .empresa-block--reverse .empresa-block__content {
+    order: 0;
+    padding: 28px 24px 32px;
+  }
+
+  .empresa-block__media img {
+    min-height: 240px;
+    max-height: 280px;
+  }
+
+  .empresa-block__text {
+    padding-right: 0;
+  }
+
+  .empresa-block__index {
+    font-size: 64px;
+    top: 12px;
+    right: 20px;
+  }
+
+  .empresa-block__deco {
+    right: 24px;
+    bottom: 18px;
+  }
+
+  .empresa-block--media-left .empresa-block__content {
+    grid-template-columns: 1fr 72px;
+    gap: 16px;
+    padding: 24px 16px 28px 20px;
+  }
+
+  .empresa-block--reverse .empresa-block__content {
+    grid-template-columns: 72px 1fr;
+    gap: 16px;
+    padding: 24px 20px 28px;
+  }
+
+  .empresa-block__aside .empresa-block__index {
+    font-size: 56px;
+  }
+
+  .empresa-block__aside .empresa-block__deco-ring {
+    width: 46px;
+    height: 46px;
+    margin-top: 8px;
+  }
+
+  .empresa-block--reverse .empresa-block__media img {
+    border-radius: 0;
+  }
+
+  .empresa-timeline__inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 40px 0 48px;
+    align-items: start;
+  }
+
+  .empresa-timeline__title,
+  .empresa-timeline__text {
+    max-width: none;
+  }
+
+  .empresa-timeline__milestones {
+    grid-template-columns: repeat(5, minmax(160px, 1fr));
+    overflow-x: auto;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+  }
+
+  .empresa-timeline__item {
+    scroll-snap-align: start;
+  }
+
+  .empresa-timeline__item:not(:last-child) {
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .empresa-timeline__item.is-revealed .empresa-timeline__card {
+    transition-duration: 0.75s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .empresa-timeline__card,
+  .empresa-timeline__dot {
+    transition: none !important;
+  }
+
+  .empresa-timeline--js .empresa-timeline__milestones.is-prepared .empresa-timeline__item:not(.is-revealed) .empresa-timeline__card {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  .empresa-timeline__item .empresa-timeline__dot {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .empresa-intro__layout {
+    aspect-ratio: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .empresa-intro__banner {
+    position: relative;
+    aspect-ratio: 1704 / 923;
+    height: auto;
+  }
+
+  .empresa-intro__content {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 32px 24px 36px;
+    background: #0b2840;
+  }
+
+  .empresa-blocks__inner {
+    width: 92%;
+  }
+
+  .empresa-blocks {
+    padding-bottom: 40px;
+  }
+
+  .empresa-blocks__inner {
+    gap: 28px;
+  }
+
+  .empresa-block__content {
+    padding: 22px 20px 24px;
+  }
+
+  .empresa-timeline__milestones {
+    grid-template-columns: 1fr;
+    overflow-x: visible;
+  }
+
+  .empresa-timeline__item {
+    padding: 0 0 24px 0;
+    margin-bottom: 0;
+    border-right: 0 !important;
+    border-left: 0;
+    scroll-snap-align: unset;
+  }
+
+  .empresa-timeline__item:not(:last-child) {
+    border-bottom: 1px solid rgba(11, 40, 64, 0.08);
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+  }
+
+  .empresa-timeline__dot {
+    display: none;
+  }
+
+  .empresa-timeline__line {
+    display: none;
+  }
+
+  .empresa-timeline__icon-stage {
+    min-height: 64px;
+    margin-bottom: 10px;
+  }
+
+  .empresa-timeline__desc {
+    max-width: none;
+  }
+}

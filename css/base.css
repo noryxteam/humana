@@ -1,0 +1,175 @@
+/* ==========================================================================
+   BASE — reset, tipografia, layout grid
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #071522;
+}
+
+:root {
+  --brand-blue: #00aeef;
+  --brand-blue-hover: #0096cc;
+  --brand-blue-dark: #007eb3;
+  --brand-blue-darker: #006891;
+  --brand-blue-deepest: #004a66;
+  --brand-blue-bg: #003d55;
+  --brand-blue-light: #e6f6fd;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+  background-color: #fff;
+  line-height: 1.7em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+.container {
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.row--2col > .col {
+  width: 50%;
+  padding: 0 1.5%;
+}
+
+.row--3col > .col,
+.row--cards > .service-card {
+  width: 33.333%;
+  padding: 0 1.5%;
+}
+
+.row--why > .col--why-text {
+  width: 60%;
+  padding: 0 1.5%;
+}
+
+.row--why > .col--why-image {
+  width: 40%;
+  padding: 0 1.5%;
+}
+
+.section {
+  position: relative;
+}
+
+.section--white {
+  background-color: #fff;
+}
+
+.section--grey {
+  background-color: #ededed;
+}
+
+.section--grey-dark {
+  background-color: #e0e0e0;
+}
+
+.section-fullwidth {
+  width: 100%;
+}
+
+.section-heading {
+  font-weight: 600;
+  font-size: 36px;
+  color: #000;
+  text-align: left;
+  line-height: 1.9em;
+}
+
+.section-heading-sm {
+  font-weight: 600;
+  font-size: 30px;
+  color: #000;
+  line-height: 1.9em;
+  margin-top: 30px;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid #000;
+  margin: 0;
+  min-height: 8.8px;
+}
+
+.divider--spaced {
+  margin-top: 30px;
+}
+
+.text-block--about {
+  color: #000;
+  font-size: 20px;
+  line-height: 1.8em;
+  text-align: justify;
+  margin-top: -3px;
+  margin-bottom: 4%;
+}
+
+.text-block--about p + p {
+  margin-top: 1em;
+}
+
+.text-block--services {
+  font-size: 16px;
+  line-height: 1.9em;
+  text-align: justify;
+  color: #666;
+}
+
+.text-block--services p + p {
+  margin-top: 1em;
+}
+
+.text-block--mission {
+  font-size: 20px;
+  line-height: 1.8em;
+  color: #000;
+  text-align: justify;
+  margin-bottom: 20px;
+}
