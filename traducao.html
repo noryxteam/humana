@@ -9,146 +9,374 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/servicos-page.css">
-<script src="js/page-transition.js"></script>
+  <link rel="stylesheet" href="css/traducao-page.css">
+  <script src="js/page-transition.js"></script>
 </head>
-<body class="servico-page">
+<body class="servico-page servico-page--traducao tradx-page">
 
-  <nav class="page-nav" aria-label="Navegação principal">
+  <nav class="page-nav page-nav--overlay" aria-label="Navegação principal">
     <div class="page-nav__inner">
       <a href="index.html" class="page-nav__logo page-nav__logo--hero">
-        <span class="page-nav__logo-mark" aria-hidden="true">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="6" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="6" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="6" cy="30" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="30" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="30" r="3" fill="#00AEEF"/>
-          </svg>
-        </span>
+        <img src="assets/images/logo-humana.png" alt="" class="page-nav__logo-img" width="84" height="40" decoding="async" aria-hidden="true">
         <span class="page-nav__logo-copy">
           <span class="page-nav__logo-name">Humana</span>
-          <span class="page-nav__logo-tag">Com &amp; Trad</span>
+          <span class="page-nav__logo-tag">com &amp; trad</span>
         </span>
       </a>
       <ul class="page-nav__list">
-        <li class="page-nav__item"><a href="index.html">Início</a></li>
-        <li class="page-nav__item"><a href="sobre.html">Sobre Nós</a></li>
+        <li class="page-nav__item"><a href="index.html" data-i18n="nav.home">Início</a></li>
+        <li class="page-nav__item"><a href="sobre.html" data-i18n="nav.about">Sobre Nós</a></li>
         <li class="page-nav__item page-nav__item--dropdown is-active">
           <a href="#" class="page-nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-            Serviços
+            <span data-i18n="nav.services">Serviços</span>
             <span class="page-nav__link-icon" data-icon="chevron-down" data-icon-size="sm"></span>
           </a>
           <ul class="page-nav__dropdown">
-            <li><a href="isp.html">Interpretação Simultânea Presencial</a></li>
-            <li><a href="isr.html">Interpretação Simultânea Remota</a></li>
-            <li><a href="traducao.html">Tradução</a></li>
-            <li><a href="cursos-formativos.html">Cursos Formativos</a></li>
+            <li><a href="isp.html" data-i18n="nav.isp">Interpretação Simultânea Presencial</a></li>
+            <li><a href="isr.html" data-i18n="nav.isr">Interpretação Simultânea Remota</a></li>
+            <li><a href="traducao.html" data-i18n="nav.translation">Tradução</a></li>
+            <li><a href="cursos-formativos.html" data-i18n="nav.courses">Cursos Formativos</a></li>
           </ul>
         </li>
         <li class="page-nav__item"><a href="cop30.html">COP30</a></li>
         <li class="page-nav__item page-nav__item--dropdown">
           <a href="#" class="page-nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-            Parceiros
+            <span data-i18n="nav.partners">Parceiros</span>
             <span class="page-nav__link-icon" data-icon="chevron-down" data-icon-size="sm"></span>
           </a>
           <ul class="page-nav__dropdown">
-            <li><a href="parceiros.html">Nossos Parceiros</a></li>
+            <li><a href="parceiros.html" data-i18n="nav.partnersAll">Nossos Parceiros</a></li>
             <li><a href="tao-filmes.html">TAO Filmes</a></li>
           </ul>
         </li>
-        <li class="page-nav__item"><a href="blog.html">Blog</a></li>
-        <li class="page-nav__item"><a href="contato.html">Contato</a></li>
+        <li class="page-nav__item"><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+        <li class="page-nav__item"><a href="contato.html" data-i18n="nav.contact">Contato</a></li>
       </ul>
       <a href="contato.html" class="page-nav__cta">
-        Solicitar Orçamento
+        <span data-i18n="nav.cta">Solicitar Orçamento</span>
         <span class="page-nav__cta-icon" data-icon="arrow-right" data-icon-size="sm"></span>
       </a>
+      <div class="lang-switcher" data-lang-switcher role="group" aria-label="Idioma / Language">
+        <button type="button" class="lang-switcher__btn is-active" data-lang="pt" aria-label="Português" title="Português">
+          <img src="assets/images/flags/br.svg" alt="" width="20" height="14" decoding="async">
+        </button>
+        <button type="button" class="lang-switcher__btn" data-lang="en" aria-label="English" title="English">
+          <img src="assets/images/flags/us.svg" alt="" width="20" height="14" decoding="async">
+        </button>
+        <button type="button" class="lang-switcher__btn" data-lang="es" aria-label="Español" title="Español">
+          <img src="assets/images/flags/es.svg" alt="" width="20" height="14" decoding="async">
+        </button>
+      </div>
     </div>
   </nav>
 
   <div id="page-container">
-    <section class="servico-hero">
-      <div class="servico-hero__inner">
-        <img class="servico-hero__image" src="assets/images/servicos/traducao-e-interpretacao.png" alt="Tradução" loading="eager">
-        <h1 class="servico-hero__title">Tradução</h1>
-        <p class="servico-hero__subtitle">Tipos de serviços de tradução</p>
-      </div>
-    </section>
-    
-    <section class="servico-content">
-      <div class="servico-content__inner">
-        <div class="servico-definition">
-        <div>
-          <h2 class="servico-definition__title">Tradução</h2>
-          <p class="servico-definition__type"><em>[substantivo, s.f.]</em></p>
-          <p class="servico-definition__text">Transformar exatamente [sem ambiguidades], uma palavra/frase/texto de uma linguagem para outra, respeitando o sentido, o contexto e a intenção do texto original.</p>
-        </div>
-        <img class="servico-definition__image" src="assets/images/servicos/traducao-e-interpretacao.png" alt="" loading="lazy">
-      </div>
-        <div class="servico-prose"><h2>Áreas de atuação</h2><p><strong>Traduções precisas e culturalmente adaptadas</strong> em diversas áreas do conhecimento: jurídico, acadêmico, científico, institucional e cultural. Nosso compromisso é entregar textos com <strong>linguagem adequada, fidelidade ao conteúdo</strong> e cuidado com os mínimos detalhes.</p></div>
-        <div class="servico-features"><article class="servico-feature"><h3 class="servico-feature__title">Translation Services</h3><p class="servico-feature__text">Added Value in Translation — traduções precisas e culturalmente adaptadas em diversas áreas do conhecimento.</p></article><article class="servico-feature"><h3 class="servico-feature__title">Como funciona a tradução?</h3><p class="servico-feature__text">Como funcionam os serviços de Tradução Humana? Cada projeto passa por análise terminológica, tradução especializada e revisão de qualidade.</p></article></div>
-      </div>
-    </section>
-    <section class="servico-cta">
-      <h2 class="servico-cta__title">Orçamento</h2>
-      <a href="contato.html" class="servico-cta__btn">Solicitar orçamento &rarr;</a>
-    </section>
-</div>
 
-    <footer class="site-footer">
+    <!-- 1. HERO -->
+    <section class="tradx-hero" aria-labelledby="tradx-hero-title">
+      <div class="tradx-hero__bg" aria-hidden="true">
+        <img src="assets/images/servicos/traducao-hero-banner.jpg" alt="" width="1920" height="680" decoding="async" loading="eager">
+      </div>
+      <div class="tradx-hero__overlay" aria-hidden="true"></div>
+      <div class="tradx-hero__inner" data-tradx-motion="hero-copy">
+        <p class="tradx-eyebrow">Serviço especializado</p>
+        <h1 id="tradx-hero-title" class="tradx-hero__title">Tradução profissional para empresas, documentos e projetos internacionais</h1>
+        <p class="tradx-hero__desc">Cada tradução é realizada por profissionais especializados, preservando contexto, terminologia e significado — com a precisão que seu projeto exige.</p>
+        <div class="tradx-hero__actions">
+          <a href="contato.html" class="tradx-btn tradx-btn--primary">Solicitar Orçamento</a>
+          <a href="#tradx-process" class="tradx-btn tradx-btn--ghost">Como funciona</a>
+        </div>
+      </div>
+    </section>
+
+    <main>
+
+      <!-- 2. TRADUÇÃO VAI ALÉM DAS PALAVRAS -->
+      <section class="tradx-beyond" aria-labelledby="tradx-beyond-title">
+        <div class="tradx-wrap">
+          <div class="tradx-beyond__grid">
+            <div class="tradx-beyond__image" data-tradx-motion="section-header">
+              <img src="assets/images/servicos/situacao-comunicativa.jpg" alt="Profissionais em reunião internacional" width="640" height="512" loading="lazy">
+            </div>
+            <div class="tradx-beyond__content">
+              <p class="tradx-eyebrow">Tradução vai além das palavras</p>
+              <h2 id="tradx-beyond-title" class="tradx-section-title">Mais do que converter texto — transmitir significado</h2>
+              <p class="tradx-beyond__text">Traduzir não significa apenas trocar palavras de um idioma para outro. É preservar o contexto, a intenção, a cultura e o significado original — garantindo que a mensagem chegue ao destinatário com a mesma força e clareza.</p>
+              <p class="tradx-beyond__text">Na Humana, cada projeto passa por profissionais que dominam a área de atuação do texto. Jurídico, técnico ou audiovisual: a tradução humana faz toda a diferença quando a precisão é inegociável.</p>
+              <span class="tradx-beyond__highlight">Qualidade que máquinas não replicam — feita por especialistas, revisada por especialistas.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. ESPECIALIDADES -->
+      <section class="tradx-specialties" aria-labelledby="tradx-specialties-title">
+        <div class="tradx-wrap">
+          <header class="tradx-specialties__header" data-tradx-motion="section-header">
+            <p class="tradx-eyebrow">Especialidades</p>
+            <h2 id="tradx-specialties-title" class="tradx-section-title">Tradução para cada necessidade</h2>
+            <p class="tradx-section-lead">Profissionais dedicados por área de conhecimento, com domínio da terminologia específica de cada segmento.</p>
+          </header>
+          <div class="tradx-specialties__grid">
+            <article class="tradx-specialty" data-tradx-motion="specialty">
+              <div class="tradx-specialty__image">
+                <img src="assets/images/servicos/traducao-juridica.png" alt="" width="400" height="250" loading="lazy">
+              </div>
+              <div>
+                <span class="tradx-specialty__line" aria-hidden="true"></span>
+                <h3 class="tradx-specialty__title">Tradução Jurídica</h3>
+                <p class="tradx-specialty__desc">Contratos, leis, tratados e documentos legais com fidelidade terminológica e rigor jurídico em cada idioma.</p>
+              </div>
+            </article>
+            <article class="tradx-specialty" data-tradx-motion="specialty">
+              <div class="tradx-specialty__image">
+                <img src="assets/images/servicos/traducao-tecnica.png" alt="" width="400" height="250" loading="lazy">
+              </div>
+              <div>
+                <span class="tradx-specialty__line" aria-hidden="true"></span>
+                <h3 class="tradx-specialty__title">Tradução Técnica</h3>
+                <p class="tradx-specialty__desc">Manuais, guias, patentes e especificações técnicas com precisão terminológica para engenharia, saúde e indústria.</p>
+              </div>
+            </article>
+            <article class="tradx-specialty" data-tradx-motion="specialty">
+              <div class="tradx-specialty__image">
+                <img src="assets/images/servicos/traducao-audiovisual.png" alt="" width="400" height="250" loading="lazy">
+              </div>
+              <div>
+                <span class="tradx-specialty__line" aria-hidden="true"></span>
+                <h3 class="tradx-specialty__title">Tradução Audiovisual</h3>
+                <p class="tradx-specialty__desc">Legendas, dublagem e adaptação de conteúdo para filmes, séries, vídeos corporativos e materiais multimídia.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. COMO FUNCIONA -->
+      <section class="tradx-process" id="tradx-process" aria-labelledby="tradx-process-title">
+        <div class="tradx-wrap">
+          <header class="tradx-process__header" data-tradx-motion="section-header">
+            <p class="tradx-eyebrow">Como funciona</p>
+            <h2 id="tradx-process-title" class="tradx-section-title">Do envio à entrega, com qualidade em cada etapa</h2>
+            <p class="tradx-section-lead">Um processo transparente e organizado para garantir traduções precisas dentro do prazo acordado.</p>
+          </header>
+          <div class="tradx-process__track" role="list" aria-label="Etapas do processo de tradução">
+            <div class="tradx-process__line" aria-hidden="true"></div>
+
+            <div class="tradx-process__step" role="listitem" data-tradx-motion="process-step">
+              <div class="tradx-process__icon">
+                <span data-icon="file-up" data-icon-size="sm" aria-hidden="true"></span>
+              </div>
+              <h3>Você envia o material</h3>
+              <p>Documentos, arquivos ou briefing com idiomas e prazo desejados.</p>
+            </div>
+            <span class="tradx-process__arrow" aria-hidden="true">↓</span>
+
+            <div class="tradx-process__step" role="listitem" data-tradx-motion="process-step">
+              <div class="tradx-process__icon">
+                <span data-icon="file-text" data-icon-size="sm" aria-hidden="true"></span>
+              </div>
+              <h3>Análise do conteúdo</h3>
+              <p>Avaliamos o contexto, volume e área de especialização do texto.</p>
+            </div>
+            <span class="tradx-process__arrow" aria-hidden="true">↓</span>
+
+            <div class="tradx-process__step" role="listitem" data-tradx-motion="process-step">
+              <div class="tradx-process__icon">
+                <span data-icon="user" data-icon-size="sm" aria-hidden="true"></span>
+              </div>
+              <h3>Tradutor especializado</h3>
+              <p>Selecionamos o profissional ideal para o tema e idioma do projeto.</p>
+            </div>
+            <span class="tradx-process__arrow" aria-hidden="true">↓</span>
+
+            <div class="tradx-process__step" role="listitem" data-tradx-motion="process-step">
+              <div class="tradx-process__icon">
+                <span data-icon="languages" data-icon-size="sm" aria-hidden="true"></span>
+              </div>
+              <h3>Tradução humana</h3>
+              <p>Trabalho realizado por tradutor nativo ou fluente na língua-alvo.</p>
+            </div>
+            <span class="tradx-process__arrow" aria-hidden="true">↓</span>
+
+            <div class="tradx-process__step" role="listitem" data-tradx-motion="process-step">
+              <div class="tradx-process__icon">
+                <span data-icon="clipboard-list" data-icon-size="sm" aria-hidden="true"></span>
+              </div>
+              <h3>Revisão de qualidade</h3>
+              <p>Segunda leitura para garantir precisão, fluidez e consistência.</p>
+            </div>
+            <span class="tradx-process__arrow" aria-hidden="true">↓</span>
+
+            <div class="tradx-process__step" role="listitem" data-tradx-motion="process-step">
+              <div class="tradx-process__icon">
+                <span data-icon="send" data-icon-size="sm" aria-hidden="true"></span>
+              </div>
+              <h3>Entrega final</h3>
+              <p>Documento traduzido entregue no formato solicitado, dentro do prazo.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. POR QUE ESCOLHER -->
+      <section class="tradx-why" aria-labelledby="tradx-why-title">
+        <div class="tradx-wrap">
+          <div class="tradx-why__grid">
+            <div class="tradx-why__image" data-tradx-motion="section-header">
+              <img src="assets/images/servicos/3m-palavras-traduzidas.png" alt="Equipe de tradução profissional" width="560" height="700" loading="lazy">
+            </div>
+            <div class="tradx-why__content">
+              <p class="tradx-eyebrow">Por que escolher nossa equipe</p>
+              <h2 id="tradx-why-title" class="tradx-section-title">Diferenciais que fazem a diferença</h2>
+              <p class="tradx-section-lead">Mais de uma década de experiência traduzindo para empresas, instituições e projetos internacionais.</p>
+              <ul class="tradx-why__list">
+                <li class="tradx-why__item" data-tradx-motion="why-item">
+                  <span class="tradx-why__check" aria-hidden="true">✓</span>
+                  <h3>Tradução totalmente humana</h3>
+                </li>
+                <li class="tradx-why__item" data-tradx-motion="why-item">
+                  <span class="tradx-why__check" aria-hidden="true">✓</span>
+                  <h3>Profissionais especializados por área</h3>
+                </li>
+                <li class="tradx-why__item" data-tradx-motion="why-item">
+                  <span class="tradx-why__check" aria-hidden="true">✓</span>
+                  <h3>Terminologia precisa</h3>
+                </li>
+                <li class="tradx-why__item" data-tradx-motion="why-item">
+                  <span class="tradx-why__check" aria-hidden="true">✓</span>
+                  <h3>Revisão completa</h3>
+                </li>
+                <li class="tradx-why__item" data-tradx-motion="why-item">
+                  <span class="tradx-why__check" aria-hidden="true">✓</span>
+                  <h3>Sigilo das informações</h3>
+                </li>
+                <li class="tradx-why__item" data-tradx-motion="why-item">
+                  <span class="tradx-why__check" aria-hidden="true">✓</span>
+                  <h3>Entrega dentro do prazo</h3>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. ÁREAS ATENDIDAS -->
+      <section class="tradx-areas" aria-labelledby="tradx-areas-title">
+        <div class="tradx-wrap">
+          <header class="tradx-areas__header" data-tradx-motion="section-header">
+            <p class="tradx-eyebrow">Áreas atendidas</p>
+            <h2 id="tradx-areas-title" class="tradx-section-title">Onde nossos serviços fazem a diferença</h2>
+            <p class="tradx-section-lead">Atuamos em diversos segmentos com tradutores especializados em cada área de conhecimento.</p>
+          </header>
+          <div class="tradx-areas__grid">
+            <div class="tradx-area" data-tradx-motion="area-item">
+              <div class="tradx-area__bg" aria-hidden="true"><img src="assets/images/servicos/traducao-juridica.png" alt=""></div>
+              <span class="tradx-area__label">Contratos</span>
+            </div>
+            <div class="tradx-area" data-tradx-motion="area-item">
+              <div class="tradx-area__bg" aria-hidden="true"><img src="assets/images/servicos/traducao-juridica.png" alt=""></div>
+              <span class="tradx-area__label">Documentação jurídica</span>
+            </div>
+            <div class="tradx-area" data-tradx-motion="area-item">
+              <div class="tradx-area__bg" aria-hidden="true"><img src="assets/images/servicos/traducao-tecnica.png" alt=""></div>
+              <span class="tradx-area__label">Manuais técnicos</span>
+            </div>
+            <div class="tradx-area" data-tradx-motion="area-item">
+              <div class="tradx-area__bg" aria-hidden="true"><img src="assets/images/servicos/traducao-audiovisual.png" alt=""></div>
+              <span class="tradx-area__label">Conteúdo audiovisual</span>
+            </div>
+            <div class="tradx-area" data-tradx-motion="area-item">
+              <div class="tradx-area__bg" aria-hidden="true"><img src="assets/images/servicos/atividade-biblioteca.jpg" alt=""></div>
+              <span class="tradx-area__label">Livros</span>
+            </div>
+            <div class="tradx-area" data-tradx-motion="area-item">
+              <div class="tradx-area__bg" aria-hidden="true"><img src="assets/images/servicos/adaptacao.jpg" alt=""></div>
+              <span class="tradx-area__label">Marketing</span>
+            </div>
+            <div class="tradx-area" data-tradx-motion="area-item">
+              <div class="tradx-area__bg" aria-hidden="true"><img src="assets/images/servicos/situacao-comunicativa.jpg" alt=""></div>
+              <span class="tradx-area__label">Materiais corporativos</span>
+            </div>
+            <div class="tradx-area" data-tradx-motion="area-item">
+              <div class="tradx-area__bg" aria-hidden="true"><img src="assets/images/servicos/atividade-desenvolvimento.jpg" alt=""></div>
+              <span class="tradx-area__label">Conteúdo acadêmico</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. VÍDEO INSTITUCIONAL -->
+      <section class="tradx-video" aria-labelledby="tradx-video-title">
+        <div class="tradx-wrap">
+          <div class="tradx-video__layout">
+            <div class="tradx-video__intro" data-tradx-motion="section-header">
+              <p class="tradx-eyebrow">Conheça nosso trabalho</p>
+              <h2 id="tradx-video-title" class="tradx-section-title">Tradução com excelência humana</h2>
+              <p class="tradx-section-lead">Veja como a Humana transforma conteúdos em diferentes idiomas, com qualidade, precisão e o cuidado que cada projeto merece.</p>
+            </div>
+            <div class="tradx-video__frame" data-tradx-motion="video">
+              <iframe src="https://www.youtube.com/embed/VplXI81EvN0" title="Translation Services — Humana Com &amp; Trad" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. CTA FINAL -->
+      <section class="tradx-cta" aria-labelledby="tradx-cta-title">
+        <div class="tradx-cta__bg" aria-hidden="true">
+          <img src="assets/images/servicos/translations-services-bg.png" alt="" width="1920" height="680" loading="lazy">
+        </div>
+        <div class="tradx-cta__overlay" aria-hidden="true"></div>
+        <div class="tradx-wrap tradx-cta__inner" data-tradx-motion="cta">
+          <h2 id="tradx-cta-title" class="tradx-cta__title">Pronto para traduzir seu projeto?</h2>
+          <p class="tradx-cta__desc">Solicite um orçamento personalizado e nossa equipe analisará seu material para propor a melhor solução de tradução profissional.</p>
+          <a href="contato.html" class="tradx-btn tradx-btn--white">Solicitar Orçamento</a>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <footer class="site-footer">
     <div class="site-footer__main">
       <div class="site-footer__inner">
         <div class="site-footer__brand">
-          <a href="index.html" class="site-footer__logo">
-            <span class="site-footer__logo-mark"><svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="6" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="6" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="6" cy="30" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="30" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="30" r="3" fill="#00AEEF"/>
-          </svg></span>
+          <a href="index.html" class="site-footer__logo" aria-label="HUMANA com &amp; trad">
+            <img src="assets/images/logo-humana.png" alt="" class="site-footer__logo-img" width="76" height="36" decoding="async" aria-hidden="true">
             <span class="site-footer__logo-copy">
               <span class="site-footer__logo-name">Humana</span>
-              <span class="site-footer__logo-tag">Com &amp; Trad</span>
+              <span class="site-footer__logo-tag">com &amp; trad</span>
             </span>
           </a>
-          <p class="site-footer__about">Empresa amazônica de serviços linguísticos com atuação em tradução, interpretação e formação — conectando pessoas, culturas e idiomas desde 1995.</p>
         </div>
 
         <nav class="site-footer__col" aria-label="Navegação do site">
-          <h3 class="site-footer__heading">Navegação</h3>
+          <h3 class="site-footer__heading" data-i18n="footer.nav">Navegação</h3>
           <ul class="site-footer__list">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+            <li><a href="sobre.html" data-i18n="nav.about">Sobre Nós</a></li>
             <li><a href="cop30.html">COP30</a></li>
-            <li><a href="parceiros.html">Parceiros</a></li>
-            <li><a href="isp.html">Serviços</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contato.html">Contato</a></li>
+            <li><a href="parceiros.html" data-i18n="nav.partners">Parceiros</a></li>
+            <li><a href="isp.html" data-i18n="nav.services">Serviços</a></li>
+            <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="contato.html" data-i18n="nav.contact">Contato</a></li>
           </ul>
         </nav>
 
         <nav class="site-footer__col" aria-label="Serviços">
-          <h3 class="site-footer__heading">Serviços</h3>
+          <h3 class="site-footer__heading" data-i18n="footer.services">Serviços</h3>
           <ul class="site-footer__list">
-            <li><a href="traducao.html">Tradução</a></li>
-            <li><a href="isp.html">Interpretação Presencial</a></li>
-            <li><a href="isr.html">Interpretação Remota</a></li>
-            <li><a href="cursos-formativos.html">Cursos Formativos</a></li>
+            <li><a href="traducao.html" data-i18n="nav.translation">Tradução</a></li>
+            <li><a href="isp.html" data-i18n="footer.ispShort">Interpretação Presencial</a></li>
+            <li><a href="isr.html" data-i18n="footer.isrShort">Interpretação Remota</a></li>
+            <li><a href="cursos-formativos.html" data-i18n="nav.courses">Cursos Formativos</a></li>
           </ul>
         </nav>
 
         <div class="site-footer__col">
-          <h3 class="site-footer__heading">Contato</h3>
+          <h3 class="site-footer__heading" data-i18n="footer.contact">Contato</h3>
           <ul class="site-footer__contact">
             <li>
               <a href="tel:+5591991005523">
@@ -171,7 +399,7 @@
             <li>
               <span class="site-footer__contact-static">
                 <span class="site-footer__contact-icon" data-icon="map-pinned" data-icon-size="sm" aria-hidden="true"></span>
-                <span>Travessa Jupira s/n Lt 05-06 Qd 18, Jardim Tropicália — Marahú, Belém/PA</span>
+                <span data-i18n="footer.address">Travessa Jupira s/n Lt 05-06 Qd 18, Jardim Tropicália — Marahú, Belém/PA</span>
               </span>
             </li>
           </ul>
@@ -181,17 +409,22 @@
 
     <div class="site-footer__bottom">
       <div class="site-footer__bottom-inner">
-        <p class="site-footer__copy">&copy; 2026 HUMANA COM &amp; TRAD. Todos os direitos reservados.</p>
+        <p class="site-footer__copy" data-i18n="footer.copyright" data-i18n-year="2026">&copy; 2026 HUMANA COM &amp; TRAD. Todos os direitos reservados.</p>
         <ul class="site-footer__legal">
-          <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
-          <li><a href="termos-de-uso.html">Termos de Uso</a></li>
+          <li><a href="politica-privacidade.html" data-i18n="footer.privacy">Política de Privacidade</a></li>
+          <li><a href="termos-de-uso.html" data-i18n="footer.terms">Termos de Uso</a></li>
         </ul>
       </div>
     </div>
   </footer>
 
+  <script src="js/i18n-common.js"></script>
+  <script src="js/i18n-pages.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/nav-dropdown.js"></script>
-  <script src="js/hero-features.js"></script>
+  <script src="js/navbar-scroll.js"></script>
   <script src="js/icons.js"></script>
+  <script src="js/traducao-page.js"></script>
+  <script type="module" src="js/traducao-motion.js"></script>
 </body>
 </html>

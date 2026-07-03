@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { buildNavLogo } from './logo-template.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -167,25 +168,7 @@ function renderPage(p) {
 
   <nav class="page-nav" aria-label="Navegação principal">
     <div class="page-nav__inner">
-      <a href="index.html" class="page-nav__logo page-nav__logo--hero">
-        <span class="page-nav__logo-mark" aria-hidden="true">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="6" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="6" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="6" cy="30" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="30" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="30" r="3" fill="#00AEEF"/>
-          </svg>
-        </span>
-        <span class="page-nav__logo-copy">
-          <span class="page-nav__logo-name">Humana</span>
-          <span class="page-nav__logo-tag">Com &amp; Trad</span>
-        </span>
-      </a>
+      ${buildNavLogo('')}
 ${NAV}
       <a href="contato.html" class="page-nav__cta">
         Solicitar Orçamento

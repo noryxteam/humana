@@ -3,152 +3,566 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interpretação Simultânea Remota | HUMANA COM &amp; TRAD</title>
+  <title>Interpretação Simultânea Remota (ISR) | HUMANA COM &amp; TRAD</title>
   <meta name="description" content="Interpretação simultânea remota (ISR) para eventos virtuais, híbridos e reuniões multilíngues online.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/servicos-page.css">
-<script src="js/page-transition.js"></script>
+  <link rel="stylesheet" href="css/isr-page.css">
+  <script src="js/page-transition.js"></script>
 </head>
-<body class="servico-page">
+<body class="servico-page servico-page--isr isrx-page">
 
-  <nav class="page-nav" aria-label="Navegação principal">
+  <nav class="page-nav page-nav--overlay" aria-label="Navegação principal">
     <div class="page-nav__inner">
       <a href="index.html" class="page-nav__logo page-nav__logo--hero">
-        <span class="page-nav__logo-mark" aria-hidden="true">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="6" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="6" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="6" cy="30" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="30" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="30" r="3" fill="#00AEEF"/>
-          </svg>
-        </span>
+        <img src="assets/images/logo-humana.png" alt="" class="page-nav__logo-img" width="84" height="40" decoding="async" aria-hidden="true">
         <span class="page-nav__logo-copy">
           <span class="page-nav__logo-name">Humana</span>
-          <span class="page-nav__logo-tag">Com &amp; Trad</span>
+          <span class="page-nav__logo-tag">com &amp; trad</span>
         </span>
       </a>
       <ul class="page-nav__list">
-        <li class="page-nav__item"><a href="index.html">Início</a></li>
-        <li class="page-nav__item"><a href="sobre.html">Sobre Nós</a></li>
+        <li class="page-nav__item"><a href="index.html" data-i18n="nav.home">Início</a></li>
+        <li class="page-nav__item"><a href="sobre.html" data-i18n="nav.about">Sobre Nós</a></li>
         <li class="page-nav__item page-nav__item--dropdown is-active">
           <a href="#" class="page-nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-            Serviços
+            <span data-i18n="nav.services">Serviços</span>
             <span class="page-nav__link-icon" data-icon="chevron-down" data-icon-size="sm"></span>
           </a>
           <ul class="page-nav__dropdown">
-            <li><a href="isp.html">Interpretação Simultânea Presencial</a></li>
-            <li><a href="isr.html">Interpretação Simultânea Remota</a></li>
-            <li><a href="traducao.html">Tradução</a></li>
-            <li><a href="cursos-formativos.html">Cursos Formativos</a></li>
+            <li><a href="isp.html" data-i18n="nav.isp">Interpretação Simultânea Presencial</a></li>
+            <li><a href="isr.html" data-i18n="nav.isr">Interpretação Simultânea Remota</a></li>
+            <li><a href="traducao.html" data-i18n="nav.translation">Tradução</a></li>
+            <li><a href="cursos-formativos.html" data-i18n="nav.courses">Cursos Formativos</a></li>
           </ul>
         </li>
         <li class="page-nav__item"><a href="cop30.html">COP30</a></li>
         <li class="page-nav__item page-nav__item--dropdown">
           <a href="#" class="page-nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-            Parceiros
+            <span data-i18n="nav.partners">Parceiros</span>
             <span class="page-nav__link-icon" data-icon="chevron-down" data-icon-size="sm"></span>
           </a>
           <ul class="page-nav__dropdown">
-            <li><a href="parceiros.html">Nossos Parceiros</a></li>
+            <li><a href="parceiros.html" data-i18n="nav.partnersAll">Nossos Parceiros</a></li>
             <li><a href="tao-filmes.html">TAO Filmes</a></li>
           </ul>
         </li>
-        <li class="page-nav__item"><a href="blog.html">Blog</a></li>
-        <li class="page-nav__item"><a href="contato.html">Contato</a></li>
+        <li class="page-nav__item"><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+        <li class="page-nav__item"><a href="contato.html" data-i18n="nav.contact">Contato</a></li>
       </ul>
       <a href="contato.html" class="page-nav__cta">
-        Solicitar Orçamento
+        <span data-i18n="nav.cta">Solicitar Orçamento</span>
         <span class="page-nav__cta-icon" data-icon="arrow-right" data-icon-size="sm"></span>
       </a>
+      <div class="lang-switcher" data-lang-switcher role="group" aria-label="Idioma / Language">
+        <button type="button" class="lang-switcher__btn is-active" data-lang="pt" aria-label="Português" title="Português">
+          <img src="assets/images/flags/br.svg" alt="" width="20" height="14" decoding="async">
+        </button>
+        <button type="button" class="lang-switcher__btn" data-lang="en" aria-label="English" title="English">
+          <img src="assets/images/flags/us.svg" alt="" width="20" height="14" decoding="async">
+        </button>
+        <button type="button" class="lang-switcher__btn" data-lang="es" aria-label="Español" title="Español">
+          <img src="assets/images/flags/es.svg" alt="" width="20" height="14" decoding="async">
+        </button>
+      </div>
     </div>
   </nav>
 
   <div id="page-container">
-    <section class="servico-hero">
-      <div class="servico-hero__inner">
-        <img class="servico-hero__image" src="assets/images/servicos/isr-hero.png" alt="Interpretação Simultânea Remota" loading="eager">
-        <h1 class="servico-hero__title">Interpretação Simultânea Remota</h1>
-        <p class="servico-hero__subtitle">O que é ISR e como funciona?</p>
-      </div>
-    </section>
-    
-    <section class="servico-content">
-      <div class="servico-content__inner">
-        <div class="servico-definition">
-        <div>
-          <h2 class="servico-definition__title">Interpretação Simultânea Remota (ISR)</h2>
-          <p class="servico-definition__type"><em>[substantivo, s. f.]</em></p>
-          <p class="servico-definition__text">Ação que consiste em estabelecer, simultânea ou consecutivamente, comunicação verbal ou não verbal entre duas entidades, pessoas ou entre um locutor e seu público, por meio de um canal digital.</p>
-        </div>
-        <img class="servico-definition__image" src="assets/images/servicos/sri-humana.png" alt="" loading="lazy">
-      </div>
-        
-        <div class="servico-features"><article class="servico-feature"><h3 class="servico-feature__title">Protagonistas da ISR</h3><p class="servico-feature__text">A interpretação simultânea remota coloca intérpretes qualificados no centro da comunicação digital, garantindo fluidez em eventos virtuais e híbridos.</p></article><article class="servico-feature"><h3 class="servico-feature__title">Por que ISR?</h3><p class="servico-feature__text">Do físico ao digital — a HUMANA adaptou sua infraestrutura para atender eventos online com o mesmo padrão de excelência dos serviços presenciais.</p></article><article class="servico-feature"><h3 class="servico-feature__title">A importância da ISR hoje</h3><p class="servico-feature__text">2020: Mudança de paradigma. A demanda por interpretação remota consolidou-se como solução essencial para conferências, reuniões e eventos internacionais.</p></article></div>
-      </div>
-    </section>
-    <section class="servico-cta">
-      <h2 class="servico-cta__title">Orçamento</h2>
-      <a href="contato.html" class="servico-cta__btn">Solicitar orçamento &rarr;</a>
-    </section>
-</div>
 
-    <footer class="site-footer">
+    <!-- 1. HERO -->
+    <section class="isrx-hero" aria-labelledby="isrx-hero-title">
+      <div class="isrx-hero__grid">
+        <div class="isrx-hero__copy" data-isrx-motion="hero-copy">
+          <p class="isrx-eyebrow">Serviço especializado</p>
+          <h1 id="isrx-hero-title" class="isrx-hero__title">Interpretação Simultânea Online</h1>
+          <p class="isrx-hero__desc">Eventos multilíngues totalmente online — conecte participantes de qualquer lugar do mundo com interpretação em tempo real, sem barreiras de idioma.</p>
+          <div class="isrx-hero__actions">
+            <a href="contato.html" class="isrx-btn isrx-btn--primary">Solicitar Orçamento</a>
+            <a href="#isrx-flow" class="isrx-btn isrx-btn--ghost">Como funciona</a>
+          </div>
+        </div>
+        <div class="isrx-hero__visual" data-isrx-motion="hero-visual">
+          <div class="isrx-hero__image-wrap">
+            <img src="assets/images/servicos/isr-hero-banner.jpg" alt="Reunião internacional online com participantes conectados" width="800" height="600" decoding="async" loading="eager">
+          </div>
+          <div class="isrx-hero__lang-orbit" aria-hidden="true">
+            <span class="isrx-hero__lang isrx-hero__lang--pt"><span class="isrx-hero__lang-dot"></span> PT</span>
+            <span class="isrx-hero__lang isrx-hero__lang--en"><span class="isrx-hero__lang-dot"></span> EN</span>
+            <span class="isrx-hero__lang isrx-hero__lang--es"><span class="isrx-hero__lang-dot"></span> ES</span>
+            <span class="isrx-hero__lang isrx-hero__lang--fr"><span class="isrx-hero__lang-dot"></span> FR</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main>
+
+      <!-- 2. COMUNICAÇÃO SEM FRONTEIRAS -->
+      <section class="isrx-borders" aria-labelledby="isrx-borders-title">
+        <div class="isrx-wrap">
+          <div class="isrx-borders__grid">
+            <div class="isrx-borders__image" data-isrx-motion="section-header">
+              <img src="assets/images/servicos/situacao-comunicativa.jpg" alt="Comunicação multilíngue em ambiente digital" width="640" height="512" loading="lazy">
+            </div>
+            <div class="isrx-borders__content">
+              <p class="isrx-eyebrow">Comunicação sem fronteiras</p>
+              <h2 id="isrx-borders-title" class="isrx-section-title">O mundo inteiro na mesma sala virtual</h2>
+              <p class="isrx-borders__text">A interpretação simultânea remota permite que pessoas de diferentes nacionalidades participem do mesmo evento online, compreendendo tudo em seu idioma — sem deslocamentos, sem cabines físicas e sem perder a fluidez da comunicação.</p>
+              <p class="isrx-borders__text">Ideal para reuniões corporativas, conferências internacionais, treinamentos e eventos híbridos, a ISR transforma qualquer plataforma de videoconferência em um espaço verdadeiramente global.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. COMO FUNCIONA -->
+      <section class="isrx-flow" id="isrx-flow" aria-labelledby="isrx-flow-title">
+        <div class="isrx-wrap">
+          <header class="isrx-flow__header" data-isrx-motion="section-header">
+            <p class="isrx-eyebrow">Como funciona</p>
+            <h2 id="isrx-flow-title" class="isrx-section-title">Do locutor ao ouvinte, em tempo real</h2>
+            <p class="isrx-section-lead">Um fluxo simples e profissional que conecta vozes, idiomas e participantes em qualquer lugar do planeta.</p>
+          </header>
+          <div class="isrx-flow__track">
+            <div class="isrx-flow__line" aria-hidden="true"></div>
+
+            <div class="isrx-flow__step" data-isrx-motion="flow-step">
+              <div class="isrx-flow__icon">
+                <img src="assets/images/servicos/isr-locutor.png" alt="" width="48" height="48" loading="lazy">
+              </div>
+              <p class="isrx-flow__label">Locutor</p>
+              <p class="isrx-flow__hint">Fala em seu idioma nativo</p>
+            </div>
+            <span class="isrx-flow__arrow" aria-hidden="true">↓</span>
+
+            <div class="isrx-flow__step" data-isrx-motion="flow-step">
+              <div class="isrx-flow__icon">
+                <span data-icon="radio" data-icon-size="md" aria-hidden="true"></span>
+              </div>
+              <p class="isrx-flow__label">Áudio pela plataforma</p>
+              <p class="isrx-flow__hint">Transmitido via videoconferência</p>
+            </div>
+            <span class="isrx-flow__arrow" aria-hidden="true">↓</span>
+
+            <div class="isrx-flow__step" data-isrx-motion="flow-step">
+              <div class="isrx-flow__icon">
+                <img src="assets/images/servicos/isr-interprete.png" alt="" width="48" height="48" loading="lazy">
+              </div>
+              <p class="isrx-flow__label">Intérprete remoto</p>
+              <p class="isrx-flow__hint">Ouve e traduz em tempo real</p>
+            </div>
+            <span class="isrx-flow__arrow" aria-hidden="true">↓</span>
+
+            <div class="isrx-flow__step" data-isrx-motion="flow-step">
+              <div class="isrx-flow__icon">
+                <span data-icon="languages" data-icon-size="md" aria-hidden="true"></span>
+              </div>
+              <p class="isrx-flow__label">Tradução em tempo real</p>
+              <p class="isrx-flow__hint">Voz do intérprete na plataforma</p>
+            </div>
+            <span class="isrx-flow__arrow" aria-hidden="true">↓</span>
+
+            <div class="isrx-flow__step" data-isrx-motion="flow-step">
+              <div class="isrx-flow__icon">
+                <img src="assets/images/servicos/isr-publico.png" alt="" width="48" height="48" loading="lazy">
+              </div>
+              <p class="isrx-flow__label">Participantes</p>
+              <p class="isrx-flow__hint">Escolhem o idioma preferido</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. BENEFÍCIOS -->
+      <section class="isrx-benefits" aria-labelledby="isrx-benefits-title">
+        <div class="isrx-wrap">
+          <div class="isrx-benefits__grid">
+            <div class="isrx-benefits__image" data-isrx-motion="section-header">
+              <img src="assets/images/servicos/isr-plataforma.png" alt="Plataforma de interpretação simultânea remota" width="560" height="700" loading="lazy">
+            </div>
+            <div class="isrx-benefits__content">
+              <p class="isrx-eyebrow">Benefícios da ISR</p>
+              <h2 id="isrx-benefits-title" class="isrx-section-title">Por que escolher interpretação remota?</h2>
+              <p class="isrx-section-lead">Mais alcance, menos custos e a mesma qualidade de uma interpretação presencial — com a flexibilidade do digital.</p>
+              <ul class="isrx-benefits__list">
+                <li class="isrx-benefits__item" data-isrx-motion="benefit-item">
+                  <span class="isrx-benefits__marker" aria-hidden="true"></span>
+                  <div>
+                    <h3>Participação global</h3>
+                    <p>Conecte participantes de qualquer país sem barreiras geográficas.</p>
+                  </div>
+                </li>
+                <li class="isrx-benefits__item" data-isrx-motion="benefit-item">
+                  <span class="isrx-benefits__marker" aria-hidden="true"></span>
+                  <div>
+                    <h3>Redução de custos</h3>
+                    <p>Sem deslocamento de intérpretes, cabines ou equipamentos presenciais.</p>
+                  </div>
+                </li>
+                <li class="isrx-benefits__item" data-isrx-motion="benefit-item">
+                  <span class="isrx-benefits__marker" aria-hidden="true"></span>
+                  <div>
+                    <h3>Sem deslocamentos</h3>
+                    <p>Intérpretes especializados atuam remotamente com a mesma excelência.</p>
+                  </div>
+                </li>
+                <li class="isrx-benefits__item" data-isrx-motion="benefit-item">
+                  <span class="isrx-benefits__marker" aria-hidden="true"></span>
+                  <div>
+                    <h3>Implantação rápida</h3>
+                    <p>Configuração ágil para eventos com prazos curtos ou demandas urgentes.</p>
+                  </div>
+                </li>
+                <li class="isrx-benefits__item" data-isrx-motion="benefit-item">
+                  <span class="isrx-benefits__marker" aria-hidden="true"></span>
+                  <div>
+                    <h3>Excelente qualidade de áudio</h3>
+                    <p>Transmissão clara e estável para compreensão perfeita em todos os idiomas.</p>
+                  </div>
+                </li>
+                <li class="isrx-benefits__item" data-isrx-motion="benefit-item">
+                  <span class="isrx-benefits__marker" aria-hidden="true"></span>
+                  <div>
+                    <h3>Flexibilidade para eventos híbridos</h3>
+                    <p>Integre participantes presenciais e remotos na mesma experiência multilíngue.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. PLATAFORMAS -->
+      <section class="isrx-platforms" aria-labelledby="isrx-platforms-title">
+        <div class="isrx-wrap">
+          <header class="isrx-platforms__header" data-isrx-motion="section-header">
+            <p class="isrx-eyebrow">Compatibilidade</p>
+            <h2 id="isrx-platforms-title" class="isrx-section-title">Plataformas compatíveis</h2>
+            <p class="isrx-section-lead">Operamos nas principais ferramentas de videoconferência utilizadas no mundo corporativo e acadêmico.</p>
+          </header>
+          <div class="isrx-platforms__grid">
+            <div class="isrx-platforms__card isrx-platforms__card--zoom" data-isrx-motion="platform">
+              <span class="isrx-platforms__logo">Zoom</span>
+              <span class="isrx-platforms__sub">Videoconferência</span>
+            </div>
+            <div class="isrx-platforms__card isrx-platforms__card--teams" data-isrx-motion="platform">
+              <span class="isrx-platforms__logo">Microsoft Teams</span>
+              <span class="isrx-platforms__sub">Colaboração</span>
+            </div>
+            <div class="isrx-platforms__card isrx-platforms__card--meet" data-isrx-motion="platform">
+              <span class="isrx-platforms__logo">Google Meet</span>
+              <span class="isrx-platforms__sub">Videoconferência</span>
+            </div>
+            <div class="isrx-platforms__card isrx-platforms__card--webex" data-isrx-motion="platform">
+              <span class="isrx-platforms__logo">Cisco Webex</span>
+              <span class="isrx-platforms__sub">Enterprise</span>
+            </div>
+            <div class="isrx-platforms__card isrx-platforms__card--goto" data-isrx-motion="platform">
+              <span class="isrx-platforms__logo">GoTo Webinar</span>
+              <span class="isrx-platforms__sub">Webinars</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. ESTRUTURA TÉCNICA -->
+      <section class="isrx-tech" aria-labelledby="isrx-tech-title">
+        <div class="isrx-wrap">
+          <div class="isrx-tech__layout">
+            <div class="isrx-tech__visual" data-isrx-motion="section-header">
+              <div class="isrx-tech__image">
+                <img src="assets/images/servicos/isr-interprete.png" alt="Intérprete remoto com equipamentos profissionais" width="640" height="440" loading="lazy">
+              </div>
+              <span class="isrx-tech__badge">Qualidade profissional garantida</span>
+            </div>
+            <div class="isrx-tech__content">
+              <p class="isrx-eyebrow">Estrutura técnica</p>
+              <h2 id="isrx-tech-title" class="isrx-section-title">Infraestrutura para interpretação estável</h2>
+              <p class="isrx-section-lead">Cada elemento contribui para uma experiência fluida e profissional — do áudio à conexão.</p>
+              <ul class="isrx-tech__list">
+                <li class="isrx-tech__item" data-isrx-motion="tech-item">
+                  <span class="isrx-tech__icon" data-icon="headphones" data-icon-size="sm" aria-hidden="true"></span>
+                  <div>
+                    <h3>Headsets profissionais</h3>
+                    <p>Áudio nítido para o intérprete ouvir cada nuance do locutor com precisão.</p>
+                  </div>
+                </li>
+                <li class="isrx-tech__item" data-isrx-motion="tech-item">
+                  <span class="isrx-tech__icon" data-icon="mic" data-icon-size="sm" aria-hidden="true"></span>
+                  <div>
+                    <h3>Microfones de alta qualidade</h3>
+                    <p>Transmissão limpa da voz do intérprete para todos os participantes.</p>
+                  </div>
+                </li>
+                <li class="isrx-tech__item" data-isrx-motion="tech-item">
+                  <span class="isrx-tech__icon" data-icon="wifi" data-icon-size="sm" aria-hidden="true"></span>
+                  <div>
+                    <h3>Internet estável</h3>
+                    <p>Conexão dedicada e redundante para evitar interrupções durante o evento.</p>
+                  </div>
+                </li>
+                <li class="isrx-tech__item" data-isrx-motion="tech-item">
+                  <span class="isrx-tech__icon" data-icon="shield" data-icon-size="sm" aria-hidden="true"></span>
+                  <div>
+                    <h3>Equipamentos certificados</h3>
+                    <p>Hardware testado e aprovado para interpretação simultânea remota.</p>
+                  </div>
+                </li>
+                <li class="isrx-tech__item" data-isrx-motion="tech-item">
+                  <span class="isrx-tech__icon" data-icon="building-2" data-icon-size="sm" aria-hidden="true"></span>
+                  <div>
+                    <h3>Ambiente preparado</h3>
+                    <p>Espaço acusticamente tratado para máxima concentração e qualidade sonora.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. ONDE A ISR É UTILIZADA -->
+      <section class="isrx-uses" aria-labelledby="isrx-uses-title">
+        <div class="isrx-wrap">
+          <header class="isrx-uses__header" data-isrx-motion="section-header">
+            <p class="isrx-eyebrow">Aplicações</p>
+            <h2 id="isrx-uses-title" class="isrx-section-title">Onde a ISR é utilizada</h2>
+            <p class="isrx-section-lead">De reuniões executivas a conferências globais — a interpretação remota se adapta a qualquer contexto multilíngue.</p>
+          </header>
+          <div class="isrx-uses__grid">
+            <article class="isrx-uses__card isrx-uses__card--1" data-isrx-motion="use-card">
+              <img src="assets/images/servicos/situacao-comunicativa.jpg" alt="" width="600" height="400" loading="lazy">
+              <div class="isrx-uses__card-content">
+                <h3>Reuniões corporativas</h3>
+                <p>Board meetings, negociações e apresentações com stakeholders internacionais.</p>
+              </div>
+            </article>
+            <article class="isrx-uses__card isrx-uses__card--2" data-isrx-motion="use-card">
+              <img src="assets/images/servicos/versatilidade.jpg" alt="" width="480" height="320" loading="lazy">
+              <div class="isrx-uses__card-content">
+                <h3>Congressos médicos</h3>
+                <p>Simpósios e congressos com participação de especialistas de diversos países.</p>
+              </div>
+            </article>
+            <article class="isrx-uses__card isrx-uses__card--3" data-isrx-motion="use-card">
+              <img src="assets/images/servicos/atividade-desenvolvimento.jpg" alt="" width="400" height="320" loading="lazy">
+              <div class="isrx-uses__card-content">
+                <h3>Treinamentos</h3>
+                <p>Capacitações e workshops com equipes distribuídas globalmente.</p>
+              </div>
+            </article>
+            <article class="isrx-uses__card isrx-uses__card--4" data-isrx-motion="use-card">
+              <img src="assets/images/servicos/eventos-emblematicos.png" alt="" width="480" height="320" loading="lazy">
+              <div class="isrx-uses__card-content">
+                <h3>Eventos governamentais</h3>
+                <p>Cúpulas, fóruns e assembleias com representantes multilíngues.</p>
+              </div>
+            </article>
+            <article class="isrx-uses__card isrx-uses__card--5" data-isrx-motion="use-card">
+              <img src="assets/images/servicos/atividade-biblioteca.jpg" alt="" width="480" height="320" loading="lazy">
+              <div class="isrx-uses__card-content">
+                <h3>Universidades</h3>
+                <p>Aulas, defesas de tese e eventos acadêmicos internacionais.</p>
+              </div>
+            </article>
+            <article class="isrx-uses__card isrx-uses__card--6" data-isrx-motion="use-card">
+              <img src="assets/images/servicos/isr-hero-banner.jpg" alt="" width="480" height="320" loading="lazy">
+              <div class="isrx-uses__card-content">
+                <h3>Conferências internacionais</h3>
+                <p>Grandes eventos com transmissão simultânea para audiências globais.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. PROCESSO DE CONTRATAÇÃO -->
+      <section class="isrx-timeline-section" aria-labelledby="isrx-timeline-title">
+        <div class="isrx-wrap">
+          <header class="isrx-timeline-section__header" data-isrx-motion="section-header">
+            <p class="isrx-eyebrow">Processo</p>
+            <h2 id="isrx-timeline-title" class="isrx-section-title">Como contratar a ISR</h2>
+            <p class="isrx-section-lead">Do primeiro contato ao encerramento — acompanhamento completo em cada etapa do seu evento.</p>
+          </header>
+          <ol class="isrx-timeline">
+            <li class="isrx-timeline__item" data-isrx-motion="timeline-item">
+              <span class="isrx-timeline__dot">01</span>
+              <h3>Contato</h3>
+              <p>Você nos conta sobre o evento, idiomas necessários e plataforma utilizada.</p>
+            </li>
+            <li class="isrx-timeline__item" data-isrx-motion="timeline-item">
+              <span class="isrx-timeline__dot">02</span>
+              <h3>Planejamento</h3>
+              <p>Definimos intérpretes, idiomas, cronograma e requisitos técnicos.</p>
+            </li>
+            <li class="isrx-timeline__item" data-isrx-motion="timeline-item">
+              <span class="isrx-timeline__dot">03</span>
+              <h3>Preparação técnica</h3>
+              <p>Testes de áudio, conexão e configuração da plataforma antes do evento.</p>
+            </li>
+            <li class="isrx-timeline__item" data-isrx-motion="timeline-item">
+              <span class="isrx-timeline__dot">04</span>
+              <h3>Evento</h3>
+              <p>Interpretação em tempo real com suporte técnico durante toda a transmissão.</p>
+            </li>
+            <li class="isrx-timeline__item" data-isrx-motion="timeline-item">
+              <span class="isrx-timeline__dot">05</span>
+              <h3>Suporte</h3>
+              <p>Equipe disponível para resolver qualquer imprevisto em tempo real.</p>
+            </li>
+            <li class="isrx-timeline__item" data-isrx-motion="timeline-item">
+              <span class="isrx-timeline__dot">06</span>
+              <h3>Encerramento</h3>
+              <p>Relatório final e feedback para aprimorar futuros eventos.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 9. FAQ -->
+      <section class="isrx-faq" aria-labelledby="isrx-faq-title">
+        <div class="isrx-wrap">
+          <div class="isrx-faq__layout">
+            <div class="isrx-faq__intro" data-isrx-motion="section-header">
+              <p class="isrx-eyebrow">Dúvidas frequentes</p>
+              <h2 id="isrx-faq-title" class="isrx-section-title">Perguntas frequentes</h2>
+              <p class="isrx-section-lead">Respostas objetivas sobre interpretação simultânea remota.</p>
+            </div>
+            <div class="isrx-faq__list">
+              <div class="isrx-faq__item">
+                <button type="button" class="isrx-faq__trigger" aria-expanded="false">
+                  O que é interpretação simultânea remota?
+                  <span class="isrx-faq__chevron" data-icon="chevron-down" data-icon-size="sm" aria-hidden="true"></span>
+                </button>
+                <div class="isrx-faq__panel">
+                  <p>É a tradução oral em tempo real realizada por intérpretes remotos, conectados via plataforma de videoconferência. O locutor fala em seu idioma e os participantes escolhem o canal de áudio no idioma desejado — tudo online, sem necessidade de cabines físicas.</p>
+                </div>
+              </div>
+              <div class="isrx-faq__item">
+                <button type="button" class="isrx-faq__trigger" aria-expanded="false">
+                  Quais plataformas são compatíveis?
+                  <span class="isrx-faq__chevron" data-icon="chevron-down" data-icon-size="sm" aria-hidden="true"></span>
+                </button>
+                <div class="isrx-faq__panel">
+                  <p>Operamos com Zoom, Microsoft Teams, Google Meet, Cisco Webex e GoTo Webinar. Caso utilize outra plataforma, consulte nossa equipe para avaliar a compatibilidade.</p>
+                </div>
+              </div>
+              <div class="isrx-faq__item">
+                <button type="button" class="isrx-faq__trigger" aria-expanded="false">
+                  É possível usar em eventos híbridos?
+                  <span class="isrx-faq__chevron" data-icon="chevron-down" data-icon-size="sm" aria-hidden="true"></span>
+                </button>
+                <div class="isrx-faq__panel">
+                  <p>Sim. A ISR integra participantes presenciais e remotos na mesma experiência multilíngue, garantindo que todos compreendam o conteúdo em seu idioma, independentemente de onde estejam.</p>
+                </div>
+              </div>
+              <div class="isrx-faq__item">
+                <button type="button" class="isrx-faq__trigger" aria-expanded="false">
+                  Quantos idiomas podem ser interpretados?
+                  <span class="isrx-faq__chevron" data-icon="chevron-down" data-icon-size="sm" aria-hidden="true"></span>
+                </button>
+                <div class="isrx-faq__panel">
+                  <p>Atendemos mais de 15 idiomas, incluindo português, inglês, espanhol, francês, alemão e línguas indígenas. A combinação depende da disponibilidade de intérpretes especializados no tema do evento.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. CTA FINAL -->
+      <section class="isrx-cta" aria-labelledby="isrx-cta-title">
+        <div class="isrx-cta__bg" aria-hidden="true">
+          <img src="assets/images/servicos/isr-hero-banner.jpg" alt="" width="1920" height="680" loading="lazy">
+        </div>
+        <div class="isrx-cta__overlay" aria-hidden="true"></div>
+        <div class="isrx-wrap isrx-cta__inner" data-isrx-motion="cta">
+          <h2 id="isrx-cta-title" class="isrx-cta__title">Pronto para conectar o mundo ao seu evento?</h2>
+          <p class="isrx-cta__desc">Solicite um orçamento personalizado e nossa equipe analisará as condições do seu evento para propor a melhor solução de interpretação simultânea online.</p>
+          <a href="contato.html" class="isrx-btn isrx-btn--white">Solicitar Orçamento</a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FAIXA DE CONTATO -->
+    <section class="isrx-contact-bar" aria-label="Informações de contato">
+      <div class="isrx-wrap">
+        <div class="isrx-contact-bar__grid">
+          <div class="isrx-contact-bar__item">
+            <span class="isrx-contact-bar__icon" data-icon="phone" data-icon-size="sm" aria-hidden="true"></span>
+            <a href="tel:+5591991005523">(91) 99100-5523</a>
+          </div>
+          <div class="isrx-contact-bar__item">
+            <span class="isrx-contact-bar__icon" data-icon="mail" data-icon-size="sm" aria-hidden="true"></span>
+            <a href="mailto:contato@humanatraducao.com.br">contato@humanatraducao.com.br</a>
+          </div>
+          <div class="isrx-contact-bar__item">
+            <span class="isrx-contact-bar__icon" data-icon="whatsapp" data-icon-size="sm" aria-hidden="true"></span>
+            <a href="https://wa.me/559191005523" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+          <div class="isrx-contact-bar__item">
+            <span class="isrx-contact-bar__icon" data-icon="map-pinned" data-icon-size="sm" aria-hidden="true"></span>
+            <span>Belém/PA — Amazônia, Brasil</span>
+          </div>
+          <div class="isrx-contact-bar__socials">
+            <a href="https://www.linkedin.com/company/humanacom%26trad/" class="isrx-contact-bar__social" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <span data-icon="linkedin" data-icon-size="sm" aria-hidden="true"></span>
+            </a>
+            <a href="https://www.instagram.com/humanacomtrad/" class="isrx-contact-bar__social" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <span data-icon="instagram" data-icon-size="sm" aria-hidden="true"></span>
+            </a>
+            <a href="https://www.facebook.com/humanacometrad/" class="isrx-contact-bar__social" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <span data-icon="facebook" data-icon-size="sm" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="site-footer">
     <div class="site-footer__main">
       <div class="site-footer__inner">
         <div class="site-footer__brand">
-          <a href="index.html" class="site-footer__logo">
-            <span class="site-footer__logo-mark"><svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="6" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="6" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="6" cy="30" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="30" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="30" r="3" fill="#00AEEF"/>
-          </svg></span>
+          <a href="index.html" class="site-footer__logo" aria-label="HUMANA com &amp; trad">
+            <img src="assets/images/logo-humana.png" alt="" class="site-footer__logo-img" width="76" height="36" decoding="async" aria-hidden="true">
             <span class="site-footer__logo-copy">
               <span class="site-footer__logo-name">Humana</span>
-              <span class="site-footer__logo-tag">Com &amp; Trad</span>
+              <span class="site-footer__logo-tag">com &amp; trad</span>
             </span>
           </a>
-          <p class="site-footer__about">Empresa amazônica de serviços linguísticos com atuação em tradução, interpretação e formação — conectando pessoas, culturas e idiomas desde 1995.</p>
         </div>
 
         <nav class="site-footer__col" aria-label="Navegação do site">
-          <h3 class="site-footer__heading">Navegação</h3>
+          <h3 class="site-footer__heading" data-i18n="footer.nav">Navegação</h3>
           <ul class="site-footer__list">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+            <li><a href="sobre.html" data-i18n="nav.about">Sobre Nós</a></li>
             <li><a href="cop30.html">COP30</a></li>
-            <li><a href="parceiros.html">Parceiros</a></li>
-            <li><a href="isp.html">Serviços</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contato.html">Contato</a></li>
+            <li><a href="parceiros.html" data-i18n="nav.partners">Parceiros</a></li>
+            <li><a href="isp.html" data-i18n="nav.services">Serviços</a></li>
+            <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="contato.html" data-i18n="nav.contact">Contato</a></li>
           </ul>
         </nav>
 
         <nav class="site-footer__col" aria-label="Serviços">
-          <h3 class="site-footer__heading">Serviços</h3>
+          <h3 class="site-footer__heading" data-i18n="footer.services">Serviços</h3>
           <ul class="site-footer__list">
-            <li><a href="traducao.html">Tradução</a></li>
-            <li><a href="isp.html">Interpretação Presencial</a></li>
-            <li><a href="isr.html">Interpretação Remota</a></li>
-            <li><a href="cursos-formativos.html">Cursos Formativos</a></li>
+            <li><a href="traducao.html" data-i18n="nav.translation">Tradução</a></li>
+            <li><a href="isp.html" data-i18n="footer.ispShort">Interpretação Presencial</a></li>
+            <li><a href="isr.html" data-i18n="footer.isrShort">Interpretação Remota</a></li>
+            <li><a href="cursos-formativos.html" data-i18n="nav.courses">Cursos Formativos</a></li>
           </ul>
         </nav>
 
         <div class="site-footer__col">
-          <h3 class="site-footer__heading">Contato</h3>
+          <h3 class="site-footer__heading" data-i18n="footer.contact">Contato</h3>
           <ul class="site-footer__contact">
             <li>
               <a href="tel:+5591991005523">
@@ -171,7 +585,7 @@
             <li>
               <span class="site-footer__contact-static">
                 <span class="site-footer__contact-icon" data-icon="map-pinned" data-icon-size="sm" aria-hidden="true"></span>
-                <span>Travessa Jupira s/n Lt 05-06 Qd 18, Jardim Tropicália — Marahú, Belém/PA</span>
+                <span data-i18n="footer.address">Travessa Jupira s/n Lt 05-06 Qd 18, Jardim Tropicália — Marahú, Belém/PA</span>
               </span>
             </li>
           </ul>
@@ -181,17 +595,22 @@
 
     <div class="site-footer__bottom">
       <div class="site-footer__bottom-inner">
-        <p class="site-footer__copy">&copy; 2026 HUMANA COM &amp; TRAD. Todos os direitos reservados.</p>
+        <p class="site-footer__copy" data-i18n="footer.copyright" data-i18n-year="2026">&copy; 2026 HUMANA COM &amp; TRAD. Todos os direitos reservados.</p>
         <ul class="site-footer__legal">
-          <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
-          <li><a href="termos-de-uso.html">Termos de Uso</a></li>
+          <li><a href="politica-privacidade.html" data-i18n="footer.privacy">Política de Privacidade</a></li>
+          <li><a href="termos-de-uso.html" data-i18n="footer.terms">Termos de Uso</a></li>
         </ul>
       </div>
     </div>
   </footer>
 
+  <script src="js/i18n-common.js"></script>
+  <script src="js/i18n-pages.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="js/nav-dropdown.js"></script>
-  <script src="js/hero-features.js"></script>
+  <script src="js/navbar-scroll.js"></script>
   <script src="js/icons.js"></script>
+  <script src="js/isr-page.js"></script>
+  <script type="module" src="js/isr-motion.js"></script>
 </body>
 </html>

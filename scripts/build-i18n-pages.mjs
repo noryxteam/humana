@@ -1,0 +1,689 @@
+/**
+ * Gera js/i18n-pages.js com traduções EN/ES por seletor CSS
+ */
+import { writeFileSync } from 'node:fs';
+import { join, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+const OUT = join(ROOT, 'js', 'i18n-pages.js');
+
+function esc(s) {
+  return JSON.stringify(s);
+}
+
+function buildJS(pages) {
+  const lines = [
+    '/**',
+    ' * Traduções por página (seletores CSS → EN/ES)',
+    ' * PT: texto original do HTML',
+    ' */',
+    'window.HUMANA_I18N_PAGES = {',
+  ];
+  for (const [pageId, selectors] of Object.entries(pages)) {
+    lines.push(`  ${esc(pageId)}: {`);
+    for (const [sel, texts] of Object.entries(selectors)) {
+      lines.push(`    ${esc(sel)}: { en: ${esc(texts.en)}, es: ${esc(texts.es)} },`);
+    }
+    lines.push('  },');
+  }
+  lines.push('};', '');
+  return lines.join('\n');
+}
+
+const contact = {
+  '.contact-section__label': { en: 'Contact', es: 'Contacto' },
+  '.contact-section__title': { en: "Let's talk.", es: 'Hablemos.' },
+  '.contact-section__subtitle': {
+    en: 'Our team is ready to help you with projects, events, and translation and interpretation needs in multiple languages.',
+    es: 'Nuestro equipo está listo para ayudarle con proyectos, eventos y necesidades de traducción e interpretación en diversos idiomas.',
+  },
+  '.contact-card--form .contact-card__title': { en: 'Send your message', es: 'Envíe su mensaje' },
+  '.contact-card--info .contact-card__title': { en: 'Where we are', es: 'Dónde estamos' },
+  '.contact-section__address-name': {
+    en: 'HUMANA Communication &amp; Translation',
+    es: 'HUMANA Comunicación y Traducción',
+  },
+  '.contact-section__address-text': {
+    en: 'Travessa Jupira s/n Lt 05-06 Qd 18 Jardim Tropicália<br>CEP: 66931-010 - Marahú - Mosqueiro - Belém - PA',
+    es: 'Travessa Jupira s/n Lt 05-06 Qd 18 Jardim Tropicália<br>CEP: 66931-010 - Marahú - Mosqueiro - Belém - PA',
+  },
+  '.contact-section__feature:nth-child(1) .contact-section__feature-title': {
+    en: 'Humanized Service',
+    es: 'Atención Humanizada',
+  },
+  '.contact-section__feature:nth-child(1) .contact-section__feature-text': {
+    en: 'A dedicated team to understand your needs with closeness and clarity.',
+    es: 'Equipo dedicado para entender su necesidad con cercanía y claridad.',
+  },
+  '.contact-section__feature:nth-child(2) .contact-section__feature-title': {
+    en: 'Quick Response',
+    es: 'Respuesta Rápida',
+  },
+  '.contact-section__feature:nth-child(2) .contact-section__feature-text': {
+    en: 'Prompt replies by email and WhatsApp for projects with tight deadlines.',
+    es: 'Respuesta ágil por correo y WhatsApp para proyectos con plazos exigentes.',
+  },
+  '.contact-section__feature:nth-child(3) .contact-section__feature-title': {
+    en: 'Your Data Protected',
+    es: 'Sus Datos Protegidos',
+  },
+  '.contact-section__feature:nth-child(3) .contact-section__feature-text': {
+    en: 'Information handled confidentially across all contact channels.',
+    es: 'Información tratada con confidencialidad en todos los canales de contacto.',
+  },
+  '.contact-section__feature:nth-child(4) .contact-section__feature-title': {
+    en: 'International Reach',
+    es: 'Actuación Internacional',
+  },
+  '.contact-section__feature:nth-child(4) .contact-section__feature-text': {
+    en: 'Experience in translation and interpretation for clients in Brazil and abroad.',
+    es: 'Experiencia en traducción e interpretación para clientes en Brasil y en el exterior.',
+  },
+};
+
+const postAside = {
+  '.post-toc__title': { en: 'In this article', es: 'En este artículo' },
+  '.post-author__heading': { en: 'About the author', es: 'Sobre la autora' },
+  '.post-author__name': { en: 'HUMANA Team', es: 'Equipe HUMANA' },
+  '.post-author__role': { en: 'Institutional communication', es: 'Comunicación institucional' },
+  '.post-aside-cta__title': { en: 'Need language support?', es: '¿Necesita apoyo lingüístico?' },
+  '.post-aside-cta__text': {
+    en: 'Talk to our team about translation, interpretation, or training.',
+    es: 'Hable con nuestro equipo sobre traducción, interpretación o formación.',
+  },
+  '.post-aside-cta__btn': { en: 'Talk to a specialist', es: 'Hablar con especialista' },
+  '.post-related__title': { en: 'Related articles', es: 'Artículos relacionados' },
+  '.post-cta-strip__title': { en: "Let's talk about your project?", es: '¿Hablemos sobre su proyecto?' },
+  '.post-cta-strip__text': {
+    en: 'Translation, interpretation, and multilingual solutions with HUMANA.',
+    es: 'Traducción, interpretación y soluciones multilingües con HUMANA.',
+  },
+  '.post-cta-strip__btn': {
+    en: 'Request a quote <span data-icon="arrow-right" data-icon-size="sm" aria-hidden="true"></span>',
+    es: 'Solicitar presupuesto <span data-icon="arrow-right" data-icon-size="sm" aria-hidden="true"></span>',
+  },
+  '.post-back': {
+    en: '<span class="post-back__icon" data-icon="arrow-right" data-icon-size="sm" aria-hidden="true"></span> Back to blog',
+    es: '<span class="post-back__icon" data-icon="arrow-right" data-icon-size="sm" aria-hidden="true"></span> Volver al blog',
+  },
+};
+
+function blogPost(id, data) {
+  const m = { ...postAside };
+  m['.post-banner__category'] = data.category;
+  m['.post-banner__title'] = data.title;
+  m['.post-banner__intro'] = data.intro;
+  data.highlights?.forEach((h, i) => {
+    const n = i + 1;
+    m[`.post-highlights .post-highlight:nth-child(${n}) .post-highlight__title`] = h.title;
+    m[`.post-highlights .post-highlight:nth-child(${n}) .post-highlight__text`] = h.text;
+  });
+  data.sections?.forEach((s, i) => {
+    const n = i + 1;
+    m[`.post-body .post-block:nth-child(${n}) .post-block__title`] = s.title;
+    m[`.post-body .post-block:nth-child(${n}) .post-block__content`] = s.content;
+  });
+  if (data.quote) m['.post-quote__text'] = data.quote;
+  return [id, m];
+}
+
+function historiaPost(id, data) {
+  const m = {};
+  m['.post-hero__category'] = data.category;
+  m['.post-hero__title'] = data.title;
+  m['.post-hero__intro'] = data.intro;
+  data.sections?.forEach((s, i) => {
+    const n = i + 1;
+    m[`.post-body .post-section:nth-child(${n}) .post-section__title`] = s.title;
+    m[`.post-body .post-section:nth-child(${n}) .post-section__content`] = s.content;
+  });
+  if (data.callout) m['.post-callout__text'] = data.callout;
+  m['.post-nav__label'] = { en: 'Timeline', es: 'Línea del tiempo' };
+  m['.post-nav__back'] = {
+    en: '<span data-icon="arrow-right" data-icon-size="sm" aria-hidden="true"></span> Back to Our History',
+    es: '<span data-icon="arrow-right" data-icon-size="sm" aria-hidden="true"></span> Volver a Nuestra Historia',
+  };
+  return [id, m];
+}
+
+const pages = {};
+
+// ─── INDEX ───────────────────────────────────────────────────────────────────
+pages['index.html'] = {
+  '.hero__eyebrow': { en: 'Translation and interpretation', es: 'Traducción e interpretación' },
+  '.hero__title': {
+    en: '<span class="hero__title-line">Humana</span><span class="hero__title-line">Com &amp; Trad</span>',
+    es: '<span class="hero__title-line">Humana</span><span class="hero__title-line">Com &amp; Trad</span>',
+  },
+  '.hero__subtitle': {
+    en: 'Simultaneous translation and interpretation for any language',
+    es: 'Traducción e interpretación simultánea para cualquier idioma',
+  },
+  '.hero__cta': {
+    en: 'Learn more <span class="hero__cta-icon" data-icon="arrow-right" data-icon-size="sm"></span>',
+    es: 'Saber más <span class="hero__cta-icon" data-icon="arrow-right" data-icon-size="sm"></span>',
+  },
+  '.hero__features-inner .hero-feature:nth-child(1) .hero-feature__title': { en: 'Any language', es: 'Cualquier idioma' },
+  '.hero__features-inner .hero-feature:nth-child(1) .hero-feature__text': {
+    en: 'Professional translation in multiple languages',
+    es: 'Traducción profesional en diversos idiomas',
+  },
+  '.hero__features-inner .hero-feature:nth-child(2) .hero-feature__title': { en: 'Experienced interpreters', es: 'Intérpretes experimentados' },
+  '.hero__features-inner .hero-feature:nth-child(2) .hero-feature__text': {
+    en: 'Qualified and specialized professionals',
+    es: 'Profesionales calificados y especializados',
+  },
+  '.hero__features-inner .hero-feature:nth-child(3) .hero-feature__title': { en: 'Confidentiality', es: 'Confidencialidad' },
+  '.hero__features-inner .hero-feature:nth-child(3) .hero-feature__text': {
+    en: 'Security and discretion for all information',
+    es: 'Seguridad y sigilo en toda la información',
+  },
+  '.about-section__title': { en: 'Who we are', es: 'Quiénes somos' },
+  '.about-section__intro .about-section__text p': {
+    en: 'At <strong>HUMANA COM &amp; TRAD</strong>, we specialize in <strong>simultaneous translation</strong>, <strong>conference interpretation</strong>, <strong>technical and legal translation</strong>, and <strong>qualified training for translators and interpreters</strong>. Founded and led by <strong>Sandro Ruggeri Dulcet</strong>, a professional interpreter active since 1995, HUMANA has decades of experience alongside research institutions, civil society organizations, NGOs, and scientific and multilingual events across Brazil and abroad.',
+    es: 'En <strong>HUMANA COM &amp; TRAD</strong>, somos especialistas en <strong>traducción simultánea</strong>, <strong>interpretación de conferencias</strong>, <strong>traducción técnica y jurídica</strong>, además de ofrecer <strong>formación cualificada para traductores e intérpretes</strong>. Fundada y dirigida por <strong>Sandro Ruggeri Dulcet</strong>, intérprete profesional con actuación desde 1995, HUMANA acumula décadas de experiencia junto a instituciones de investigación, organizaciones de la sociedad civil, ONG y eventos científicos y multilingües en todo Brasil y en el exterior.',
+  },
+  '.about-section__content .about-section__text p:nth-child(1)': {
+    en: 'Based in the <strong>Brazilian Amazon</strong> with global reach, we are a reference in <strong>humanized language services</strong>, with a model grounded in linguistic justice, respect for cultural diversity, and commitment to technical excellence.',
+    es: 'Con sede en la <strong>Amazonía brasileña</strong> y alcance global, somos referencia en <strong>servicios lingüísticos humanizados</strong>, con un modelo basado en la justicia lingüística, el respeto a la diversidad cultural y el compromiso con la excelencia técnica.',
+  },
+  '.about-section__content .about-section__text p:nth-child(2)': {
+    en: 'We offer tailored language solutions for in-person, hybrid, and online events, ensuring <strong>clear communication</strong>, <strong>terminological precision</strong>, and <strong>connection between different cultures</strong>.',
+    es: 'Ofrecemos soluciones lingüísticas personalizadas para eventos presenciales, híbridos y en línea, garantizando <strong>claridad en la comunicación</strong>, <strong>precisión terminológica</strong> y <strong>conexión entre diferentes culturas</strong>.',
+  },
+  '.about-section__content .btn--outline': { en: 'Learn more', es: 'Saber más' },
+  '.services-official__title': { en: 'Our Services', es: 'Nuestros Servicios' },
+  '.services-official__intro > p': {
+    en: '<strong>HUMANA COM &amp; TRAD</strong> is a language services company founded in <strong>2008 in Belém, Pará</strong>, in the heart of the <strong>Brazilian Amazon</strong>. In nearly 15 years of operation, our team has completed more than <strong>500 projects</strong>, including <strong>320 simultaneous and consecutive interpretation services</strong> and <strong>180 technical and legal translation projects</strong>. Our journey is marked by consistent work at <strong>multilingual events, scientific congresses, international seminars, and capacity-building initiatives for NGOs and social movements</strong>.',
+    es: '<strong>HUMANA COM &amp; TRAD</strong> es una empresa de servicios lingüísticos fundada en <strong>2008 en Belém do Pará</strong>, en el corazón de la <strong>Amazonía brasileña</strong>. En casi 15 años de actuación, nuestro equipo suma más de <strong>500 proyectos realizados</strong>, siendo <strong>320 servicios de interpretación simultánea y consecutiva</strong> y <strong>180 trabajos de traducción técnica y jurídica</strong>. Nuestra trayectoria está marcada por una actuación consistente en <strong>eventos multilingües, congresos científicos, seminarios internacionales y acciones de fortalecimiento institucional de ONG y movimientos sociales</strong>.',
+  },
+  '.services-official__intro-col p:nth-child(1)': {
+    en: 'Since its founding, HUMANA has also been committed to strengthening the local community of translators and interpreters. We have trained more than <strong>50 professionals from the region</strong> who began their careers through our conference interpretation training courses.',
+    es: 'Desde su fundación, HUMANA también se compromete con el fortalecimiento de la escena local de traductores e intérpretes. Ya hemos formado a más de <strong>50 profesionales de la región</strong>, que iniciaron sus carreras a través de nuestros cursos de capacitación en interpretación de conferencias.',
+  },
+  '.services-official__intro-col p:nth-child(2)': {
+    en: 'With experience in events and projects involving the languages of <strong>science, culture, and social transformation</strong>, we work with <strong>technical precision</strong>, <strong>respect for each client\'s context</strong>, and <strong>linguistic sensitivity</strong> — from the Amazon rainforest to international conferences.',
+    es: 'Con experiencia acumulada en eventos y proyectos que involucran los lenguajes de la <strong>ciencia, cultura y transformación social</strong>, actuamos con <strong>precisión técnica</strong>, <strong>respeto al contexto de cada cliente</strong> y <strong>sensibilidad lingüística</strong> — desde la selva amazónica hasta las conferencias internacionales.',
+  },
+  '.services-official__grid .services-official__item:nth-child(1) .services-official__name': {
+    en: 'SIMULTANEOUS INTERPRETATION',
+    es: 'INTERPRETACIÓN SIMULTÁNEA',
+  },
+  '.services-official__grid .services-official__item:nth-child(1) .services-official__text': {
+    en: 'HUMANA specializes in <strong>high-level simultaneous interpretation</strong>, both at in-person and virtual events. Whether international conferences, academic seminars, or multilingual meetings, we ensure fluency, clarity, and professionalism in communication across languages.',
+    es: 'HUMANA está especializada en <strong>interpretación simultánea de alto nivel</strong>, tanto en eventos presenciales como virtuales. Ya sea en conferencias internacionales, seminarios académicos o reuniones multilingües, garantizamos fluidez, claridad y profesionalismo en la comunicación entre idiomas.',
+  },
+  '.services-official__grid .services-official__item:nth-child(2) .services-official__name': { en: 'TRANSLATION', es: 'TRADUCCIÓN' },
+  '.services-official__grid .services-official__item:nth-child(2) .services-official__text': {
+    en: '<strong>Accurate and culturally adapted translations</strong> across diverse fields: legal, academic, scientific, institutional, and cultural. Our commitment is to deliver texts with <strong>appropriate language and fidelity to content</strong>, with attention to every detail.',
+    es: '<strong>Traducciones precisas y culturalmente adaptadas</strong> en diversas áreas del conocimiento: jurídico, académico, científico, institucional y cultural. Nuestro compromiso es entregar textos con <strong>lenguaje adecuado y fidelidad al contenido</strong>, con cuidado en los mínimos detalles.',
+  },
+  '.services-official__grid .services-official__item:nth-child(3) .services-official__name': { en: 'TRAINING COURSES', es: 'CURSOS FORMATIVOS' },
+  '.services-official__grid .services-official__item:nth-child(3) .services-official__text': {
+    en: 'Since 2009, we have offered <strong>translation and interpretation training courses</strong> focused on the technical and ethical development of new professionals. We invest in <strong>developing local talent</strong>, expanding job opportunities in the Amazon and strengthening the sector.',
+    es: 'Desde 2009, ofrecemos <strong>cursos de formación en traducción e interpretación</strong>, con foco en el desarrollo técnico y ético de nuevos profesionales. Invertimos en la <strong>capacitación de talentos locales</strong>, ampliando oportunidades de trabajo en la Amazonía y contribuyendo al fortalecimiento del sector.',
+  },
+  '.location-section__title': { en: 'Where we are', es: 'Dónde estamos' },
+  '.location-section__text': {
+    en: 'The new headquarters of Instituto HUMANA, located in Benevides, 30 km from Belém — PA, was built with <strong>bioarchitecture</strong> techniques and local materials, reinforcing our commitment to sustainability, <strong>valuing Amazonian communities</strong>, and <strong>linguistic justice</strong>.',
+    es: 'La nueva sede del Instituto HUMANA, ubicada en la ciudad de Benevides a 30 km de Belém — PA, fue construida con técnicas de <strong>bioarquitectura</strong> y materiales locales, reforzando nuestro compromiso con la sostenibilidad, la <strong>valorización de las comunidades amazónicas</strong> y la <strong>justicia lingüística</strong>.',
+  },
+  '.location-section .btn--outline': {
+    en: 'Learn more <span aria-hidden="true">&rarr;</span>',
+    es: 'Saber más <span aria-hidden="true">&rarr;</span>',
+  },
+  '.diferenciais__label': { en: 'Our Differentiators', es: 'Nuestros Diferenciales' },
+  '.diferenciais__title': { en: 'Why choose HUMANA COM &amp; TRAD?', es: '¿Por qué elegir HUMANA COM &amp; TRAD?' },
+  '.diferenciais__item:nth-child(1) .diferenciais__item-title': { en: 'International experience', es: 'Experiencia internacional' },
+  '.diferenciais__item:nth-child(1) .diferenciais__item-text': {
+    en: 'Work at multilingual events with global standards of excellence.',
+    es: 'Actuación en eventos multilingües con estándar de excelencia global.',
+  },
+  '.diferenciais__item:nth-child(2) .diferenciais__item-title': { en: 'Specialized translators', es: 'Traductores especializados' },
+  '.diferenciais__item:nth-child(2) .diferenciais__item-text': {
+    en: 'Qualified professionals across diverse fields of knowledge.',
+    es: 'Profesionales calificados en diversas áreas del conocimiento.',
+  },
+  '.diferenciais__item:nth-child(3) .diferenciais__item-title': { en: 'Social and environmental impact', es: 'Impacto social y ambiental' },
+  '.diferenciais__item:nth-child(3) .diferenciais__item-text': {
+    en: 'We work with a focus on social transformation and sustainability.',
+    es: 'Actuamos con foco en la transformación social y la sostenibilidad.',
+  },
+  '.diferenciais__item:nth-child(4) .diferenciais__item-title': { en: 'In-person and online events', es: 'Eventos presenciales y en línea' },
+  '.diferenciais__item:nth-child(4) .diferenciais__item-text': {
+    en: 'Modern infrastructure and complete solutions for different event formats.',
+    es: 'Infraestructura moderna y soluciones completas para diferentes formatos de evento.',
+  },
+  '.diferenciais__item:nth-child(5) .diferenciais__item-title': { en: 'Based in the Amazon', es: 'Base en la Amazonía' },
+  '.diferenciais__item:nth-child(5) .diferenciais__item-text': {
+    en: 'Connected to the Amazon, working locally and globally.',
+    es: 'Conectados con la Amazonía, actuando localmente y en el mundo.',
+  },
+  '.clients-header__eyebrow': { en: '+500 Completed Projects', es: '+500 Proyectos Concluidos' },
+  '.clients-header__title': { en: 'Our Clients', es: 'Nuestros Clientes' },
+  '.clients-header__subtitle': {
+    en: 'More than 500 interpretation and translation services delivered with excellence for companies and professionals across Brazil.',
+    es: 'Más de 500 servicios de interpretación y traducción realizados con excelencia para empresas y profesionales en todo Brasil.',
+  },
+  '.stats-bar__item:nth-child(1) .stats-bar__label': { en: 'Services delivered', es: 'Servicios realizados' },
+  '.stats-bar__item:nth-child(2) .stats-bar__label': { en: 'Companies served', es: 'Empresas atendidas' },
+  '.stats-bar__item:nth-child(3) .stats-bar__label': { en: 'Cities served', es: 'Ciudades atendidas' },
+  '.stats-bar__item:nth-child(4) .stats-bar__label': { en: 'Commitment and excellence', es: 'Compromiso y excelencia' },
+  '.mission-content__label': { en: 'Our Mission', es: 'Nuestra Misión' },
+  '.mission-content__title': { en: 'Experience that connects the world', es: 'Experiencia que conecta el mundo' },
+  '.mission-content__text': {
+    en: 'We serve a diverse audience of researchers, staff, and members of research institutions, knowledge dissemination faculty, and NGOs worldwide.',
+    es: 'Atendemos un público diverso de investigadores, personal y miembros de instituciones de investigación, docentes de difusión del conocimiento y ONG en todo el mundo.',
+  },
+  '.mission-content__feature:nth-child(1) .mission-content__feature-text': {
+    en: '<strong>Personalized</strong> service',
+    es: 'Atención <strong>personalizada</strong>',
+  },
+  '.mission-content__feature:nth-child(2) .mission-content__feature-text': {
+    en: '<strong>International</strong> reach',
+    es: 'Actuación <strong>internacional</strong>',
+  },
+  '.mission-content__feature:nth-child(3) .mission-content__feature-text': {
+    en: 'Excellence in <strong>every detail</strong>',
+    es: 'Excelencia en <strong>cada detalle</strong>',
+  },
+  '.mission-content__btn-text': { en: 'Discover our story', es: 'Conozca nuestra historia' },
+  '.mission-card__badge span:last-child': { en: 'International Presence', es: 'Presencia Internacional' },
+  '.mission-card__stat:nth-child(1) .mission-card__stat-copy strong': {
+    en: 'We work in multiple countries',
+    es: 'Actuamos en diversos países',
+  },
+  '.mission-card__stat:nth-child(1) .mission-card__stat-copy span:last-child': {
+    en: 'Connecting people, institutions, and ideas.',
+    es: 'Conectando personas, instituciones e ideas.',
+  },
+  '.mission-card__stat:nth-child(2) .mission-card__stat-copy span:last-child': {
+    en: 'projects completed',
+    es: 'proyectos realizados',
+  },
+  '.blog-header__label': { en: 'About us', es: 'Sobre nosotros' },
+  '.blog-header__title': { en: 'Humana Blog', es: 'Blog Humana' },
+  '.blog-header__subtitle': {
+    en: 'Follow our actions, projects, and initiatives that promote knowledge, inclusion, and social transformation.',
+    es: 'Siga nuestras acciones, proyectos e iniciativas que promueven conocimiento, inclusión y transformación social.',
+  },
+  '#blog .blog-dark-card:nth-child(1) .blog-dark-card__tag': { en: 'Events', es: 'Eventos' },
+  '#blog .blog-dark-card:nth-child(1) .blog-dark-card__title': {
+    en: 'HUMANA Participates in Technical Visits and Official COP30 Meetings in Belém',
+    es: 'HUMANA Participa en las Visitas Técnicas y Reuniones Oficiales de la COP30 en Belém',
+  },
+  '#blog .blog-dark-card:nth-child(1) .blog-dark-card__excerpt': {
+    en: 'HUMANA COM &amp; TRAD took part in technical visits and official meetings related to COP30 in Belém, supporting multilingual communication at one of the world\'s largest environmental gatherings.',
+    es: 'HUMANA COM &amp; TRAD participó de las visitas técnicas y reuniones oficiales relacionadas con la COP30 en Belém, apoyando la comunicación multilingüe en uno de los mayores encuentros ambientales del mundo.',
+  },
+  '#blog .blog-dark-card:nth-child(2) .blog-dark-card__tag': { en: 'Training', es: 'Capacitación' },
+  '#blog .blog-dark-card:nth-child(2) .blog-dark-card__title': {
+    en: 'Training Indigenous Interpreters for COP30',
+    es: 'Capacitación de Intérpretes Indígenas para COP30',
+  },
+  '#blog .blog-dark-card:nth-child(2) .blog-dark-card__excerpt': {
+    en: 'HUMANA participated in training indigenous interpreters for the COP30 context, amplifying the presence of indigenous voices in globally relevant environmental debates.',
+    es: 'HUMANA participó de la capacitación de intérpretes indígenas orientada al contexto de la COP30, ampliando la presencia de voces originarias en debates ambientales de alcance mundial.',
+  },
+  '#blog .blog-dark-card:nth-child(3) .blog-dark-card__tag': { en: 'Institute', es: 'Instituto' },
+  '#blog .blog-dark-card:nth-child(3) .blog-dark-card__title': { en: 'Institute Activities', es: 'Actividades del Instituto' },
+  '#blog .blog-dark-card:nth-child(3) .blog-dark-card__excerpt': {
+    en: 'Instituto HUMANA develops training, research, and dissemination of best practices in translation and interpretation in the North region and across Brazil.',
+    es: 'El Instituto HUMANA desarrolla actividades de formación, investigación y difusión de buenas prácticas en traducción e interpretación en la región Norte y en todo Brasil.',
+  },
+  '#blog .blog-dark-card__link': {
+    en: 'Learn more <span class="blog-dark-card__link-icon" data-icon="arrow-right" data-icon-size="sm"></span>',
+    es: 'Saber más <span class="blog-dark-card__link-icon" data-icon="arrow-right" data-icon-size="sm"></span>',
+  },
+  '.blog-section__btn': {
+    en: '<span class="blog-section__btn-icon" data-icon="newspaper" data-icon-size="sm"></span> View all articles',
+    es: '<span class="blog-section__btn-icon" data-icon="newspaper" data-icon-size="sm"></span> Ver todos los artículos',
+  },
+  ...contact,
+};
+
+// ─── CONTATO ─────────────────────────────────────────────────────────────────
+pages['contato.html'] = {
+  '.contato-hero__label': { en: 'Request a quote', es: 'Solicite un presupuesto' },
+  '.contato-hero__title': {
+    en: 'Simultaneous translation and interpretation for any <span class="contato-hero__accent">language.</span>',
+    es: 'Traducción e interpretación simultánea para cualquier <span class="contato-hero__accent">idioma.</span>',
+  },
+  '.contato-hero__subtitle': {
+    en: 'We serve companies, events, and institutions across Brazil with agility, precision, and full confidentiality.',
+    es: 'Atendemos empresas, eventos e instituciones en todo Brasil con agilidad, precisión y total confidencialidad.',
+  },
+  '.contato-hero__badges li:nth-child(1)': { en: 'Guaranteed confidentiality', es: 'Confidencialidad garantizada' },
+  '.contato-hero__badges li:nth-child(2)': { en: 'Quick and personalized response', es: 'Respuesta rápida y personalizada' },
+  '.contato-section-title': { en: 'How it works', es: 'Cómo funciona' },
+  '.contato-timeline__item:nth-child(1) .contato-timeline__title': {
+    en: 'Send your files or event details',
+    es: 'Envíe sus archivos o los detalles del evento',
+  },
+  '.contato-timeline__item:nth-child(1) .contato-timeline__text': {
+    en: 'Share the necessary information securely.',
+    es: 'Comparta la información necesaria con seguridad.',
+  },
+  '.contato-timeline__item:nth-child(2) .contato-timeline__title': {
+    en: 'Receive quotes and deadlines by email',
+    es: 'Reciba cotizaciones y plazos en su correo',
+  },
+  '.contato-timeline__item:nth-child(2) .contato-timeline__text': {
+    en: 'Quick response with a personalized proposal for your needs.',
+    es: 'Respuesta rápida con propuesta personalizada para su necesidad.',
+  },
+  '.contato-timeline__item:nth-child(3) .contato-timeline__title': {
+    en: 'Choose services and payment method',
+    es: 'Elija servicios y forma de pago',
+  },
+  '.contato-timeline__item:nth-child(3) .contato-timeline__text': {
+    en: 'Together we define the best solution for your project.',
+    es: 'Definimos juntos la mejor solución para su proyecto.',
+  },
+  '.contato-timeline__item:nth-child(4) .contato-timeline__title': {
+    en: 'Hire and receive translations at home',
+    es: 'Contrate y reciba traducciones en casa',
+  },
+  '.contato-timeline__item:nth-child(4) .contato-timeline__text': {
+    en: 'Quality delivery, on time, wherever you need it.',
+    es: 'Entrega con calidad, en plazo y donde usted lo necesite.',
+  },
+  '.contato-team-card__title': { en: 'Talk to our team', es: 'Hable con nuestro equipo' },
+  '.contato-team-card__text': {
+    en: 'We are ready to serve you and find the best solution.',
+    es: 'Estamos listos para atenderle y encontrar la mejor solución.',
+  },
+  '#orcamento .contato-section-title': { en: 'Request your quote', es: 'Solicite su presupuesto' },
+  '.contato-form-card .contato-section-title': { en: 'Request your quote', es: 'Solicite su presupuesto' },
+  '.contato-services__legend': { en: 'Services of interest', es: 'Servicios de interés' },
+  '.contato-service-card:nth-child(1) .contato-service-card__label': {
+    en: 'On-site Simultaneous Interpretation',
+    es: 'Interpretación Simultánea Presencial',
+  },
+  '.contato-service-card:nth-child(2) .contato-service-card__label': {
+    en: 'Remote Simultaneous Interpretation',
+    es: 'Interpretación Simultánea Remota',
+  },
+  '.contato-service-card:nth-child(3) .contato-service-card__label': { en: 'Translation', es: 'Traducción' },
+  '.contato-service-card:nth-child(4) .contato-service-card__label': { en: 'Training Courses', es: 'Cursos Formativos' },
+  '.contato-upload__title': { en: 'Attach files (optional)', es: 'Adjuntar archivos (opcional)' },
+  '.contato-upload__hint': {
+    en: 'Documents, presentations, scripts, etc.',
+    es: 'Documentos, presentaciones, guiones, etc.',
+  },
+  '.contato-upload__btn': { en: 'Choose file', es: 'Elegir archivo' },
+  '.contato-submit': {
+    en: 'Send request <span class="contato-submit__icon" data-icon="arrow-right" data-icon-size="sm"></span>',
+    es: 'Enviar solicitud <span class="contato-submit__icon" data-icon="arrow-right" data-icon-size="sm"></span>',
+  },
+  '.contato-form__secure': {
+    en: 'Your data is secure and we do not share it with third parties.',
+    es: 'Sus datos están seguros y no los compartimos con terceros.',
+  },
+  '.contato-info-item:nth-child(1) .contato-info-item__label': { en: 'Call us', es: 'Llámenos' },
+  '.contato-info-item:nth-child(2) .contato-info-item__label': { en: 'Business hours', es: 'Horario de atención' },
+  '.contato-info-item:nth-child(2) .contato-info-item__value': { en: 'Mon–Fri &bull; 8am to 6pm', es: 'Lun a Vie &bull; 08h a 18h' },
+};
+
+// ─── SOBRE ───────────────────────────────────────────────────────────────────
+pages['sobre.html'] = {
+  '.empresa-intro__label': { en: 'About Humana', es: 'Sobre Humana' },
+  '.empresa-intro__title': {
+    en: 'For nearly three decades, connecting people, institutions, and cultures through language.',
+    es: 'Durante casi tres décadas conectando personas, instituciones y culturas a través del lenguaje.',
+  },
+  '.empresa-intro__text:nth-of-type(1)': {
+    en: 'Since 1995, HUMANA COM &amp; TRAD has worked with excellence in translation, interpretation, and language solutions, offering humanized services that ensure clarity, precision, and connection anywhere in Brazil and the world.',
+    es: 'Desde 1995, HUMANA COM &amp; TRAD actúa con excelencia en traducción, interpretación y soluciones lingüísticas, ofreciendo servicios humanizados que garantizan claridad, precisión y conexión en cualquier parte de Brasil y del mundo.',
+  },
+  '.empresa-intro__text:nth-of-type(2)': {
+    en: 'Our journey is built on dedication, experience, and commitment to cultural diversity.',
+    es: 'Nuestra trayectoria se construye con dedicación, experiencia y compromiso con la diversidad cultural.',
+  },
+  '.empresa-block:nth-child(1) .empresa-block__label': { en: 'Founder', es: 'Fundador' },
+  '.empresa-block:nth-child(1) .empresa-block__title': { en: 'Who are we?', es: '¿Quiénes somos?' },
+  '.empresa-block:nth-child(1) .empresa-block__text': {
+    en: 'Its founder and director is Sandro Ruggeri Dulcet, a professional translator and interpreter since 1995, when he began serving various local clients and companies in the sector.',
+    es: 'Su fundador y director es Sandro Ruggeri Dulcet, traductor e intérprete profesional desde 1995, año en que comenzó a atender diversos clientes locales y empresas del sector.',
+  },
+  '.empresa-block:nth-child(2) .empresa-block__label': { en: 'Services', es: 'Servicios' },
+  '.empresa-block:nth-child(2) .empresa-block__title': { en: 'Clients &amp; Services', es: 'Clientes y Servicios' },
+  '.empresa-block:nth-child(2) .empresa-block__text': {
+    en: 'In the last decade, the company has provided more than 500 services, of which approximately 300 are interpretation services and 200 are translation projects.',
+    es: 'En la última década, la empresa prestó más de 500 servicios, de los cuales, aproximadamente, 300 corresponden a servicios de interpretación y 200 a trabajos de traducción.',
+  },
+  '.empresa-block:nth-child(3) .empresa-block__label': { en: 'Professionals', es: 'Profesionales' },
+  '.empresa-block:nth-child(3) .empresa-block__title': { en: 'Translators and Interpreters', es: 'Traductores e Intérpretes' },
+  '.empresa-block:nth-child(3) .empresa-block__text': {
+    en: '39 of our regular collaborators are professional translators. HUMANA regularly works with a group of 97 interpreter collaborators on services delivered locally or in other cities across Brazil and the Guiana Shield.',
+    es: '39 de nuestros colaboradores habituales son traductores profesionales. HUMANA cuenta regularmente con un grupo de 97 intérpretes colaboradores en servicios prestados localmente o en otras ciudades de Brasil y del Escudo de las Guayanas.',
+  },
+  '.empresa-block:nth-child(4) .empresa-block__label': { en: 'Projects', es: 'Proyectos' },
+  '.empresa-block:nth-child(4) .empresa-block__title': { en: 'Projects and Impact', es: 'Proyectos e Impacto' },
+  '.empresa-block:nth-child(4) .empresa-block__text': {
+    en: 'We work on translation and interpretation projects across Brazil and in international contexts — at scientific, environmental, institutional, and multilingual events, with the Amazon as our base and the world as our horizon.',
+    es: 'Actuamos en proyectos de traducción e interpretación en todo Brasil y en contextos internacionales — en eventos científicos, ambientales, institucionales y multilingües, con la Amazonía como base y el mundo como horizonte.',
+  },
+  '.empresa-block__cta': {
+    en: 'Learn more <span aria-hidden="true">&rarr;</span>',
+    es: 'Saber más <span aria-hidden="true">&rarr;</span>',
+  },
+  '.empresa-timeline__label': { en: 'Our Journey', es: 'Nuestra Trayectoria' },
+  '.empresa-timeline__title': {
+    en: 'A history of experience and constant evolution.',
+    es: 'Una historia de experiencia y evolución constante.',
+  },
+  '.empresa-timeline__text': {
+    en: 'Since 1995, HUMANA COM &amp; TRAD has built a journey marked by trust, excellence, and human closeness in every project we carry out.',
+    es: 'Desde 1995, HUMANA COM &amp; TRAD construye un recorrido marcado por la confianza, la excelencia y la proximidad humana en cada proyecto que realizamos.',
+  },
+  '.empresa-timeline__cta': {
+    en: 'Discover our history <span class="empresa-timeline__cta-icon" data-icon="arrow-right" data-icon-size="sm"></span>',
+    es: 'Conozca nuestra historia <span class="empresa-timeline__cta-icon" data-icon="arrow-right" data-icon-size="sm"></span>',
+  },
+  '.empresa-timeline__item:nth-child(1) .empresa-timeline__event': { en: 'Foundation', es: 'Fundación' },
+  '.empresa-timeline__item:nth-child(1) .empresa-timeline__desc': {
+    en: 'Sandro Ruggeri Dulcet founds HUMANA COM &amp; TRAD with the purpose of offering excellence in interpretation and translation.',
+    es: 'Sandro Ruggeri Dulcet funda HUMANA COM &amp; TRAD con el propósito de ofrecer interpretación y traducción de excelencia.',
+  },
+  '.empresa-timeline__item:nth-child(2) .empresa-timeline__event': { en: 'Expansion', es: 'Expansión' },
+  '.empresa-timeline__item:nth-child(2) .empresa-timeline__desc': {
+    en: 'Expansion into new languages, technical fields, and international events.',
+    es: 'Ampliación de la actuación a nuevos idiomas, áreas técnicas y eventos internacionales.',
+  },
+  '.empresa-timeline__item:nth-child(3) .empresa-timeline__event': { en: 'International Reach', es: 'Actuación Internacional' },
+  '.empresa-timeline__item:nth-child(3) .empresa-timeline__desc': {
+    en: 'Strengthening presence in multilingual projects and international organizations.',
+    es: 'Fortalecimiento de la presencia en proyectos multilingües y en organizaciones internacionales.',
+  },
+  '.empresa-timeline__item:nth-child(4) .empresa-timeline__event': { en: 'New Horizons', es: 'Nuevos Horizontes' },
+  '.empresa-timeline__item:nth-child(4) .empresa-timeline__desc': {
+    en: 'Expansion of hybrid and online services, meeting new global demands.',
+    es: 'Expansión de servicios híbridos y en línea, acompañando las nuevas demandas globales.',
+  },
+  '.empresa-timeline__item:nth-child(5) .empresa-timeline__event': { en: 'Still connecting', es: 'Seguimos conectando' },
+  '.empresa-timeline__item:nth-child(5) .empresa-timeline__desc': {
+    en: 'More than 500 projects completed and a renewed commitment to people and cultures.',
+    es: 'Más de 500 proyectos realizados y un compromiso renovado con personas y culturas.',
+  },
+  '.bases-card--missao .bases-card__title': { en: 'Mission', es: 'Misión' },
+  '.bases-card--missao .bases-card__text': {
+    en: 'HUMANA\'s mission is to offer <strong>high-level translation and interpretation services</strong> with <strong>quality</strong> and <strong>competence</strong>, attracting, serving, and retaining its clients.',
+    es: 'La misión de HUMANA es ofrecer servicios de <strong>traducción e interpretación de alto nivel</strong>, con <strong>calidad</strong> y <strong>competencia</strong>, atrayendo, atendiendo y fidelizando a sus clientes.',
+  },
+  '.bases-card--visao .bases-card__title': { en: 'Vision', es: 'Visión' },
+  '.bases-card--visao .bases-card__text': {
+    en: 'We aim to remain a <strong>leading and distinctive company</strong> in the market of <strong>quality</strong> language service providers, creating <strong>added value</strong> for everyone who participates directly or indirectly.',
+    es: 'Deseamos seguir siendo una <strong>empresa líder</strong> y diferenciada en el mercado de prestadores de servicios lingüísticos de <strong>calidad</strong>, creando <strong>valor adicional</strong> para quienes en ella participan directa o indirectamente.',
+  },
+  '.bases-card--valores .bases-card__title': { en: 'Values', es: 'Valores' },
+  '.bases-card--valores .bases-card__text': {
+    en: 'The values that inspire and guide the company\'s strategy and conduct are <strong>dedication and enthusiasm at work</strong>, <strong>organization</strong>, <strong>clarity</strong>, <strong>care</strong>, and <strong>rational use</strong> of resources.',
+    es: 'Los valores que nos inspiran y guían la estrategia y forma de actuar de la empresa son la <strong>dedicación y el entusiasmo en el trabajo</strong>, la <strong>organización</strong>, la <strong>claridad</strong>, el <strong>cuidado</strong> y el <strong>uso racional</strong> en el tratamiento de los recursos.',
+  },
+  '.bases-card__cta': {
+    en: 'Learn more <span aria-hidden="true">&rarr;</span>',
+    es: 'Saber más <span aria-hidden="true">&rarr;</span>',
+  },
+  ...contact,
+};
+
+// ─── HISTORIA ────────────────────────────────────────────────────────────────
+pages['historia.html'] = {
+  '.historia-hero__label': { en: 'Our Journey', es: 'Nuestra Trayectoria' },
+  '.historia-hero__title': {
+    en: 'A history of <span class="historia-hero__accent">experience</span> and constant evolution.',
+    es: 'Una historia de <span class="historia-hero__accent">experiencia</span> y evolución constante.',
+  },
+  '.historia-hero__intro': {
+    en: 'Since 1995, HUMANA COM &amp; TRAD has built a journey marked by trust, excellence, and human closeness — connecting people, institutions, and cultures through language.',
+    es: 'Desde 1995, HUMANA COM &amp; TRAD construye un recorrido marcado por la confianza, la excelencia y la proximidad humana — conectando personas, instituciones y culturas a través del lenguaje.',
+  },
+  '.historia-intro__label': { en: 'Our History', es: 'Nuestra Historia' },
+  '.historia-intro__title': { en: 'How it all began', es: 'Cómo empezó todo' },
+  '.historia-values__cta-title': { en: 'Be part of our next chapter', es: 'Forme parte de nuestra próxima historia' },
+  '.historia-values__cta-btn--ghost': { en: 'Back to About Us', es: 'Volver a Sobre Nosotros' },
+};
+
+pages['blog.html'] = {
+  '.blog-hero__label': { en: 'Blog', es: 'Blog' },
+  '.blog-hero__title': {
+    en: 'Blog <span class="blog-hero__title-accent">Humana</span>',
+    es: 'Blog <span class="blog-hero__title-accent">Humana</span>',
+  },
+  '.blog-hero__subtitle': {
+    en: 'Follow our actions, projects, and initiatives that promote knowledge, inclusion, and social transformation.',
+    es: 'Siga nuestras acciones, proyectos e iniciativas que promueven conocimiento, inclusión y transformación social.',
+  },
+  ...contact,
+};
+
+pages['cop30.html'] = {
+  '.cop30-hero__title': { en: 'HUMANA in COP30 preparation in Belém', es: 'HUMANA en la preparación de la COP30 en Belém' },
+  '.cop30-hero__intro': {
+    en: 'High-standard language support for technical visits, official meetings, and multilingual communication — connecting the Amazon to the global climate dialogue.',
+    es: 'Apoyo lingüístico de alto estándar para visitas técnicas, reuniones oficiales y comunicación multilingüe — conectando la Amazonía al diálogo climático global.',
+  },
+  '.cop30-cta__title': {
+    en: "Let's build your delegation's communication for COP30 together",
+    es: 'Construyamos juntos la comunicación de su delegación en la COP30',
+  },
+};
+
+pages['parceiros.html'] = {
+  '.parc-hero__title': { en: 'Our Partners', es: 'Nuestros Socios' },
+  '.parc-hero__intro': {
+    en: 'We build solid relationships with companies, institutions, and organizations that share our commitment to excellence, communication, and positive impact.',
+    es: 'Construimos relaciones sólidas con empresas, instituciones y organizaciones que comparten nuestro compromiso con la excelencia, la comunicación y el impacto positivo.',
+  },
+};
+
+pages['tao-filmes.html'] = {
+  '.tao-hero__title': { en: 'TAO Filmes', es: 'TAO Filmes' },
+  '.tao-hero__intro': {
+    en: 'Audiovisual production company and center of excellence in performing arts, uniting cinema, theater, and visual communication to transform stories into impactful experiences.',
+    es: 'Productora audiovisual y centro de excelencia en artes escénicas, uniendo cine, teatro y comunicación visual para transformar historias en experiencias de impacto.',
+  },
+};
+
+pages['isp.html'] = {
+  '.isp-hero__title': { en: 'On-site Simultaneous Interpretation', es: 'Interpretación Simultánea Presencial' },
+  '.isp-hero__subtitle': { en: 'The need for adaptability', es: 'La necesidad de adaptabilidad' },
+  '.isp-orcamento__title': { en: 'Quote', es: 'Presupuesto' },
+};
+
+pages['isr.html'] = {
+  '.servico-hero__title': { en: 'Remote Simultaneous Interpretation', es: 'Interpretación Simultánea Remota' },
+  '.servico-hero__subtitle': { en: 'What is RSI and how does it work?', es: '¿Qué es ISR y cómo funciona?' },
+};
+
+pages['traducao.html'] = {
+  '.servico-hero__title': { en: 'Translation', es: 'Traducción' },
+};
+
+pages['cursos-formativos.html'] = {
+  '.servico-hero__title': { en: 'Training Courses', es: 'Cursos Formativos' },
+};
+
+pages['politica-privacidade.html'] = {
+  '.legal-page__title': { en: 'Privacy Policy', es: 'Política de Privacidad' },
+  '.legal-page__intro': {
+    en: 'HUMANA COM &amp; TRAD respects the privacy of visitors and clients. This document describes how we collect, use, and protect your information.',
+    es: 'HUMANA COM &amp; TRAD respeta la privacidad de visitantes y clientes. Este documento describe cómo recopilamos, usamos y protegemos su información.',
+  },
+};
+
+pages['termos-de-uso.html'] = {
+  '.legal-page__title': { en: 'Terms of Use', es: 'Términos de Uso' },
+  '.legal-page__intro': {
+    en: 'By accessing this site, you agree to the terms below. We recommend reading them carefully before using our digital channels.',
+    es: 'Al acceder a este sitio, usted acepta los términos a continuación. Recomendamos leerlos atentamente antes de utilizar nuestros canales digitales.',
+  },
+};
+
+const blogPosts = {
+  'traducao-internacional.html': {
+    category: { en: 'About Humana', es: 'Sobre Humana' },
+    title: { en: 'Excellence in translation and interpretation since 2008', es: 'Excelencia en traducción e interpretación desde 2008' },
+  },
+  'trajetoria-12-anos.html': {
+    category: { en: 'News', es: 'Noticias' },
+    title: { en: "HUMANA's journey at 12 years", es: 'Trayectoria de HUMANA en los 12 años de la empresa' },
+  },
+  'capacitacao-indigenas-cop30.html': {
+    category: { en: 'Training', es: 'Capacitación' },
+    title: { en: 'Training Indigenous Interpreters for COP30', es: 'Capacitación de Intérpretes Indígenas para COP30' },
+  },
+  'atividades-instituto.html': {
+    category: { en: 'Institute', es: 'Instituto' },
+    title: { en: 'Institute Activities', es: 'Actividades del Instituto' },
+  },
+  'trabalhos-isp.html': {
+    category: { en: 'Interpretation', es: 'Interpretación' },
+    title: { en: 'SI Work', es: 'Trabajos de ISP' },
+  },
+  'traducao-hoje.html': {
+    category: { en: 'Translation', es: 'Traducción' },
+    title: { en: 'Translation Today', es: 'Traducción Hoy' },
+  },
+  'missao-visao-valores.html': {
+    category: { en: 'Values', es: 'Valores' },
+    title: { en: 'Humana Mission, Vision, and Values', es: 'Misión, Visión y Valores de Humana' },
+  },
+  'cop30-belem.html': {
+    category: { en: 'Events', es: 'Eventos' },
+    title: {
+      en: 'HUMANA Participates in Technical Visits and Official COP30 Meetings in Belém',
+      es: 'HUMANA Participa en las Visitas Técnicas y Reuniones Oficiales de la COP30 en Belém',
+    },
+  },
+  'linguas-minoritarias.html': {
+    category: { en: 'News', es: 'Noticias' },
+    title: { en: 'Minority Languages of the Guiana Shield', es: 'Lenguas Minoritarias del Escudo de las Guayanas' },
+  },
+  'luz-sons-marahu.html': {
+    category: { en: 'News', es: 'Noticias' },
+    title: { en: 'Light and sounds of Marahú: the harmony of bioarchitecture', es: 'Luz y sonidos del Marahú: la armonía de la bioarquitectura' },
+  },
+};
+
+Object.entries(blogPosts).forEach(([id, d]) => {
+  pages[id] = { ...postAside, '.post-banner__category': d.category, '.post-banner__title': d.title };
+});
+
+const historiaPosts = {
+  '1995-fundacao.html': { en: 'Foundation', es: 'Fundación' },
+  '2008-expansao.html': { en: 'Expansion', es: 'Expansión' },
+  '2015-atuacao-internacional.html': { en: 'International Reach', es: 'Actuación Internacional' },
+  '2020-novos-horizontes.html': { en: 'New Horizons', es: 'Nuevos Horizontes' },
+  '2026-continuamos-conectando.html': { en: 'Still connecting', es: 'Seguimos conectando' },
+};
+
+Object.entries(historiaPosts).forEach(([id, title]) => {
+  pages[id] = { '.post-hero__title': title };
+});
+
+writeFileSync(OUT, buildJS(pages));
+console.log('Pages:', Object.keys(pages).length);
+console.log('Written:', OUT);

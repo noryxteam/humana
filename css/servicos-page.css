@@ -4,182 +4,279 @@
   padding-top: 0;
 }
 
-.servico-page .page-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 99999;
-  background: #fff;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
-}
-
-/* ---- Hero ISP ---- */
-.isp-hero {
+/* ---- ISP: Banner ---- */
+.isp-banner {
   position: relative;
-  padding: 100px 0 48px;
-  background-color: #0d1f33;
-  background-image: url("../assets/images/servicos/isp-bg.jpg");
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  color: #fff;
+  overflow: hidden;
+  min-height: 323px;
+  background-color: #0b2840;
 }
 
-.isp-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(8, 20, 36, 0.72);
-}
-
-.isp-hero__inner {
-  position: relative;
-  z-index: 1;
-  width: min(92%, 900px);
-  margin: 0 auto;
-}
-
-.isp-hero__banner {
+.isp-banner__img {
   display: block;
-  max-width: 520px;
   width: 100%;
+  height: 323px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ---- ISP: Título ---- */
+.isp-intro {
+  padding: 24px 0 8px;
+  background: #fff;
+  text-align: center;
+}
+
+.isp-intro__inner {
+  width: min(92%, 1080px);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.isp-intro__icons {
+  display: block;
+  width: 12%;
+  min-width: 120px;
+  max-width: 180px;
   height: auto;
-  margin: 0 auto 28px;
+  margin: 0 auto 16px;
 }
 
-.isp-hero__title {
-  margin: 0 0 10px;
-  font-size: clamp(22px, 3.2vw, 34px);
-  font-weight: 700;
+.isp-intro__title {
+  margin: 0 0 4px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 600;
   line-height: 1.25;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: #fff;
+  color: #000;
 }
 
-.isp-hero__subtitle {
-  margin: 0;
-  font-size: clamp(16px, 2vw, 20px);
+.isp-intro__subtitle {
+  margin: 0 0 1px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
   font-weight: 400;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.9;
+  color: #333;
 }
 
-/* ---- Stats ---- */
+/* ---- ISP: Estatísticas ---- */
+.isp-stats-section {
+  padding: 29px 0 0;
+  background: #ededed;
+}
+
 .isp-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  background: #0a1628;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  gap: 24px;
+  width: min(92%, 1080px);
+  margin: 0 auto;
+  padding: 43px 0 0;
 }
 
-.isp-stats__item {
-  padding: 32px 20px 36px;
+.isp-stats__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.isp-stats__item:last-child {
-  border-right: 0;
+  padding: 26px 20px 20px;
+  background: #deefff;
+  box-shadow: 11px 6px 18px 0 rgba(0, 0, 0, 0.3);
 }
 
 .isp-stats__icon {
   display: block;
-  max-width: 200px;
-  width: 80%;
+  width: 57%;
+  max-width: 154px;
+  min-height: 72px;
   height: auto;
-  margin: 0 auto 12px;
+  margin: 0 auto 8px;
   object-fit: contain;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px 12px;
+  box-sizing: content-box;
 }
 
 .isp-stats__value {
   display: block;
-  font-size: clamp(36px, 5vw, 52px);
-  font-weight: 700;
-  line-height: 1;
-  color: #fff;
-  margin-bottom: 8px;
-}
-
-.isp-stats__item:not(:has(.isp-stats__icon)) .isp-stats__value {
-  margin-top: 24px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 45px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #0064c9;
+  margin-bottom: 4px;
 }
 
 .isp-stats__label {
   display: block;
-  font-size: 11px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
   font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.75);
-}
-
-/* ---- Definição ---- */
-.isp-definition-wrap {
-  padding: 48px 0 56px;
-  background: #ededed;
-}
-
-.isp-definition {
-  display: grid;
-  grid-template-columns: 1fr minmax(180px, 280px);
-  gap: 32px;
-  align-items: center;
-  width: min(92%, 1080px);
-  margin: 0 auto;
-  padding: 36px 40px;
-  background: #fff;
-  border-radius: 4px;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
-}
-
-.isp-definition__title {
-  margin: 0 0 8px;
-  font-size: 26px;
-  font-weight: 600;
-  color: #00276b;
   line-height: 1.3;
+  color: #0064c9;
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
-.isp-definition__type {
-  margin: 0 0 14px;
-  font-size: 16px;
-  font-style: italic;
-  color: #666;
+/* ---- ISP: O que é (card premium) ---- */
+.isp-oque-e {
+  padding: 48px 0 56px;
+  background: #f4f7fb;
 }
 
-.isp-definition__text {
+.isp-oque-e__wrap {
+  position: relative;
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.isp-oque-e__card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: stretch;
+  gap: 0;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow:
+    0 24px 60px rgba(11, 40, 64, 0.1),
+    0 8px 24px rgba(11, 40, 64, 0.06);
+  overflow: hidden;
+}
+
+.isp-oque-e__content {
+  padding: clamp(32px, 4vw, 52px) clamp(28px, 3.5vw, 48px);
+}
+
+.isp-oque-e__eyebrow {
+  margin: 0 0 12px;
+  font-family: "Montserrat", "Open Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--brand-blue);
+}
+
+.isp-oque-e__title {
   margin: 0;
-  font-size: 18px;
-  line-height: 1.7;
-  color: #333;
+  font-family: "Montserrat", "Open Sans", sans-serif;
+  font-size: clamp(26px, 2.8vw, 34px);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #00276b;
 }
 
-.isp-definition__image {
+.isp-oque-e__accent {
+  display: block;
+  width: 52px;
+  height: 4px;
+  margin: 16px 0 22px;
+  border-radius: 999px;
+  background: var(--brand-blue);
+}
+
+.isp-oque-e__intro {
+  margin: 0 0 28px;
+  max-width: 36em;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #5a6578;
+}
+
+.isp-oque-e__benefits {
+  display: grid;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.isp-oque-e__benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.isp-oque-e__benefit-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--brand-blue-light);
+  color: var(--brand-blue-dark);
+}
+
+.isp-oque-e__benefit-icon .humana-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.isp-oque-e__benefit-title {
+  margin: 0 0 4px;
+  font-family: "Montserrat", "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #00276b;
+}
+
+.isp-oque-e__benefit-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #5a6578;
+}
+
+.isp-oque-e__media {
+  position: relative;
+  margin: 0;
+  min-height: 360px;
+  background: #e8eef5;
+}
+
+.isp-oque-e__media img {
   display: block;
   width: 100%;
-  max-width: 280px;
-  height: auto;
-  margin: 0 auto;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  object-position: center;
 }
 
-/* ---- Cards de destaque ---- */
+.isp-oque-e__dots {
+  position: absolute;
+  top: 50%;
+  right: -24px;
+  width: 88px;
+  height: 112px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(0, 174, 239, 0.55) 2.5px, transparent 2.5px);
+  background-size: 12px 12px;
+  opacity: 0.85;
+  z-index: 1;
+}
+
+/* ---- ISP: Definição (legado — removido) ---- */
+
+/* ---- ISP: Grid de serviços ---- */
 .isp-features {
-  padding: 48px 0 56px;
-  background: #0d1f33;
-}
-
-.isp-features__inner {
-  width: min(92%, 1080px);
-  margin: 0 auto;
+  padding: 15px 0 0;
+  background: #fff;
 }
 
 .isp-features__row {
   display: grid;
   gap: 0;
-  margin-bottom: 0;
+  width: 100%;
+  max-width: 2560px;
+  margin: 0 auto;
 }
 
 .isp-features__row--top {
@@ -191,79 +288,1011 @@
 }
 
 .isp-feature {
-  padding: 28px 24px 32px;
-  min-height: 200px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  min-height: 472px;
+}
+
+.isp-feature::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.27) 0%, rgba(0, 0, 0, 0.69) 100%);
+  transition: background 300ms ease;
+  pointer-events: none;
+}
+
+.isp-feature:hover::before {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.63) 0%, rgba(0, 0, 0, 0.98) 100%);
+}
+
+.isp-feature--versatilidade {
+  background-image: url("/assets/images/servicos/versatilidade.jpg");
+}
+
+.isp-feature--adaptacao {
+  background-image: url("/assets/images/servicos/adaptacao.jpg");
+}
+
+.isp-feature--situacao {
+  background-image: url("/assets/images/servicos/situacao-comunicativa.jpg");
+}
+
+.isp-feature--mobilidade {
+  background-image: url("/assets/images/servicos/mobilidade.jpg");
+  min-height: 472px;
+}
+
+.isp-feature--eventos {
+  background-image: url("/assets/images/servicos/eventos-emblematicos.png");
+  min-height: 472px;
+}
+
+.isp-feature__body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: inherit;
+  padding: 220px 21px 53px;
+}
+
+.isp-features__row--bottom .isp-feature__body {
+  padding-top: 194px;
 }
 
 .isp-feature__title {
-  margin: 0 0 14px;
-  font-size: 15px;
+  margin: 2px 0 12px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 28px;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  line-height: 1.25;
   color: #fff;
 }
 
 .isp-feature__text {
-  margin: 0 0 18px;
-  font-size: 14px;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 0;
+  padding-right: 60px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #fff;
+  max-width: 100%;
 }
 
 .isp-feature__text strong,
 .isp-feature__text b {
   font-weight: 700;
-  color: #fff;
 }
 
-.isp-feature__link {
+.isp-feature__btn {
   display: inline-block;
-  font-size: 13px;
-  font-weight: 600;
-  color: #2ea3f2;
-  text-transform: capitalize;
-  letter-spacing: 0.02em;
+  margin-top: 53px;
+  margin-bottom: 53px;
+  padding: 7px 20px;
+  background: #51d2af;
+  color: #000;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 0;
+  transition: background-color 300ms ease;
 }
 
-.isp-feature__link:hover {
+.isp-feature__btn:hover {
+  background: rgba(0, 0, 0, 0.4);
   color: #fff;
   opacity: 1;
 }
 
-/* ---- Orçamento ---- */
-.isp-orcamento {
-  padding: 48px 0 64px;
-  text-align: center;
+/* ---- ISP: Nossos Clientes ---- */
+.isp-clients {
+  padding: 0 0 48px;
   background: #fff;
 }
 
-.isp-orcamento__title {
-  margin: 0 0 20px;
-  font-size: 28px;
+.isp-clients__inner {
+  width: min(92%, 1080px);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.isp-clients__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 50px;
+}
+
+.isp-clients__title {
+  margin: 0 0 4px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #000;
+}
+
+.isp-clients__subtitle {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.9;
+  color: #666;
+}
+
+.isp-clients__nav {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+  padding-top: 8px;
+}
+
+.isp-clients__nav-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #aaa;
+  background: transparent;
+  color: #aaa;
+  font-size: 22px;
+  line-height: 28px;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.isp-clients__nav-btn:hover {
+  background: #16a08b;
+  color: #fff;
+  border-color: #16a08b;
+}
+
+.isp-clients__divider {
+  border: 0;
+  border-top: 1px solid #000;
+  margin: 12px 0 0;
+}
+
+.isp-clients__carousel {
+  padding-top: 46px;
+}
+
+.isp-clients__viewport {
+  overflow: hidden;
+}
+
+.isp-clients__track {
+  display: flex;
+  gap: 12px;
+  transition: transform 500ms ease;
+}
+
+.isp-clients__slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.isp-clients__slide img {
+  max-height: 80px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* ---- ISR: Banner ---- */
+.isr-banner {
+  min-height: 323px;
+  background-image: url("/assets/images/servicos/isr-hero-banner.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ---- ISR: Título ---- */
+.isr-intro {
+  padding: 29px 0 8px;
+  background: #fff;
+  text-align: center;
+}
+
+.isr-intro__inner {
+  width: min(92%, 1080px);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.isr-intro__icons {
+  display: block;
+  width: 12%;
+  min-width: 120px;
+  max-width: 180px;
+  height: auto;
+  margin: 0 auto 16px;
+}
+
+.isr-intro__title {
+  margin: 0 0 4px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #000;
+}
+
+.isr-intro__subtitle {
+  margin: 0 0 1px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.9;
+  color: #333;
+}
+
+/* ---- ISR: Definição ---- */
+.isr-definition-wrap {
+  padding: 0 0 31px;
+  background: #ededed;
+}
+
+.isr-definition {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 24px;
+  align-items: center;
+  width: min(92%, 1080px);
+  margin: 0 auto 31px;
+  padding: 27px 46px 27px 100px;
+  background: #deefff;
+  box-shadow: 6px 6px 18px 0 rgba(0, 0, 0, 0.3);
+}
+
+.isr-definition__title {
+  margin: 0 0 8px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 26px;
   font-weight: 700;
   color: #00276b;
+  line-height: 1.3;
+  text-shadow: 0.08em 0.08em 0.08em rgba(0, 0, 0, 0.23);
 }
 
-.isp-orcamento__btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 32px;
-  background: #2ea3f2;
-  color: #fff;
-  font-size: 13px;
+.isr-definition__type {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-style: italic;
+  color: #000;
+}
+
+.isr-definition__text {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #000;
+  text-align: left;
+  max-width: 800px;
+}
+
+.isr-definition__image {
+  display: block;
+  width: 100%;
+  max-width: 216px;
+  height: auto;
+  margin: 86px auto 0;
+}
+
+/* ---- ISR: Protagonistas ---- */
+.isr-protagonists {
+  padding: 0 0 40px;
+  background: #deefff;
+}
+
+.isr-protagonists__inner {
+  width: min(92%, 1080px);
+  margin: 0 auto;
+  padding: 0 29px;
+}
+
+.isr-protagonists__heading {
+  margin: 0 0 40px;
+  padding-top: 8px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 36px;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  border-radius: 3px;
-  transition: background-color 0.2s ease;
+  line-height: 1.25;
+  color: #03045e;
+  text-align: center;
 }
 
-.isp-orcamento__btn:hover {
-  background: #1a8fd9;
+.isr-protagonist {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 24px;
+  align-items: start;
+  margin-top: 40px;
+  padding: 0 0 6px;
+  background: #deefff;
+}
+
+.isr-protagonist--icon-right {
+  grid-template-columns: 3fr 1fr;
+}
+
+.isr-protagonist__icon {
+  display: block;
+  width: 100%;
+  max-width: 352px;
+  height: auto;
+  margin: 41px auto 0;
+}
+
+.isr-protagonist--icon-right .isr-protagonist__icon {
+  margin-top: 41px;
+}
+
+.isr-protagonist__content {
+  padding: 28px 0 37px;
+}
+
+.isr-protagonist__content--left .isr-protagonist__title {
+  text-align: left;
+}
+
+.isr-protagonist__content--left .isr-protagonist__text {
+  text-align: justify;
+}
+
+.isr-protagonist__content--right .isr-protagonist__title {
+  text-align: right;
+}
+
+.isr-protagonist__content--right .isr-protagonist__text {
+  text-align: right;
+}
+
+.isr-protagonist__title {
+  margin: 0 0 16px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #03045e;
+}
+
+.isr-protagonist__text {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #000;
+}
+
+.isr-protagonist__text strong,
+.isr-protagonist__text b {
+  font-weight: 700;
+}
+
+/* ---- ISR: Por que ISR? ---- */
+.isr-why {
+  padding: 0 0 48px;
+  background: #fff;
+}
+
+.isr-why__inner {
+  width: min(92%, 1080px);
+  margin: 0 auto;
+  padding: 43px 20px 0;
+}
+
+.isr-why__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.isr-why__title {
+  margin: 0 0 4px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #000;
+}
+
+.isr-why__subtitle {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.9;
+  color: #666;
+}
+
+.isr-why__nav {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+  padding-top: 8px;
+}
+
+.isr-why__nav-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #aaa;
+  background: transparent;
+  color: #aaa;
+  font-size: 22px;
+  line-height: 28px;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.isr-why__nav-btn:hover {
+  background: #16a08b;
+  color: #fff;
+  border-color: #16a08b;
+}
+
+.isr-why__divider {
+  border: 0;
+  border-top: 1px solid #000;
+  margin: 12px 0 0;
+}
+
+.isr-why__carousel {
+  padding-top: 46px;
+}
+
+.isr-why__viewport {
+  overflow: hidden;
+}
+
+.isr-why__track {
+  display: flex;
+  gap: 12px;
+  transition: transform 500ms ease;
+}
+
+.isr-why__slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.isr-why__slide img {
+  max-height: 80px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* ---- Tradução: Banner ---- */
+.trad-banner {
+  min-height: 323px;
+  background-image: url("/assets/images/servicos/traducao-hero-banner.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ---- Tradução: Título ---- */
+.trad-intro {
+  padding: 29px 0 8px;
+  background: #fff;
+  text-align: center;
+}
+
+.trad-intro__inner {
+  width: min(92%, 1080px);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.trad-intro__icons {
+  display: block;
+  width: 12%;
+  min-width: 120px;
+  max-width: 180px;
+  height: auto;
+  margin: 0 auto 16px;
+}
+
+.trad-intro__title {
+  margin: 0 0 4px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #000;
+}
+
+.trad-intro__subtitle {
+  margin: 0 0 1px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.9;
+  color: #333;
+}
+
+/* ---- Tradução: Categorias + Definição ---- */
+.trad-categories-wrap {
+  padding: 0 0 0;
+  background: #fff;
+}
+
+.trad-categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: min(82%, 1080px);
+  margin: -34px auto 0;
+  padding: 42px 0 0;
+}
+
+.trad-category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 16px;
+  background: #deefff;
+  box-shadow: 6px 6px 18px 0 rgba(0, 0, 0, 0.3);
+}
+
+.trad-category__icon {
+  display: block;
+  width: 57%;
+  max-width: 154px;
+  height: auto;
+  margin: 0 auto 12px;
+  object-fit: contain;
+}
+
+.trad-category__label {
+  display: block;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #0064c9;
+  text-transform: uppercase;
+}
+
+.trad-definition {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 24px;
+  align-items: center;
+  width: min(92%, 1080px);
+  margin: 39px auto 31px;
+  padding: 27px 40px 27px 100px;
+  background: #deefff;
+  box-shadow: 6px 6px 18px 0 rgba(0, 0, 0, 0.3);
+}
+
+.trad-definition__title {
+  margin: 0 0 8px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #00276b;
+  line-height: 1.3;
+  text-shadow: 0.08em 0.08em 0.08em rgba(0, 0, 0, 0.23);
+}
+
+.trad-definition__type {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-style: italic;
+  color: #000;
+}
+
+.trad-definition__text {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #000;
+  text-align: left;
+  max-width: 800px;
+}
+
+.trad-definition__image {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: -13px auto 0;
+}
+
+/* ---- Tradução: Translation Services ---- */
+.trad-services {
+  padding: 0 0 44px;
+  background: #ededed;
+}
+
+.trad-services__inner {
+  width: min(92%, 1080px);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.trad-services__title {
+  margin: 0 0 4px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #000;
+}
+
+.trad-services__subtitle {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.9;
+  color: #666;
+}
+
+.trad-services__divider {
+  border: 0;
+  border-top: 1px solid #000;
+  margin: 12px 0 0;
+}
+
+/* ---- Tradução: Área em branco ---- */
+.trad-spacer {
+  min-height: 418px;
+  background-image: url("/assets/images/servicos/translations-services-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fff;
+}
+
+/* ---- Tradução: Como funciona ---- */
+.trad-how {
+  padding: 29px 0 48px;
+  background: #ededed;
+}
+
+.trad-how__inner {
+  width: min(92%, 1240px);
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.trad-how__icons {
+  display: block;
+  width: 12%;
+  min-width: 120px;
+  max-width: 180px;
+  height: auto;
+  margin: 0 auto 16px;
+}
+
+.trad-how__title {
+  margin: 0 0 4px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #000;
+}
+
+.trad-how__subtitle {
+  margin: 0 0 24px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.9;
+  color: #333;
+}
+
+.trad-how__prose {
+  max-width: 1240px;
+  margin: 0 auto 32px;
+  text-align: justify;
+}
+
+.trad-how__prose p {
+  margin: 0 0 16px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 1.4;
+  color: #000;
+}
+
+.trad-how__prose p:last-child {
+  margin-bottom: 0;
+}
+
+.trad-how__video {
+  position: relative;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  aspect-ratio: 4 / 3;
+  background: #000;
+}
+
+.trad-how__video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ---- Cursos Formativos / Instituto Humana ---- */
+.cursos-banner {
+  min-height: 323px;
+  background-image: url("/assets/images/servicos/instituto-hero-banner.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.cursos-intro {
+  padding: 29px 0 8px;
+  background: #fff;
+  text-align: center;
+}
+
+.cursos-intro__inner {
+  width: min(92%, 1080px);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.cursos-intro__logo {
+  display: block;
+  width: 15%;
+  min-width: 140px;
+  max-width: 220px;
+  height: auto;
+  margin: 0 auto 16px;
+}
+
+.cursos-intro__title {
+  margin: 0 0 4px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #000;
+}
+
+.cursos-intro__subtitle {
+  margin: 0 0 1px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.9;
+  color: #494949;
+}
+
+.cursos-content {
+  padding: 0 0 0;
+  background: #fff;
+}
+
+.cursos-content__inner {
+  width: min(92%, 1240px);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.cursos-prose {
+  padding: 22px 0;
+  margin-bottom: 30px;
+}
+
+.cursos-prose p {
+  margin: 0 0 16px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 1.4;
+  color: #000;
+  text-align: justify;
+}
+
+.cursos-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.cursos-prose strong,
+.cursos-prose b {
+  font-weight: 700;
+}
+
+.cursos-video {
+  position: relative;
+  width: 100%;
+  margin: 0 auto 30px;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.cursos-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.cursos-list {
+  padding: 22px 0 30px;
+}
+
+.cursos-list p {
+  margin: 0 0 12px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #000;
+  text-align: left;
+}
+
+.cursos-list p:last-child {
+  margin-bottom: 0;
+}
+
+.cursos-atividades {
+  padding: 29px 0 0;
+  background: #fff;
+}
+
+.cursos-atividades__header-wrap {
+  width: min(92%, 1080px);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.cursos-atividades__header {
+  margin-top: 26px;
+  text-align: center;
+}
+
+.cursos-atividades__title {
+  margin: 0 0 4px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #000;
+}
+
+.cursos-atividades__subtitle {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.9;
+  color: #666;
+}
+
+.cursos-atividades__divider {
+  border: 0;
+  border-top: 1px solid #000;
+  margin: 12px 0 0;
+}
+
+.cursos-atividades__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  width: 100%;
+  max-width: 2560px;
+  margin: 0 auto;
+  min-height: 492px;
+}
+
+.cursos-atividade {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 492px;
+}
+
+.cursos-atividade::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.27) 0%, rgba(0, 0, 0, 0.69) 100%);
+  transition: background 300ms ease;
+  pointer-events: none;
+}
+
+.cursos-atividade:hover::before {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.63) 0%, rgba(0, 0, 0, 0.98) 100%);
+}
+
+.cursos-atividade--reciclagem {
+  background-image: url("/assets/images/servicos/atividade-reciclagem.jpg");
+}
+
+.cursos-atividade--biblioteca {
+  background-image: url("/assets/images/servicos/atividade-biblioteca.jpg");
+}
+
+.cursos-atividade--desenvolvimento {
+  background-image: url("/assets/images/servicos/atividade-desenvolvimento.jpg");
+}
+
+.cursos-atividade__body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: inherit;
+  padding: 222px 40px 50px;
+}
+
+.cursos-atividade--biblioteca .cursos-atividade__body {
+  padding-top: 220px;
+}
+
+.cursos-atividade--desenvolvimento .cursos-atividade__body {
+  padding-top: 221px;
+}
+
+.cursos-atividade__title {
+  margin: 0 0 12px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #fff;
+}
+
+.cursos-atividade__text {
+  margin: 0;
+  padding-right: 20px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #fff;
+}
+
+.cursos-atividade__btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 7px 20px;
+  background: #51d2af;
+  color: #000;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 0;
+  transition: background-color 300ms ease;
+}
+
+.cursos-atividade__btn:hover {
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
   opacity: 1;
 }
 
@@ -415,19 +1444,39 @@
   opacity: 1;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 980px) {
+  .isp-banner__img {
+    height: clamp(180px, 32vw, 323px);
+  }
+
+  .isp-banner {
+    min-height: clamp(180px, 32vw, 323px);
+  }
+
+  .isp-intro__icons {
+    width: 12%;
+    min-width: 100px;
+  }
+
   .isp-stats {
     grid-template-columns: 1fr;
+    gap: 20px;
+    padding-top: 24px;
   }
 
-  .isp-stats__item {
-    border-right: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .isp-definition {
+  .isp-oque-e__card {
     grid-template-columns: 1fr;
-    padding: 28px 24px;
+  }
+
+  .isp-oque-e__media img {
+    min-height: 280px;
+  }
+
+  .isp-oque-e__dots {
+    top: auto;
+    bottom: -20px;
+    right: 24px;
+    transform: none;
   }
 
   .isp-features__row--top,
@@ -435,8 +1484,246 @@
     grid-template-columns: 1fr;
   }
 
+  .isp-feature {
+    min-height: 320px;
+  }
+
+  .isp-feature__body {
+    padding: 100px 20px 50px;
+  }
+
+  .isp-features__row--bottom .isp-feature__body {
+    padding-top: 100px;
+  }
+
+  .isp-feature__text {
+    padding-right: 0;
+  }
+
   .servico-definition {
     grid-template-columns: 1fr;
     padding: 28px 24px;
+  }
+
+  .trad-banner {
+    min-height: 100px;
+  }
+
+  .trad-intro__icons,
+  .trad-how__icons {
+    width: 12%;
+    min-width: 100px;
+  }
+
+  .trad-categories {
+    grid-template-columns: 1fr;
+    width: min(92%, 1080px);
+    margin-top: 0;
+    padding-top: 24px;
+  }
+
+  .trad-definition {
+    grid-template-columns: 1fr;
+    padding: 28px 32px;
+  }
+
+  .trad-definition__image {
+    margin-top: 0;
+    max-width: 200px;
+  }
+
+  .trad-spacer {
+    min-height: 286px;
+  }
+
+  .cursos-banner {
+    min-height: 100px;
+  }
+
+  .cursos-intro__logo {
+    width: 12%;
+    min-width: 120px;
+  }
+
+  .cursos-atividades__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cursos-atividade {
+    min-height: 320px;
+  }
+
+  .cursos-atividade__body {
+    padding: 100px 20px 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .isp-banner__img {
+    height: clamp(180px, 32vw, 323px);
+  }
+
+  .isp-banner {
+    min-height: clamp(180px, 32vw, 323px);
+  }
+
+  .isp-intro__icons {
+    width: 27%;
+    min-width: 90px;
+  }
+
+  .isp-intro__title {
+    font-size: clamp(24px, 6vw, 36px);
+  }
+
+  .isp-clients__header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .isp-clients__nav {
+    align-self: flex-end;
+  }
+
+  .isr-banner {
+    min-height: 100px;
+  }
+
+  .isr-intro__icons {
+    width: 12%;
+    min-width: 100px;
+  }
+
+  .isr-definition {
+    grid-template-columns: 1fr;
+    padding: 28px 32px;
+  }
+
+  .isr-definition__image {
+    margin-top: 0;
+    max-width: 200px;
+  }
+
+  .isr-protagonist,
+  .isr-protagonist--icon-right {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .isr-protagonist__icon {
+    max-width: min(56%, 352px);
+    margin: 0 auto;
+  }
+
+  .isr-protagonist__content--right .isr-protagonist__title,
+  .isr-protagonist__content--right .isr-protagonist__text {
+    text-align: left;
+  }
+
+  .isr-why__header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .isr-why__nav {
+    align-self: flex-end;
+  }
+
+  .trad-intro__icons,
+  .trad-how__icons {
+    width: 27%;
+    min-width: 90px;
+  }
+
+  .trad-definition__image {
+    width: 56%;
+    max-width: 280px;
+  }
+
+  .trad-spacer {
+    min-height: 154px;
+  }
+
+  .cursos-intro__logo {
+    width: 27%;
+    min-width: 100px;
+  }
+
+  .cursos-atividade__body {
+    padding: 100px 20px 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  .isp-intro__title {
+    font-size: 24px;
+  }
+
+  .isr-banner {
+    min-height: 100px;
+  }
+
+  .isr-intro__icons {
+    width: 27%;
+    min-width: 90px;
+  }
+
+  .isr-intro__title {
+    font-size: 24px;
+  }
+
+  .isr-definition {
+    padding: 28px 24px;
+  }
+
+  .isr-definition__image {
+    margin-top: 0;
+    max-width: 180px;
+  }
+
+  .isr-protagonists__inner {
+    padding: 0 20px;
+  }
+
+  .isr-protagonist,
+  .isr-protagonist--icon-right {
+    grid-template-columns: 1fr;
+  }
+
+  .isr-protagonist__icon {
+    max-width: 56%;
+    margin-top: 0;
+  }
+
+  .isr-protagonist__content--right .isr-protagonist__title,
+  .isr-protagonist__content--right .isr-protagonist__text {
+    text-align: left;
+  }
+
+  .isr-why__header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .isr-why__nav {
+    align-self: flex-end;
+  }
+
+  .trad-intro__title,
+  .trad-how__title {
+    font-size: 24px;
+  }
+
+  .trad-how__prose p {
+    font-size: 21px;
+  }
+
+  .cursos-intro__title {
+    font-size: 24px;
+  }
+
+  .cursos-prose p,
+  .cursos-list p {
+    font-size: 21px;
   }
 }

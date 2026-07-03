@@ -1,0 +1,707 @@
+/* ==========================================================================
+   Tradução — página premium
+   ========================================================================== */
+
+.tradx-page {
+  --tradx-navy: #0a1628;
+  --tradx-navy-soft: #132238;
+  --tradx-accent: #2d7dd2;
+  --tradx-accent-light: #4a9ae8;
+  --tradx-gold: #c9a227;
+  --tradx-muted: #5c6b7f;
+  --tradx-border: rgba(10, 22, 40, 0.08);
+  --tradx-bg: #f8fafc;
+  --tradx-bg-warm: #f4f6f9;
+  --tradx-radius: 16px;
+  --tradx-radius-lg: 24px;
+  --tradx-shadow: 0 24px 64px rgba(10, 22, 40, 0.08);
+  --tradx-shadow-sm: 0 8px 32px rgba(10, 22, 40, 0.06);
+  --tradx-max: 1180px;
+  --tradx-section: clamp(4.5rem, 9vw, 7rem);
+  font-family: 'Open Sans', system-ui, sans-serif;
+  color: var(--tradx-navy);
+  background: #fff;
+}
+
+.tradx-page #page-container {
+  overflow-x: clip;
+}
+
+.tradx-wrap {
+  width: min(100% - 2.5rem, var(--tradx-max));
+  margin-inline: auto;
+}
+
+.tradx-eyebrow {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tradx-accent);
+  margin-bottom: 1rem;
+}
+
+.tradx-section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.25rem;
+}
+
+.tradx-section-lead {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  line-height: 1.7;
+  color: var(--tradx-muted);
+  margin: 0;
+  max-width: 52ch;
+}
+
+.tradx-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.75rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  cursor: pointer;
+}
+
+.tradx-btn:hover {
+  transform: translateY(-2px);
+}
+
+.tradx-btn--primary {
+  background: linear-gradient(135deg, #2563b8, #1a4d8c);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(37, 99, 184, 0.35);
+}
+
+.tradx-btn--primary:hover {
+  box-shadow: 0 12px 32px rgba(37, 99, 184, 0.45);
+}
+
+.tradx-btn--ghost {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(8px);
+}
+
+.tradx-btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.tradx-btn--white {
+  background: #fff;
+  color: var(--tradx-navy);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+}
+
+.tradx-btn--white:hover {
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+}
+
+.tradx-page.is-motion-ready [data-tradx-motion] {
+  opacity: 0;
+}
+
+.tradx-page.is-motion-static [data-tradx-motion] {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   1. HERO
+   -------------------------------------------------------------------------- */
+.tradx-hero {
+  position: relative;
+  min-height: min(88vh, 780px);
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(7rem, 14vw, 9rem) 0 clamp(3.5rem, 7vw, 5rem);
+  overflow: hidden;
+}
+
+.tradx-hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.tradx-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tradx-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, rgba(10, 22, 40, 0.92) 0%, rgba(10, 22, 40, 0.55) 55%, rgba(10, 22, 40, 0.35) 100%);
+}
+
+.tradx-hero__inner {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 2.5rem, var(--tradx-max));
+  margin-inline: auto;
+  max-width: 680px;
+}
+
+.tradx-hero__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem, 4.5vw, 3.1rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin: 0 0 1.25rem;
+}
+
+.tradx-hero__desc {
+  font-size: clamp(1rem, 1.6vw, 1.125rem);
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0 0 2rem;
+  max-width: 54ch;
+}
+
+.tradx-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.tradx-hero .tradx-eyebrow {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* --------------------------------------------------------------------------
+   2. ALÉM DAS PALAVRAS
+   -------------------------------------------------------------------------- */
+.tradx-beyond {
+  padding: var(--tradx-section) 0;
+  background: #fff;
+}
+
+.tradx-beyond__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(2.5rem, 6vw, 5.5rem);
+  align-items: center;
+}
+
+.tradx-beyond__image {
+  position: relative;
+  border-radius: var(--tradx-radius-lg);
+  overflow: hidden;
+  aspect-ratio: 5 / 4;
+  box-shadow: var(--tradx-shadow);
+}
+
+.tradx-beyond__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tradx-beyond__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 65%, rgba(10, 22, 40, 0.12) 100%);
+}
+
+.tradx-beyond__text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--tradx-muted);
+  margin: 0 0 1.25rem;
+}
+
+.tradx-beyond__text:last-child {
+  margin-bottom: 0;
+}
+
+.tradx-beyond__highlight {
+  display: block;
+  margin-top: 1.75rem;
+  padding-left: 1.25rem;
+  border-left: 3px solid var(--tradx-accent);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.55;
+  color: var(--tradx-navy);
+}
+
+/* --------------------------------------------------------------------------
+   3. ESPECIALIDADES
+   -------------------------------------------------------------------------- */
+.tradx-specialties {
+  padding: var(--tradx-section) 0;
+  background: var(--tradx-bg);
+}
+
+.tradx-specialties__header {
+  text-align: center;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.tradx-specialties__header .tradx-section-lead {
+  margin-inline: auto;
+}
+
+.tradx-specialties__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.tradx-specialty {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.tradx-specialty__image {
+  border-radius: var(--tradx-radius);
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: #fff;
+}
+
+.tradx-specialty__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.tradx-specialty:hover .tradx-specialty__image img {
+  transform: scale(1.03);
+}
+
+.tradx-specialty__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  color: var(--tradx-navy);
+}
+
+.tradx-specialty__desc {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--tradx-muted);
+  margin: 0;
+}
+
+.tradx-specialty__line {
+  width: 2rem;
+  height: 2px;
+  background: var(--tradx-accent);
+  opacity: 0.5;
+}
+
+/* --------------------------------------------------------------------------
+   4. COMO FUNCIONA — timeline
+   -------------------------------------------------------------------------- */
+.tradx-process {
+  padding: var(--tradx-section) 0;
+  background: #fff;
+}
+
+.tradx-process__header {
+  text-align: center;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.tradx-process__header .tradx-section-lead {
+  margin-inline: auto;
+}
+
+.tradx-process__track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+}
+
+.tradx-process__line {
+  position: absolute;
+  top: 1.6rem;
+  left: 6%;
+  right: 6%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--tradx-accent) 12%, var(--tradx-accent) 88%, transparent);
+  opacity: 0.2;
+}
+
+.tradx-process__step {
+  position: relative;
+  text-align: center;
+  padding-top: 0.25rem;
+}
+
+.tradx-process__icon {
+  width: 3.25rem;
+  height: 3.25rem;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--tradx-bg);
+  border: 1px solid var(--tradx-border);
+  border-radius: 50%;
+  color: var(--tradx-accent);
+  box-shadow: var(--tradx-shadow-sm);
+}
+
+.tradx-process__step h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0 0 0.4rem;
+}
+
+.tradx-process__step p {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--tradx-muted);
+  margin: 0;
+}
+
+.tradx-process__arrow {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   5. POR QUE ESCOLHER
+   -------------------------------------------------------------------------- */
+.tradx-why {
+  padding: var(--tradx-section) 0;
+  background: var(--tradx-bg-warm);
+}
+
+.tradx-why__grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: center;
+}
+
+.tradx-why__image {
+  border-radius: var(--tradx-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--tradx-shadow);
+  aspect-ratio: 4 / 5;
+}
+
+.tradx-why__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tradx-why__list {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.tradx-why__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--tradx-border);
+}
+
+.tradx-why__item:first-child {
+  border-top: 1px solid var(--tradx-border);
+}
+
+.tradx-why__check {
+  flex-shrink: 0;
+  width: 1.35rem;
+  height: 1.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.1rem;
+  border-radius: 50%;
+  background: rgba(45, 125, 210, 0.1);
+  color: var(--tradx-accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.tradx-why__item h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* --------------------------------------------------------------------------
+   6. ÁREAS ATENDIDAS
+   -------------------------------------------------------------------------- */
+.tradx-areas {
+  padding: var(--tradx-section) 0;
+  background: var(--tradx-navy);
+  color: #fff;
+}
+
+.tradx-areas .tradx-eyebrow {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.tradx-areas .tradx-section-title {
+  color: #fff;
+}
+
+.tradx-areas .tradx-section-lead {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.tradx-areas__header {
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.tradx-areas__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.tradx-area {
+  position: relative;
+  padding: 1.5rem 1.25rem;
+  border-radius: var(--tradx-radius);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.tradx-area:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.tradx-area__bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.tradx-area__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tradx-area__label {
+  position: relative;
+  z-index: 1;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+/* --------------------------------------------------------------------------
+   7. VÍDEO INSTITUCIONAL
+   -------------------------------------------------------------------------- */
+.tradx-video {
+  padding: var(--tradx-section) 0;
+  background: #fff;
+}
+
+.tradx-video__layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.tradx-video__frame {
+  position: relative;
+  border-radius: var(--tradx-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--tradx-shadow);
+  background: var(--tradx-navy);
+  aspect-ratio: 16 / 9;
+}
+
+.tradx-video__frame::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(45, 125, 210, 0.4), rgba(201, 162, 39, 0.2));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tradx-video__frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   8. CTA FINAL
+   -------------------------------------------------------------------------- */
+.tradx-cta {
+  position: relative;
+  padding: clamp(5rem, 10vw, 7.5rem) 0;
+  overflow: hidden;
+}
+
+.tradx-cta__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.tradx-cta__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tradx-cta__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(10, 22, 40, 0.9) 0%, rgba(10, 22, 40, 0.75) 100%);
+}
+
+.tradx-cta__inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 620px;
+  margin-inline: auto;
+}
+
+.tradx-cta__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.85rem, 4vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.12;
+  color: #fff;
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.tradx-cta__desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 2rem;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .tradx-beyond__grid,
+  .tradx-why__grid,
+  .tradx-video__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .tradx-specialties__grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-inline: auto;
+  }
+
+  .tradx-process__track {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin-inline: auto;
+  }
+
+  .tradx-process__line {
+    display: none;
+  }
+
+  .tradx-process__arrow {
+    display: block;
+    text-align: center;
+    color: var(--tradx-accent);
+    opacity: 0.35;
+    font-size: 1.1rem;
+    margin: -0.15rem 0 0.35rem;
+  }
+
+  .tradx-areas__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tradx-why__grid {
+    direction: rtl;
+  }
+
+  .tradx-why__grid > * {
+    direction: ltr;
+  }
+}
+
+@media (max-width: 640px) {
+  .tradx-areas__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tradx-hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tradx-area {
+    min-height: 100px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tradx-specialty:hover .tradx-specialty__image img {
+    transform: none;
+  }
+
+  .tradx-btn:hover {
+    transform: none;
+  }
+}

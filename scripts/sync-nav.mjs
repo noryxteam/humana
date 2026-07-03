@@ -1,6 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { buildNavLogo } from './logo-template.mjs';
+import { buildLangSwitcher } from './lang-switcher.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -22,6 +24,11 @@ const OVERLAY_PAGES = new Set([
   'cop30.html',
   'parceiros.html',
   'tao-filmes.html',
+  'contato.html',
+  'isp.html',
+  'isr.html',
+  'traducao.html',
+  'cursos-formativos.html',
 ]);
 
 function activeFor(filePath) {
@@ -51,58 +58,41 @@ function buildNav(prefix, active, overlay) {
 
   return `  <nav class="${navClass}" aria-label="Navegação principal">
     <div class="page-nav__inner">
-      <a href="${prefix}index.html" class="page-nav__logo page-nav__logo--hero">
-        <span class="page-nav__logo-mark" aria-hidden="true">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="6" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="6" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="6" cy="30" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="30" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="30" r="3" fill="#00AEEF"/>
-          </svg>
-        </span>
-        <span class="page-nav__logo-copy">
-          <span class="page-nav__logo-name">Humana</span>
-          <span class="page-nav__logo-tag">Com &amp; Trad</span>
-        </span>
-      </a>
+      ${buildNavLogo(prefix)}
       <ul class="page-nav__list">
-        <li class="page-nav__item${a('inicio')}"><a href="${prefix}index.html">Início</a></li>
-        <li class="page-nav__item${a('sobre')}"><a href="${prefix}sobre.html">Sobre Nós</a></li>
+        <li class="page-nav__item${a('inicio')}"><a href="${prefix}index.html" data-i18n="nav.home">Início</a></li>
+        <li class="page-nav__item${a('sobre')}"><a href="${prefix}sobre.html" data-i18n="nav.about">Sobre Nós</a></li>
         <li class="page-nav__item page-nav__item--dropdown${a('servicos')}">
           <a href="#" class="page-nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-            Serviços
+            <span data-i18n="nav.services">Serviços</span>
             <span class="page-nav__link-icon" data-icon="chevron-down" data-icon-size="sm"></span>
           </a>
           <ul class="page-nav__dropdown">
-            <li><a href="${prefix}isp.html">Interpretação Simultânea Presencial</a></li>
-            <li><a href="${prefix}isr.html">Interpretação Simultânea Remota</a></li>
-            <li><a href="${prefix}traducao.html">Tradução</a></li>
-            <li><a href="${prefix}cursos-formativos.html">Cursos Formativos</a></li>
+            <li><a href="${prefix}isp.html" data-i18n="nav.isp">Interpretação Simultânea Presencial</a></li>
+            <li><a href="${prefix}isr.html" data-i18n="nav.isr">Interpretação Simultânea Remota</a></li>
+            <li><a href="${prefix}traducao.html" data-i18n="nav.translation">Tradução</a></li>
+            <li><a href="${prefix}cursos-formativos.html" data-i18n="nav.courses">Cursos Formativos</a></li>
           </ul>
         </li>
         <li class="page-nav__item${a('cop30')}"><a href="${prefix}cop30.html">COP30</a></li>
         <li class="page-nav__item page-nav__item--dropdown${a('parceiros')}">
           <a href="#" class="page-nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-            Parceiros
+            <span data-i18n="nav.partners">Parceiros</span>
             <span class="page-nav__link-icon" data-icon="chevron-down" data-icon-size="sm"></span>
           </a>
           <ul class="page-nav__dropdown">
-            <li><a href="${prefix}parceiros.html">Nossos Parceiros</a></li>
+            <li><a href="${prefix}parceiros.html" data-i18n="nav.partnersAll">Nossos Parceiros</a></li>
             <li><a href="${prefix}tao-filmes.html">TAO Filmes</a></li>
           </ul>
         </li>
-        <li class="page-nav__item${a('blog')}"><a href="${prefix}blog.html">Blog</a></li>
-        <li class="page-nav__item${a('contato')}"><a href="${prefix}contato.html">Contato</a></li>
+        <li class="page-nav__item${a('blog')}"><a href="${prefix}blog.html" data-i18n="nav.blog">Blog</a></li>
+        <li class="page-nav__item${a('contato')}"><a href="${prefix}contato.html" data-i18n="nav.contact">Contato</a></li>
       </ul>
       <a href="${prefix}contato.html" class="page-nav__cta">
-        Solicitar Orçamento
+        <span data-i18n="nav.cta">Solicitar Orçamento</span>
         <span class="page-nav__cta-icon" data-icon="arrow-right" data-icon-size="sm"></span>
       </a>
+      ${buildLangSwitcher(prefix)}
     </div>
   </nav>`;
 }

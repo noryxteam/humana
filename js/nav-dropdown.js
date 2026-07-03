@@ -1,5 +1,5 @@
 /**
- * Dropdown do menu Serviços — igual humanatraducao.com.br
+ * Dropdowns do menu — abrem só no clique; um fecha ao abrir o outro
  */
 (function () {
   'use strict';
@@ -17,7 +17,14 @@
   function init() {
     document.querySelectorAll('.page-nav__item--dropdown').forEach(function (item) {
       var trigger = item.querySelector('.page-nav__dropdown-trigger');
+      var menu = item.querySelector('.page-nav__dropdown');
       if (!trigger) return;
+
+      if (menu) {
+        menu.addEventListener('click', function (event) {
+          event.stopPropagation();
+        });
+      }
 
       trigger.addEventListener('click', function (event) {
         event.preventDefault();

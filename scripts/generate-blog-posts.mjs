@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { buildSiteFooter } from './footer-template.mjs';
+import { buildNavLogo } from './logo-template.mjs';
 
 const SECTION_ICONS = ['user', 'message-circle', 'globe', 'shield', 'graduation-cap', 'languages'];
 
@@ -652,25 +653,7 @@ function renderPost(post) {
 
   <nav class="page-nav page-nav--overlay" aria-label="Navegação principal">
     <div class="page-nav__inner">
-      <a href="../index.html" class="page-nav__logo page-nav__logo--hero">
-        <span class="page-nav__logo-mark" aria-hidden="true">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="6" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="6" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="6" cy="30" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="30" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="30" r="3" fill="#00AEEF"/>
-          </svg>
-        </span>
-        <span class="page-nav__logo-copy">
-          <span class="page-nav__logo-name">Humana</span>
-          <span class="page-nav__logo-tag">Com &amp; Trad</span>
-        </span>
-      </a>
+      ${buildNavLogo('../')}
       <ul class="page-nav__list">
         <li class="page-nav__item"><a href="../index.html">Início</a></li>
         <li class="page-nav__item"><a href="../sobre.html">Sobre Nós</a></li>

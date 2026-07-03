@@ -37,6 +37,16 @@
       ['polyline', { points: '12 6 12 12 16 14' }],
     ],
     'chevron-down': [['path', { d: 'm6 9 6 6 6-6' }]],
+    'chevron-left': [['path', { d: 'm15 18-6-6 6-6' }]],
+    'chevron-right': [['path', { d: 'm9 18 6-6-6-6' }]],
+    'clipboard-list': [
+      ['rect', { width: '8', height: '4', x: '8', y: '2', rx: '1', ry: '1' }],
+      ['path', { d: 'M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2' }],
+      ['path', { d: 'M12 11h4' }],
+      ['path', { d: 'M12 16h4' }],
+      ['path', { d: 'M8 11h.01' }],
+      ['path', { d: 'M8 16h.01' }],
+    ],
     flag: [
       ['path', { d: 'M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z' }],
       ['line', { x1: '4', x2: '4', y1: '22', y2: '15' }],
@@ -76,6 +86,11 @@
     ],
     headphones: [
       ['path', { d: 'M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3' }],
+    ],
+    headset: [
+      ['path', { d: 'M3 11h3a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1a9 9 0 0 1 18 0v1a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-1a2 2 0 0 1 2-2h3' }],
+      ['path', { d: 'M21 16v2a4 4 0 0 1-4 4h-2' }],
+      ['path', { d: 'M3 16v2a4 4 0 0 0 4 4h2' }],
     ],
     'heart-handshake': [
       ['path', { d: 'M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z' }],
@@ -128,6 +143,11 @@
       ['path', { d: 'M19 10v2a7 7 0 0 1-14 0v-2' }],
       ['line', { x1: '12', x2: '12', y1: '19', y2: '22' }],
     ],
+    map: [
+      ['path', { d: 'M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z' }],
+      ['path', { d: 'M15 5.764v15' }],
+      ['path', { d: 'M9 3.236v15' }],
+    ],
     'map-pinned': [
       ['path', { d: 'M18 8c0 3.613-3.869 7.429-5.393 8.795a1 1 0 0 1-1.214 0C9.87 15.429 6 11.613 6 8a6 6 0 0 1 12 0' }],
       ['circle', { cx: '12', cy: '8', r: '2' }],
@@ -151,6 +171,13 @@
     ],
     phone: [
       ['path', { d: 'M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384' }],
+    ],
+    radio: [
+      ['path', { d: 'M16.247 7.761a6 6 0 0 1 0 8.478' }],
+      ['path', { d: 'M19.075 4.933a10 10 0 0 1 0 14.134' }],
+      ['path', { d: 'M4.925 19.067a10 10 0 0 1 0-14.134' }],
+      ['path', { d: 'M7.753 16.239a6 6 0 0 1 0-8.478' }],
+      ['circle', { cx: '12', cy: '12', r: '2' }],
     ],
     rocket: [
       ['path', { d: 'M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z' }],
@@ -201,6 +228,17 @@
       ['path', { d: 'M2 8.82a15 15 0 0 1 20 0' }],
       ['path', { d: 'M5 12.429a10 10 0 0 1 14 0' }],
       ['path', { d: 'M8.5 16.429a5 5 0 0 1 7 0' }],
+    ],
+    wrench: [
+      ['path', { d: 'M14.7 6.3a1 1 0 0 0 0 .6l1.92 3.48a1 1 0 0 0 .6.4l3.48 1.92a1 1 0 0 0 1.06-.22l2.47-2.47a1 1 0 0 0 .22-1.06l-1.92-3.48a1 1 0 0 0-.6-.4l-3.48-1.92a1 1 0 0 0-1.06.22l-2.47 2.47a1 1 0 0 0-.22 1.06l1.92 3.48a1 1 0 0 0 .6.4z' }],
+      ['path', { d: 'm15 14-4 4' }],
+    ],
+    x: [
+      ['path', { d: 'M18 6 6 18' }],
+      ['path', { d: 'm6 6 12 12' }],
+    ],
+    zap: [
+      ['path', { d: 'M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13.5 10H20a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 10.5 14z' }],
     ],
     youtube: [
       ['path', { d: 'M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17' }],
@@ -260,7 +298,35 @@
     return svg;
   }
 
+  function mountDropdownIcons() {
+    var servicesDropdown = document.querySelector(
+      '.page-nav__list > .page-nav__item--dropdown .page-nav__dropdown'
+    );
+    if (!servicesDropdown) return;
+
+    var iconMap = [
+      { selector: 'a[href*="isp.html"]', icon: 'headphones' },
+      { selector: 'a[href*="isr.html"]', icon: 'monitor-smartphone' },
+      { selector: 'a[href*="traducao.html"]', icon: 'globe' },
+      { selector: 'a[href*="cursos-formativos.html"]', icon: 'graduation-cap' },
+    ];
+
+    iconMap.forEach(function (item) {
+      var link = servicesDropdown.querySelector(item.selector);
+      if (!link || link.querySelector('.page-nav__dropdown-icon')) return;
+
+      var span = document.createElement('span');
+      span.className = 'page-nav__dropdown-icon';
+      span.setAttribute('data-icon', item.icon);
+      span.setAttribute('data-icon-size', 'sm');
+      span.setAttribute('aria-hidden', 'true');
+      link.insertBefore(span, link.firstChild);
+    });
+  }
+
   function mountIcons() {
+    mountDropdownIcons();
+
     document.querySelectorAll('[data-icon]').forEach(function (node) {
       if (node.dataset.iconMounted === 'true') {
         return;

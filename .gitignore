@@ -1,2 +1,5 @@
 node_modules/
 dist/
+
+# Artefato de deploy (pacote gerado para o Hostinger)
+humana-hostinger.zip

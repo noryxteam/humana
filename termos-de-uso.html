@@ -16,58 +16,57 @@
 
   <nav class="page-nav" aria-label="Navegação principal">
     <div class="page-nav__inner">
-      <a href="index.html" class="page-nav__logo page-nav__logo--hero">
-        <span class="page-nav__logo-mark" aria-hidden="true">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="6" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="6" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="6" cy="30" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="30" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="30" r="3" fill="#00AEEF"/>
-          </svg>
-        </span>
+            <a href="index.html" class="page-nav__logo page-nav__logo--hero">
+        <img src="assets/images/logo-humana.png" alt="" class="page-nav__logo-img" width="84" height="40" decoding="async" aria-hidden="true">
         <span class="page-nav__logo-copy">
-          <span class="page-nav__logo-name">Humana</span>
-          <span class="page-nav__logo-tag">Com &amp; Trad</span>
-        </span>
+        <span class="page-nav__logo-name">Humana</span>
+        <span class="page-nav__logo-tag">com &amp; trad</span>
+      </span>
       </a>
       <ul class="page-nav__list">
-        <li class="page-nav__item"><a href="index.html">Início</a></li>
-        <li class="page-nav__item"><a href="sobre.html">Sobre Nós</a></li>
+        <li class="page-nav__item"><a href="index.html" data-i18n="nav.home">Início</a></li>
+        <li class="page-nav__item"><a href="sobre.html" data-i18n="nav.about">Sobre Nós</a></li>
         <li class="page-nav__item page-nav__item--dropdown">
           <a href="#" class="page-nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-            Serviços
+            <span data-i18n="nav.services">Serviços</span>
             <span class="page-nav__link-icon" data-icon="chevron-down" data-icon-size="sm"></span>
           </a>
           <ul class="page-nav__dropdown">
-            <li><a href="isp.html">Interpretação Simultânea Presencial</a></li>
-            <li><a href="isr.html">Interpretação Simultânea Remota</a></li>
-            <li><a href="traducao.html">Tradução</a></li>
-            <li><a href="cursos-formativos.html">Cursos Formativos</a></li>
+            <li><a href="isp.html" data-i18n="nav.isp">Interpretação Simultânea Presencial</a></li>
+            <li><a href="isr.html" data-i18n="nav.isr">Interpretação Simultânea Remota</a></li>
+            <li><a href="traducao.html" data-i18n="nav.translation">Tradução</a></li>
+            <li><a href="cursos-formativos.html" data-i18n="nav.courses">Cursos Formativos</a></li>
           </ul>
         </li>
         <li class="page-nav__item"><a href="cop30.html">COP30</a></li>
         <li class="page-nav__item page-nav__item--dropdown">
           <a href="#" class="page-nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-            Parceiros
+            <span data-i18n="nav.partners">Parceiros</span>
             <span class="page-nav__link-icon" data-icon="chevron-down" data-icon-size="sm"></span>
           </a>
           <ul class="page-nav__dropdown">
-            <li><a href="parceiros.html">Nossos Parceiros</a></li>
+            <li><a href="parceiros.html" data-i18n="nav.partnersAll">Nossos Parceiros</a></li>
             <li><a href="tao-filmes.html">TAO Filmes</a></li>
           </ul>
         </li>
-        <li class="page-nav__item"><a href="blog.html">Blog</a></li>
-        <li class="page-nav__item"><a href="contato.html">Contato</a></li>
+        <li class="page-nav__item"><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+        <li class="page-nav__item"><a href="contato.html" data-i18n="nav.contact">Contato</a></li>
       </ul>
       <a href="contato.html" class="page-nav__cta">
-        Solicitar Orçamento
+        <span data-i18n="nav.cta">Solicitar Orçamento</span>
         <span class="page-nav__cta-icon" data-icon="arrow-right" data-icon-size="sm"></span>
       </a>
+            <div class="lang-switcher" data-lang-switcher role="group" aria-label="Idioma / Language">
+        <button type="button" class="lang-switcher__btn is-active" data-lang="pt" aria-label="Português" title="Português">
+          <img src="assets/images/flags/br.svg" alt="" width="20" height="14" decoding="async">
+        </button>
+        <button type="button" class="lang-switcher__btn" data-lang="en" aria-label="English" title="English">
+          <img src="assets/images/flags/us.svg" alt="" width="20" height="14" decoding="async">
+        </button>
+        <button type="button" class="lang-switcher__btn" data-lang="es" aria-label="Español" title="Español">
+          <img src="assets/images/flags/es.svg" alt="" width="20" height="14" decoding="async">
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -100,51 +99,40 @@
     <div class="site-footer__main">
       <div class="site-footer__inner">
         <div class="site-footer__brand">
-          <a href="index.html" class="site-footer__logo">
-            <span class="site-footer__logo-mark"><svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="6" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="6" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="6" cy="30" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="30" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="30" r="3" fill="#00AEEF"/>
-          </svg></span>
+          <a href="index.html" class="site-footer__logo" aria-label="HUMANA com &amp; trad">
+            <img src="assets/images/logo-humana.png" alt="" class="site-footer__logo-img" width="76" height="36" decoding="async" aria-hidden="true">
             <span class="site-footer__logo-copy">
-              <span class="site-footer__logo-name">Humana</span>
-              <span class="site-footer__logo-tag">Com &amp; Trad</span>
-            </span>
+        <span class="site-footer__logo-name">Humana</span>
+        <span class="site-footer__logo-tag">com &amp; trad</span>
+      </span>
           </a>
-          <p class="site-footer__about">Empresa amazônica de serviços linguísticos com atuação em tradução, interpretação e formação — conectando pessoas, culturas e idiomas desde 1995.</p>
         </div>
 
         <nav class="site-footer__col" aria-label="Navegação do site">
-          <h3 class="site-footer__heading">Navegação</h3>
+          <h3 class="site-footer__heading" data-i18n="footer.nav">Navegação</h3>
           <ul class="site-footer__list">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+            <li><a href="sobre.html" data-i18n="nav.about">Sobre Nós</a></li>
             <li><a href="cop30.html">COP30</a></li>
-            <li><a href="parceiros.html">Parceiros</a></li>
-            <li><a href="isp.html">Serviços</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contato.html">Contato</a></li>
+            <li><a href="parceiros.html" data-i18n="nav.partners">Parceiros</a></li>
+            <li><a href="isp.html" data-i18n="nav.services">Serviços</a></li>
+            <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="contato.html" data-i18n="nav.contact">Contato</a></li>
           </ul>
         </nav>
 
         <nav class="site-footer__col" aria-label="Serviços">
-          <h3 class="site-footer__heading">Serviços</h3>
+          <h3 class="site-footer__heading" data-i18n="footer.services">Serviços</h3>
           <ul class="site-footer__list">
-            <li><a href="traducao.html">Tradução</a></li>
-            <li><a href="isp.html">Interpretação Presencial</a></li>
-            <li><a href="isr.html">Interpretação Remota</a></li>
-            <li><a href="cursos-formativos.html">Cursos Formativos</a></li>
+            <li><a href="traducao.html" data-i18n="nav.translation">Tradução</a></li>
+            <li><a href="isp.html" data-i18n="footer.ispShort">Interpretação Presencial</a></li>
+            <li><a href="isr.html" data-i18n="footer.isrShort">Interpretação Remota</a></li>
+            <li><a href="cursos-formativos.html" data-i18n="nav.courses">Cursos Formativos</a></li>
           </ul>
         </nav>
 
         <div class="site-footer__col">
-          <h3 class="site-footer__heading">Contato</h3>
+          <h3 class="site-footer__heading" data-i18n="footer.contact">Contato</h3>
           <ul class="site-footer__contact">
             <li>
               <a href="tel:+5591991005523">
@@ -167,7 +155,7 @@
             <li>
               <span class="site-footer__contact-static">
                 <span class="site-footer__contact-icon" data-icon="map-pinned" data-icon-size="sm" aria-hidden="true"></span>
-                <span>Travessa Jupira s/n Lt 05-06 Qd 18, Jardim Tropicália — Marahú, Belém/PA</span>
+                <span data-i18n="footer.address">Travessa Jupira s/n Lt 05-06 Qd 18, Jardim Tropicália — Marahú, Belém/PA</span>
               </span>
             </li>
           </ul>
@@ -177,14 +165,18 @@
 
     <div class="site-footer__bottom">
       <div class="site-footer__bottom-inner">
-        <p class="site-footer__copy">&copy; 2026 HUMANA COM &amp; TRAD. Todos os direitos reservados.</p>
+        <p class="site-footer__copy" data-i18n="footer.copyright" data-i18n-year="2026">&copy; 2026 HUMANA COM &amp; TRAD. Todos os direitos reservados.</p>
         <ul class="site-footer__legal">
-          <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
-          <li><a href="termos-de-uso.html">Termos de Uso</a></li>
+          <li><a href="politica-privacidade.html" data-i18n="footer.privacy">Política de Privacidade</a></li>
+          <li><a href="termos-de-uso.html" data-i18n="footer.terms">Termos de Uso</a></li>
         </ul>
       </div>
     </div>
   </footer>
+  <script src="js/i18n-common.js"></script>
+  <script src="js/i18n-pages.js"></script>
+  <script src="js/i18n.js"></script>
+
 
   <script src="js/nav-dropdown.js"></script>
   <script src="js/icons.js"></script>

@@ -7,145 +7,630 @@
   <meta name="description" content="Interpretação simultânea presencial de alto nível para conferências, seminários e eventos multilíngues.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/servicos-page.css">
-<script src="js/page-transition.js"></script>
+  <link rel="stylesheet" href="css/isp-page.css">
+  <script src="js/page-transition.js"></script>
 </head>
-<body class="servico-page servico-page--isp">
+<body class="servico-page servico-page--isp ispx-page">
 
-  <nav class="page-nav" aria-label="Navegação principal">
+  <nav class="page-nav page-nav--overlay" aria-label="Navegação principal">
     <div class="page-nav__inner">
-      <a href="index.html" class="page-nav__logo page-nav__logo--hero">
-        <span class="page-nav__logo-mark" aria-hidden="true">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="6" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="6" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="6" cy="30" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="30" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="30" r="3" fill="#00AEEF"/>
-          </svg>
-        </span>
+            <a href="index.html" class="page-nav__logo page-nav__logo--hero">
+        <img src="assets/images/logo-humana.png" alt="" class="page-nav__logo-img" width="84" height="40" decoding="async" aria-hidden="true">
         <span class="page-nav__logo-copy">
-          <span class="page-nav__logo-name">Humana</span>
-          <span class="page-nav__logo-tag">Com &amp; Trad</span>
-        </span>
+        <span class="page-nav__logo-name">Humana</span>
+        <span class="page-nav__logo-tag">com &amp; trad</span>
+      </span>
       </a>
       <ul class="page-nav__list">
-        <li class="page-nav__item"><a href="index.html">Início</a></li>
-        <li class="page-nav__item"><a href="sobre.html">Sobre Nós</a></li>
+        <li class="page-nav__item"><a href="index.html" data-i18n="nav.home">Início</a></li>
+        <li class="page-nav__item"><a href="sobre.html" data-i18n="nav.about">Sobre Nós</a></li>
         <li class="page-nav__item page-nav__item--dropdown is-active">
           <a href="#" class="page-nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-            Serviços
+            <span data-i18n="nav.services">Serviços</span>
             <span class="page-nav__link-icon" data-icon="chevron-down" data-icon-size="sm"></span>
           </a>
           <ul class="page-nav__dropdown">
-            <li><a href="isp.html">Interpretação Simultânea Presencial</a></li>
-            <li><a href="isr.html">Interpretação Simultânea Remota</a></li>
-            <li><a href="traducao.html">Tradução</a></li>
-            <li><a href="cursos-formativos.html">Cursos Formativos</a></li>
+            <li><a href="isp.html" data-i18n="nav.isp">Interpretação Simultânea Presencial</a></li>
+            <li><a href="isr.html" data-i18n="nav.isr">Interpretação Simultânea Remota</a></li>
+            <li><a href="traducao.html" data-i18n="nav.translation">Tradução</a></li>
+            <li><a href="cursos-formativos.html" data-i18n="nav.courses">Cursos Formativos</a></li>
           </ul>
         </li>
         <li class="page-nav__item"><a href="cop30.html">COP30</a></li>
         <li class="page-nav__item page-nav__item--dropdown">
           <a href="#" class="page-nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-            Parceiros
+            <span data-i18n="nav.partners">Parceiros</span>
             <span class="page-nav__link-icon" data-icon="chevron-down" data-icon-size="sm"></span>
           </a>
           <ul class="page-nav__dropdown">
-            <li><a href="parceiros.html">Nossos Parceiros</a></li>
+            <li><a href="parceiros.html" data-i18n="nav.partnersAll">Nossos Parceiros</a></li>
             <li><a href="tao-filmes.html">TAO Filmes</a></li>
           </ul>
         </li>
-        <li class="page-nav__item"><a href="blog.html">Blog</a></li>
-        <li class="page-nav__item"><a href="contato.html">Contato</a></li>
+        <li class="page-nav__item"><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+        <li class="page-nav__item"><a href="contato.html" data-i18n="nav.contact">Contato</a></li>
       </ul>
       <a href="contato.html" class="page-nav__cta">
-        Solicitar Orçamento
+        <span data-i18n="nav.cta">Solicitar Orçamento</span>
         <span class="page-nav__cta-icon" data-icon="arrow-right" data-icon-size="sm"></span>
       </a>
+            <div class="lang-switcher" data-lang-switcher role="group" aria-label="Idioma / Language">
+        <button type="button" class="lang-switcher__btn is-active" data-lang="pt" aria-label="Português" title="Português">
+          <img src="assets/images/flags/br.svg" alt="" width="20" height="14" decoding="async">
+        </button>
+        <button type="button" class="lang-switcher__btn" data-lang="en" aria-label="English" title="English">
+          <img src="assets/images/flags/us.svg" alt="" width="20" height="14" decoding="async">
+        </button>
+        <button type="button" class="lang-switcher__btn" data-lang="es" aria-label="Español" title="Español">
+          <img src="assets/images/flags/es.svg" alt="" width="20" height="14" decoding="async">
+        </button>
+      </div>
     </div>
   </nav>
 
   <div id="page-container">
 
-    <section class="isp-hero">
-      <div class="isp-hero__inner">
-        <img class="isp-hero__banner" src="assets/images/servicos/isp-banner.png" alt="" width="800" height="380" loading="eager">
-        <h1 class="isp-hero__title">Interpretação Simultânea Presencial</h1>
-        <p class="isp-hero__subtitle">A necessidade de adaptabilidade</p>
-      </div>
-    </section>
-
-    <div class="isp-stats" aria-label="Números da HUMANA">
-      <div class="isp-stats__item">
-        <img class="isp-stats__icon" src="assets/images/servicos/39-tradutores.png" alt="" width="270" height="151" loading="lazy">
-        <span class="isp-stats__value">39</span>
-        <span class="isp-stats__label">Tradutores</span>
-      </div>
-      <div class="isp-stats__item">
-        <img class="isp-stats__icon" src="assets/images/servicos/97-interpretes.png" alt="" width="270" height="151" loading="lazy">
-        <span class="isp-stats__value">97</span>
-        <span class="isp-stats__label">Intérpretes</span>
-      </div>
-      <div class="isp-stats__item">
-        <span class="isp-stats__value">300+</span>
-        <span class="isp-stats__label">Serviços de interpretação</span>
-      </div>
-    </div>
-
-    <section class="isp-definition-wrap">
-      <div class="isp-definition">
-        <div>
-          <h2 class="isp-definition__title">Interpretação Simultânea (IS)</h2>
-          <p class="isp-definition__type"><em>[substantivo, s. f.]</em></p>
-          <p class="isp-definition__text">Ação que consiste em estabelecer, simultânea ou consecutivamente, comunicação verbal ou não verbal entre duas entidades, pessoas ou entre um locutor e seu público.</p>
+    <!-- 1. HERO -->
+    <section class="ispx-hero" aria-labelledby="ispx-hero-title">
+      <img class="ispx-hero__bg" src="assets/images/servicos/isp-hero-banner.jpg" alt="" width="1920" height="680" decoding="async" loading="eager">
+      <div class="ispx-hero__overlay" aria-hidden="true"></div>
+      <div class="ispx-hero__content">
+        <p class="ispx-eyebrow">Serviço especializado</p>
+        <h1 id="ispx-hero-title" class="ispx-hero__title">Interpretação Simultânea Presencial</h1>
+        <p class="ispx-hero__desc">Comunicação multilíngue de alto padrão para congressos, conferências e eventos corporativos — com intérpretes especializados, equipamentos profissionais e suporte técnico completo.</p>
+        <div class="ispx-hero__actions">
+          <a href="contato.html" class="ispx-btn ispx-btn--primary">Solicitar Orçamento</a>
+          <a href="contato.html" class="ispx-btn ispx-btn--ghost">Falar com Especialista</a>
         </div>
-        <img class="isp-definition__image" src="assets/images/servicos/97-interpretes.png" alt="" width="270" height="151" loading="lazy">
-      </div>
-    </section>
-
-    <section class="isp-features">
-      <div class="isp-features__inner">
-        <div class="isp-features__row isp-features__row--top">
-          <article class="isp-feature">
-            <h3 class="isp-feature__title">Versatilidade</h3>
-            <p class="isp-feature__text">Ao longo dos primeiros quinze anos da sua trajetória, a HUMANA COM &amp; TRAD tem prestado 300 serviços de interpretação em eventos de <strong>variadas disciplinas e temáticas</strong>.</p>
-            <a href="blog/trabalhos-isp.html" class="isp-feature__link">Saber mais</a>
-          </article>
-          <article class="isp-feature">
-            <h3 class="isp-feature__title">Adaptação</h3>
-            <p class="isp-feature__text">Seja a versatilidade, no que se refere aos temas tratados, assim como a <strong>capacidade de adaptação</strong>, na hora de trabalhar em lugares remotos, representam um <strong>valor adicional</strong> que a empresa potencia ao máximo.</p>
-            <a href="blog/trabalhos-isp.html" class="isp-feature__link">Saber mais</a>
-          </article>
-          <article class="isp-feature">
-            <h3 class="isp-feature__title">Situação comunicativa</h3>
-            <p class="isp-feature__text">Para atender esta demanda por <strong>serviços especializados</strong>, analisamos as condições particulares de cada evento para decidir os meios humanos e técnicos necessários para melhor atendê-lo.</p>
-            <a href="blog/trabalhos-isp.html" class="isp-feature__link">Saber mais</a>
-          </article>
-        </div>
-        <div class="isp-features__row isp-features__row--bottom">
-          <article class="isp-feature">
-            <h3 class="isp-feature__title">Mobilidade</h3>
-            <p class="isp-feature__text">A estrutura e a organização da HUMANA COM &amp; TRAD permitem que a empresa possua uma <strong>grande agilidade</strong> administrativa e logística, assim como capacidade de <strong>mobilidade geográfica</strong>.</p>
-            <a href="blog/trabalhos-isp.html" class="isp-feature__link">Saber mais</a>
-          </article>
-          <article class="isp-feature">
-            <h3 class="isp-feature__title">Eventos Emblemáticos</h3>
-            <p class="isp-feature__text">A HUMANA participou de eventos de grande relevância nacional e internacional, consolidando experiência em congressos científicos, conferências ambientais e encontros multilíngues.</p>
-            <a href="blog/trabalhos-isp.html" class="isp-feature__link">Saber mais</a>
-          </article>
+        <div class="ispx-hero__metrics">
+          <div class="ispx-hero__metric">
+            <strong>300+</strong>
+            <span>Eventos realizados</span>
+          </div>
+          <div class="ispx-hero__metric">
+            <strong>15+</strong>
+            <span>Idiomas disponíveis</span>
+          </div>
+          <div class="ispx-hero__metric">
+            <strong>17</strong>
+            <span>Anos de experiência</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="isp-orcamento">
-      <h2 class="isp-orcamento__title">Orçamento</h2>
-      <a href="contato.html" class="isp-orcamento__btn">Solicitar orçamento &rarr;</a>
+    <main>
+
+      <!-- 2. POR QUE ESCOLHER -->
+      <section class="ispx-why" aria-labelledby="ispx-why-title">
+        <div class="ispx-wrap">
+          <div class="ispx-why__grid">
+            <div class="ispx-reveal">
+              <p class="ispx-eyebrow">Por que escolher</p>
+              <h2 id="ispx-why-title" class="ispx-section-title">Interpretação simultânea presencial?</h2>
+              <p class="ispx-section-lead">A interpretação simultânea permite que participantes de diferentes nacionalidades compreendam o conteúdo em tempo real, sem interrupções — essencial para eventos internacionais de alto impacto.</p>
+              <ul class="ispx-why__benefits">
+                <li>
+                  <span class="ispx-why__benefits-icon" data-icon="zap" data-icon-size="sm" aria-hidden="true"></span>
+                  <div>
+                    <h3>Comunicação em tempo real</h3>
+                    <p>Mensagens transmitidas instantaneamente, mantendo o ritmo e a fluidez do evento.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="ispx-why__benefits-icon" data-icon="users" data-icon-size="sm" aria-hidden="true"></span>
+                  <div>
+                    <h3>Inclusão de todos os participantes</h3>
+                    <p>Cada ouvinte acompanha palestras e debates no seu idioma, com igual acesso à informação.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="ispx-why__benefits-icon" data-icon="award" data-icon-size="sm" aria-hidden="true"></span>
+                  <div>
+                    <h3>Imagem profissional</h3>
+                    <p>Demonstra compromisso com excelência e respeito à diversidade linguística do seu público.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="ispx-why__benefits-icon" data-icon="globe" data-icon-size="sm" aria-hidden="true"></span>
+                  <div>
+                    <h3>Alcance internacional</h3>
+                    <p>Amplie o impacto do seu evento para delegações, parceiros e stakeholders de todo o mundo.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <figure class="ispx-why__visual ispx-reveal ispx-reveal--delay-2">
+              <img src="assets/images/servicos/isp-o-que-e.jpg" alt="Intérprete em cabine de interpretação simultânea" width="720" height="900" loading="lazy">
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. EXPERIÊNCIA E CREDIBILIDADE -->
+      <section class="ispx-trust" aria-labelledby="ispx-trust-title">
+        <div class="ispx-wrap">
+          <header class="ispx-trust__header" data-ispx-trust-motion="header">
+            <p class="ispx-eyebrow">Nossa trajetória</p>
+            <h2 id="ispx-trust-title" class="ispx-trust__title">Experiência que conecta</h2>
+            <p class="ispx-trust__intro">Há mais de uma década, transformamos comunicação em conexões reais entre pessoas, culturas e ideias — com interpretação simultânea presencial de padrão internacional.</p>
+          </header>
+
+          <div class="ispx-trust__stage">
+            <figure class="ispx-trust__figure" data-ispx-trust-motion="figure">
+              <img src="assets/images/servicos/versatilidade.jpg" alt="Intérpretes profissionais em evento corporativo internacional com equipamentos de interpretação simultânea" width="1400" height="780" loading="lazy" decoding="async">
+              <span class="ispx-trust__figure-overlay" aria-hidden="true"></span>
+            </figure>
+
+            <div class="ispx-trust__stats" aria-label="Indicadores de experiência">
+              <article class="ispx-trust__stat ispx-trust__stat--tl" data-ispx-trust-motion="stat">
+                <p class="ispx-trust__stat-num"><span data-ispx-count="300" data-ispx-suffix="+">0</span></p>
+                <h3 class="ispx-trust__stat-title">Eventos realizados</h3>
+                <p class="ispx-trust__stat-desc">Soluções sob medida para eventos de todos os portes e segmentos.</p>
+              </article>
+              <article class="ispx-trust__stat ispx-trust__stat--tr" data-ispx-trust-motion="stat">
+                <p class="ispx-trust__stat-num"><span data-ispx-count="97">0</span></p>
+                <h3 class="ispx-trust__stat-title">Intérpretes especializados</h3>
+                <p class="ispx-trust__stat-desc">Profissionais altamente qualificados e experientes ao seu lado.</p>
+              </article>
+              <article class="ispx-trust__stat ispx-trust__stat--bl" data-ispx-trust-motion="stat">
+                <p class="ispx-trust__stat-num"><span data-ispx-count="15" data-ispx-suffix="+">0</span></p>
+                <h3 class="ispx-trust__stat-title">Idiomas atendidos</h3>
+                <p class="ispx-trust__stat-desc">Comunicação sem barreiras em qualquer lugar do mundo.</p>
+              </article>
+              <article class="ispx-trust__stat ispx-trust__stat--br" data-ispx-trust-motion="stat">
+                <p class="ispx-trust__stat-num"><span data-ispx-count="20" data-ispx-suffix="+">0</span></p>
+                <h3 class="ispx-trust__stat-title">Países atendidos</h3>
+                <p class="ispx-trust__stat-desc">Atuação global com a mesma excelência em cada detalhe.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="ispx-trust__timeline-block" data-ispx-trust-motion="timeline-block">
+            <span class="ispx-trust__timeline-rule" aria-hidden="true"></span>
+            <ol class="ispx-trust__timeline" aria-label="Evolução da HUMANA">
+              <li class="ispx-trust__timeline-item" data-ispx-trust-motion="timeline-item">
+                <span class="ispx-trust__timeline-marker" aria-hidden="true"></span>
+                <h3 class="ispx-trust__timeline-title">Fundação</h3>
+                <p class="ispx-trust__timeline-desc">A HUMANA nasce em Belém do Pará com foco em excelência linguística e atendimento humanizado.</p>
+              </li>
+              <li class="ispx-trust__timeline-item" data-ispx-trust-motion="timeline-item">
+                <span class="ispx-trust__timeline-marker" aria-hidden="true"></span>
+                <h3 class="ispx-trust__timeline-title">Primeiros eventos internacionais</h3>
+                <p class="ispx-trust__timeline-desc">Presença em congressos e encontros multilíngues no Brasil e no exterior.</p>
+              </li>
+              <li class="ispx-trust__timeline-item" data-ispx-trust-motion="timeline-item">
+                <span class="ispx-trust__timeline-marker" aria-hidden="true"></span>
+                <h3 class="ispx-trust__timeline-title">Expansão da equipe</h3>
+                <p class="ispx-trust__timeline-desc">Formação de uma rede de intérpretes especializados em temas técnicos e institucionais.</p>
+              </li>
+              <li class="ispx-trust__timeline-item" data-ispx-trust-motion="timeline-item">
+                <span class="ispx-trust__timeline-marker" aria-hidden="true"></span>
+                <h3 class="ispx-trust__timeline-title">Atuação em diversos idiomas</h3>
+                <p class="ispx-trust__timeline-desc">Cobertura de mais de 15 idiomas em eventos corporativos, acadêmicos e diplomáticos.</p>
+              </li>
+              <li class="ispx-trust__timeline-item" data-ispx-trust-motion="timeline-item">
+                <span class="ispx-trust__timeline-marker" aria-hidden="true"></span>
+                <h3 class="ispx-trust__timeline-title">Referência em interpretação simultânea</h3>
+                <p class="ispx-trust__timeline-desc">Mais de 300 eventos realizados com padrão internacional de qualidade e confiabilidade.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. COMO FUNCIONA -->
+      <section class="ispx-process" aria-labelledby="ispx-process-title">
+        <div class="ispx-wrap">
+          <header class="ispx-process__header ispx-reveal">
+            <p class="ispx-eyebrow">Metodologia</p>
+            <h2 id="ispx-process-title" class="ispx-section-title">Como funciona</h2>
+            <p class="ispx-section-lead">Do planejamento ao suporte pós-evento — um processo estruturado para garantir comunicação impecável em cada etapa.</p>
+          </header>
+          <div class="ispx-process__track">
+            <div class="ispx-process__line" aria-hidden="true"></div>
+            <article class="ispx-process__step ispx-reveal">
+              <div class="ispx-process__step-icon" data-icon="clipboard-list" data-icon-size="md" aria-hidden="true"></div>
+              <h3>Planejamento</h3>
+              <p>Análise das necessidades do evento, idiomas, público e infraestrutura do local.</p>
+            </article>
+            <article class="ispx-process__step ispx-reveal ispx-reveal--delay-1">
+              <div class="ispx-process__step-icon" data-icon="users" data-icon-size="md" aria-hidden="true"></div>
+              <h3>Preparação da equipe</h3>
+              <p>Seleção de intérpretes especializados no tema e briefing técnico completo.</p>
+            </article>
+            <article class="ispx-process__step ispx-reveal ispx-reveal--delay-2">
+              <div class="ispx-process__step-icon" data-icon="radio" data-icon-size="md" aria-hidden="true"></div>
+              <h3>Equipamentos</h3>
+              <p>Instalação e testes de cabines, receptores, transmissores e sistemas de áudio.</p>
+            </article>
+            <article class="ispx-process__step ispx-reveal ispx-reveal--delay-3">
+              <div class="ispx-process__step-icon" data-icon="mic" data-icon-size="md" aria-hidden="true"></div>
+              <h3>Evento</h3>
+              <p>Interpretação simultânea em tempo real com supervisão técnica in loco.</p>
+            </article>
+            <article class="ispx-process__step ispx-reveal">
+              <div class="ispx-process__step-icon" data-icon="headset" data-icon-size="md" aria-hidden="true"></div>
+              <h3>Suporte</h3>
+              <p>Acompanhamento durante todo o evento e assistência técnica imediata.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. DIFERENCIAIS -->
+      <section class="ispx-diff" aria-labelledby="ispx-diff-title">
+        <div class="ispx-wrap">
+          <header class="ispx-diff__header ispx-reveal">
+            <p class="ispx-eyebrow">Diferenciais</p>
+            <h2 id="ispx-diff-title" class="ispx-section-title">Por que a HUMANA</h2>
+            <p class="ispx-section-lead">Experiência acumulada em eventos multilíngues, com equipe qualificada e infraestrutura técnica de padrão internacional.</p>
+          </header>
+          <div class="ispx-diff__grid">
+            <article class="ispx-diff-card ispx-reveal">
+              <div class="ispx-diff-card__icon" data-icon="users" data-icon-size="lg" aria-hidden="true"></div>
+              <h3>Equipe especializada</h3>
+              <p>97 intérpretes com formação e experiência em congressos, seminários e eventos corporativos.</p>
+            </article>
+            <article class="ispx-diff-card ispx-reveal ispx-reveal--delay-1">
+              <div class="ispx-diff-card__icon" data-icon="radio" data-icon-size="lg" aria-hidden="true"></div>
+              <h3>Equipamentos profissionais</h3>
+              <p>Cabines, receptores e sistemas de transmissão de última geração para qualquer porte de evento.</p>
+            </article>
+            <article class="ispx-diff-card ispx-reveal ispx-reveal--delay-2">
+              <div class="ispx-diff-card__icon" data-icon="map-pinned" data-icon-size="lg" aria-hidden="true"></div>
+              <h3>Atendimento nacional</h3>
+              <p>Cobertura em todo o Brasil, com mobilidade logística e agilidade administrativa.</p>
+            </article>
+            <article class="ispx-diff-card ispx-reveal">
+              <div class="ispx-diff-card__icon" data-icon="globe" data-icon-size="lg" aria-hidden="true"></div>
+              <h3>Eventos internacionais</h3>
+              <p>Atuação no Escudo das Guianas, África e conferências globais de alto impacto.</p>
+            </article>
+            <article class="ispx-diff-card ispx-reveal ispx-reveal--delay-1">
+              <div class="ispx-diff-card__icon" data-icon="wrench" data-icon-size="lg" aria-hidden="true"></div>
+              <h3>Suporte técnico</h3>
+              <p>Equipe técnica dedicada antes, durante e após o evento para garantir operação contínua.</p>
+            </article>
+            <article class="ispx-diff-card ispx-reveal ispx-reveal--delay-2">
+              <div class="ispx-diff-card__icon" data-icon="clipboard-list" data-icon-size="lg" aria-hidden="true"></div>
+              <h3>Planejamento personalizado</h3>
+              <p>Cada evento é analisado individualmente para definir a melhor solução humana e técnica.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. TIPOS DE EVENTOS -->
+      <section class="ispx-events" aria-labelledby="ispx-events-title">
+        <div class="ispx-wrap">
+          <header class="ispx-events__header ispx-reveal">
+            <p class="ispx-eyebrow">Onde atuamos</p>
+            <h2 id="ispx-events-title" class="ispx-section-title">Tipos de eventos</h2>
+          </header>
+          <div class="ispx-events__grid">
+            <article class="ispx-event-card ispx-reveal">
+              <img src="assets/images/servicos/versatilidade.jpg" alt="" width="600" height="450" loading="lazy">
+              <div class="ispx-event-card__body">
+                <h3>Congressos</h3>
+                <p>Grandes encontros científicos e acadêmicos com múltiplos idiomas e salas simultâneas.</p>
+              </div>
+            </article>
+            <article class="ispx-event-card ispx-reveal ispx-reveal--delay-1">
+              <img src="assets/images/servicos/situacao-comunicativa.jpg" alt="" width="600" height="450" loading="lazy">
+              <div class="ispx-event-card__body">
+                <h3>Seminários</h3>
+                <p>Debates técnicos e formativos com interpretação precisa e contextualizada.</p>
+              </div>
+            </article>
+            <article class="ispx-event-card ispx-reveal ispx-reveal--delay-2">
+              <img src="assets/images/servicos/adaptacao.jpg" alt="" width="600" height="450" loading="lazy">
+              <div class="ispx-event-card__body">
+                <h3>Conferências</h3>
+                <p>Comunicação fluida para plateias internacionais em auditórios de grande porte.</p>
+              </div>
+            </article>
+            <article class="ispx-event-card ispx-reveal">
+              <img src="assets/images/servicos/mobilidade.jpg" alt="" width="600" height="450" loading="lazy">
+              <div class="ispx-event-card__body">
+                <h3>Eventos corporativos</h3>
+                <p>Reuniões de diretoria, lançamentos e convenções empresariais multilíngues.</p>
+              </div>
+            </article>
+            <article class="ispx-event-card ispx-reveal ispx-reveal--delay-1">
+              <img src="assets/images/servicos/eventos-emblematicos.png" alt="" width="600" height="450" loading="lazy">
+              <div class="ispx-event-card__body">
+                <h3>Reuniões governamentais</h3>
+                <p>Encontros institucionais e diplomáticos com rigor terminológico e confidencialidade.</p>
+              </div>
+            </article>
+            <article class="ispx-event-card ispx-reveal ispx-reveal--delay-2">
+              <img src="assets/images/servicos/isp-banner.png" alt="" width="600" height="450" loading="lazy">
+              <div class="ispx-event-card__body">
+                <h3>Eventos internacionais</h3>
+                <p>Projetos globais com equipes mobilizadas para qualquer região do mundo.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. INFRAESTRUTURA -->
+      <section class="ispx-infra" aria-labelledby="ispx-infra-title">
+        <div class="ispx-wrap">
+          <div class="ispx-infra__main">
+            <figure class="ispx-infra__visual" data-ispx-infra-motion="figure">
+              <img src="assets/images/servicos/adaptacao.jpg" alt="Intérprete profissional com equipamentos de interpretação simultânea em evento corporativo" width="900" height="1100" loading="lazy" decoding="async">
+              <span class="ispx-infra__visual-overlay" aria-hidden="true"></span>
+            </figure>
+
+            <div class="ispx-infra__content">
+              <header class="ispx-infra__header" data-ispx-infra-motion="header">
+                <p class="ispx-eyebrow">Infraestrutura</p>
+                <h2 id="ispx-infra-title" class="ispx-infra__title">Infraestrutura que garante uma experiência impecável</h2>
+                <p class="ispx-infra__lead">Todos os equipamentos são cuidadosamente selecionados para oferecer qualidade de áudio, estabilidade e conforto durante todo o evento — independentemente do porte ou da localização.</p>
+              </header>
+
+              <ul class="ispx-infra__list" aria-label="Recursos de infraestrutura">
+                <li class="ispx-infra__item" data-ispx-infra-motion="item">
+                  <span class="ispx-infra__item-icon" data-icon="shield" data-icon-size="sm" aria-hidden="true"></span>
+                  <div class="ispx-infra__item-copy">
+                    <h3>Cabines de interpretação</h3>
+                    <p>Isolamento acústico para proporcionar máxima concentração e precisão durante toda a interpretação.</p>
+                  </div>
+                </li>
+                <li class="ispx-infra__item" data-ispx-infra-motion="item">
+                  <span class="ispx-infra__item-icon" data-icon="headphones" data-icon-size="sm" aria-hidden="true"></span>
+                  <div class="ispx-infra__item-copy">
+                    <h3>Receptores individuais</h3>
+                    <p>Equipamentos confortáveis que permitem ao público selecionar facilmente o idioma desejado.</p>
+                  </div>
+                </li>
+                <li class="ispx-infra__item" data-ispx-infra-motion="item">
+                  <span class="ispx-infra__item-icon" data-icon="radio" data-icon-size="sm" aria-hidden="true"></span>
+                  <div class="ispx-infra__item-copy">
+                    <h3>Sistemas de transmissão</h3>
+                    <p>Tecnologia digital ou infravermelha de alta fidelidade para garantir áudio limpo e estável.</p>
+                  </div>
+                </li>
+                <li class="ispx-infra__item" data-ispx-infra-motion="item">
+                  <span class="ispx-infra__item-icon" data-icon="headset" data-icon-size="sm" aria-hidden="true"></span>
+                  <div class="ispx-infra__item-copy">
+                    <h3>Headsets profissionais</h3>
+                    <p>Conforto e excelente qualidade sonora para longos períodos de utilização.</p>
+                  </div>
+                </li>
+                <li class="ispx-infra__item" data-ispx-infra-motion="item">
+                  <span class="ispx-infra__item-icon" data-icon="mic" data-icon-size="sm" aria-hidden="true"></span>
+                  <div class="ispx-infra__item-copy">
+                    <h3>Microfones profissionais</h3>
+                    <p>Captação precisa da voz dos palestrantes e intérpretes para uma comunicação clara.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="ispx-infra__strip" data-ispx-infra-motion="strip" aria-label="Diferenciais da infraestrutura">
+            <ul class="ispx-infra__strip-list">
+              <li class="ispx-infra__strip-item"><span class="ispx-infra__strip-check" aria-hidden="true">✔</span> Áudio cristalino</li>
+              <li class="ispx-infra__strip-divider" aria-hidden="true"></li>
+              <li class="ispx-infra__strip-item"><span class="ispx-infra__strip-check" aria-hidden="true">✔</span> Equipamentos profissionais</li>
+              <li class="ispx-infra__strip-divider" aria-hidden="true"></li>
+              <li class="ispx-infra__strip-item"><span class="ispx-infra__strip-check" aria-hidden="true">✔</span> Montagem especializada</li>
+              <li class="ispx-infra__strip-divider" aria-hidden="true"></li>
+              <li class="ispx-infra__strip-item"><span class="ispx-infra__strip-check" aria-hidden="true">✔</span> Suporte técnico durante todo o evento</li>
+              <li class="ispx-infra__strip-divider" aria-hidden="true"></li>
+              <li class="ispx-infra__strip-item"><span class="ispx-infra__strip-check" aria-hidden="true">✔</span> Operação sem interrupções</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. GALERIA -->
+      <section class="ispx-gallery" aria-labelledby="ispx-gallery-title">
+        <div class="ispx-wrap">
+          <header class="ispx-gallery__header ispx-reveal">
+            <p class="ispx-eyebrow">Em campo</p>
+            <h2 id="ispx-gallery-title" class="ispx-section-title">Galeria</h2>
+            <p class="ispx-section-lead">Momentos de interpretação simultânea presencial em eventos nacionais e internacionais.</p>
+          </header>
+          <div class="ispx-gallery__grid">
+            <button type="button" class="ispx-gallery__item ispx-gallery__item--a ispx-reveal" data-ispx-lightbox="assets/images/servicos/versatilidade.jpg" aria-label="Ampliar imagem">
+              <img src="assets/images/servicos/versatilidade.jpg" alt="Evento com interpretação simultânea" width="800" height="600" loading="lazy">
+            </button>
+            <button type="button" class="ispx-gallery__item ispx-gallery__item--b ispx-reveal ispx-reveal--delay-1" data-ispx-lightbox="assets/images/servicos/adaptacao.jpg" aria-label="Ampliar imagem">
+              <img src="assets/images/servicos/adaptacao.jpg" alt="Adaptação em locais remotos" width="600" height="400" loading="lazy">
+            </button>
+            <button type="button" class="ispx-gallery__item ispx-gallery__item--c ispx-reveal ispx-reveal--delay-2" data-ispx-lightbox="assets/images/servicos/situacao-comunicativa.jpg" aria-label="Ampliar imagem">
+              <img src="assets/images/servicos/situacao-comunicativa.jpg" alt="Situação comunicativa" width="600" height="400" loading="lazy">
+            </button>
+            <button type="button" class="ispx-gallery__item ispx-gallery__item--d ispx-reveal" data-ispx-lightbox="assets/images/servicos/mobilidade.jpg" aria-label="Ampliar imagem">
+              <img src="assets/images/servicos/mobilidade.jpg" alt="Mobilidade geográfica" width="500" height="700" loading="lazy">
+            </button>
+            <button type="button" class="ispx-gallery__item ispx-gallery__item--e ispx-reveal ispx-reveal--delay-1" data-ispx-lightbox="assets/images/servicos/eventos-emblematicos.png" aria-label="Ampliar imagem">
+              <img src="assets/images/servicos/eventos-emblematicos.png" alt="Eventos emblemáticos" width="400" height="400" loading="lazy">
+            </button>
+            <button type="button" class="ispx-gallery__item ispx-gallery__item--f ispx-reveal ispx-reveal--delay-2" data-ispx-lightbox="assets/images/servicos/isp-o-que-e.jpg" aria-label="Ampliar imagem">
+              <img src="assets/images/servicos/isp-o-que-e.jpg" alt="Cabine de interpretação" width="800" height="500" loading="lazy">
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lightbox -->
+      <div id="ispx-lightbox" class="ispx-lightbox" aria-hidden="true" role="dialog" aria-label="Visualização de imagem">
+        <button type="button" class="ispx-lightbox__close" aria-label="Fechar">
+          <span data-icon="x" data-icon-size="md" aria-hidden="true"></span>
+        </button>
+        <img class="ispx-lightbox__img" src="" alt="">
+      </div>
+
+      <!-- 9. VÍDEO -->
+      <section class="ispx-video" aria-labelledby="ispx-video-title">
+        <div class="ispx-wrap">
+          <header class="ispx-video__header ispx-reveal">
+            <p class="ispx-eyebrow">Conheça a HUMANA</p>
+            <h2 id="ispx-video-title" class="ispx-section-title">Excelência em interpretação presencial</h2>
+            <p class="ispx-section-lead">Veja como a HUMANA COM &amp; TRAD conecta idiomas, culturas e pessoas em eventos de alto impacto.</p>
+          </header>
+          <div class="ispx-video__frame ispx-reveal ispx-reveal--delay-1">
+            <iframe src="https://www.youtube.com/embed/mmsXF0gq0nU" title="Humana Com &amp; Trad — Interpretação Simultânea Presencial" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. DEPOIMENTOS -->
+      <section class="ispx-testimonials" aria-labelledby="ispx-testimonials-title">
+        <div class="ispx-wrap">
+          <header class="ispx-testimonials__header ispx-reveal">
+            <p class="ispx-eyebrow">Confiança</p>
+            <h2 id="ispx-testimonials-title" class="ispx-section-title">O que dizem nossos clientes</h2>
+          </header>
+          <div class="ispx-testimonials__carousel ispx-reveal">
+            <div class="ispx-testimonials__viewport">
+              <div class="ispx-testimonials__track" id="ispx-testimonials-track">
+                <article class="ispx-testimonial">
+                  <div class="ispx-testimonial__avatar ispx-testimonial__avatar--initials" aria-hidden="true">MR</div>
+                  <blockquote class="ispx-testimonial__quote">"A HUMANA demonstrou profissionalismo excepcional em nosso congresso internacional. A equipe de intérpretes e o suporte técnico superaram todas as expectativas."</blockquote>
+                  <p class="ispx-testimonial__name">Maria Rodrigues</p>
+                  <p class="ispx-testimonial__role">Coordenadora de Eventos — Organização Internacional</p>
+                </article>
+                <article class="ispx-testimonial">
+                  <div class="ispx-testimonial__avatar ispx-testimonial__avatar--initials" aria-hidden="true">JC</div>
+                  <blockquote class="ispx-testimonial__quote">"Trabalhamos com a Humana em eventos na Amazônia e no exterior. A capacidade de adaptação a locais remotos é um diferencial que poucas empresas oferecem."</blockquote>
+                  <p class="ispx-testimonial__name">João Carvalho</p>
+                  <p class="ispx-testimonial__role">Diretor de Projetos — Instituto de Pesquisa</p>
+                </article>
+                <article class="ispx-testimonial">
+                  <div class="ispx-testimonial__avatar ispx-testimonial__avatar--initials" aria-hidden="true">AS</div>
+                  <blockquote class="ispx-testimonial__quote">"Equipamentos impecáveis, intérpretes altamente qualificados e planejamento meticuloso. Recomendamos a HUMANA para qualquer evento multilíngue de grande porte."</blockquote>
+                  <p class="ispx-testimonial__name">Ana Souza</p>
+                  <p class="ispx-testimonial__role">Gerente de Comunicação — Empresa Multinacional</p>
+                </article>
+              </div>
+            </div>
+            <div class="ispx-testimonials__nav">
+              <button type="button" class="ispx-testimonials__btn" data-ispx-test-prev aria-label="Depoimento anterior">
+                <span data-icon="chevron-left" data-icon-size="sm" aria-hidden="true"></span>
+              </button>
+              <button type="button" class="ispx-testimonials__btn" data-ispx-test-next aria-label="Próximo depoimento">
+                <span data-icon="chevron-right" data-icon-size="sm" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11. FAQ -->
+      <section class="ispx-faq" aria-labelledby="ispx-faq-title">
+        <div class="ispx-wrap">
+          <div class="ispx-faq__layout">
+            <div class="ispx-reveal">
+              <p class="ispx-eyebrow">Dúvidas frequentes</p>
+              <h2 id="ispx-faq-title" class="ispx-section-title">Perguntas frequentes</h2>
+              <p class="ispx-section-lead">Respostas às principais questões sobre interpretação simultânea presencial e nossos serviços.</p>
+            </div>
+            <div class="ispx-faq__list ispx-reveal ispx-reveal--delay-1">
+              <div class="ispx-faq__item">
+                <button type="button" class="ispx-faq__trigger" aria-expanded="false">
+                  O que é interpretação simultânea?
+                  <span class="ispx-faq__chevron" data-icon="chevron-down" data-icon-size="sm" aria-hidden="true"></span>
+                </button>
+                <div class="ispx-faq__panel">
+                  <p>É a transmissão oral quase instantânea de um discurso de um idioma para outro, realizada por intérpretes em cabines acústicas. O público ouve a interpretação através de receptores individuais, enquanto o palestrante continua sua apresentação sem interrupções.</p>
+                </div>
+              </div>
+              <div class="ispx-faq__item">
+                <button type="button" class="ispx-faq__trigger" aria-expanded="false">
+                  Quantos intérpretes são necessários?
+                  <span class="ispx-faq__chevron" data-icon="chevron-down" data-icon-size="sm" aria-hidden="true"></span>
+                </button>
+                <div class="ispx-faq__panel">
+                  <p>Para cada idioma de destino, recomendamos dois intérpretes que se revezam a cada 20–30 minutos, devido à alta concentração exigida. Para eventos longos ou com múltiplos idiomas, a equipe é dimensionada conforme a programação.</p>
+                </div>
+              </div>
+              <div class="ispx-faq__item">
+                <button type="button" class="ispx-faq__trigger" aria-expanded="false">
+                  Como funciona o aluguel dos equipamentos?
+                  <span class="ispx-faq__chevron" data-icon="chevron-down" data-icon-size="sm" aria-hidden="true"></span>
+                </button>
+                <div class="ispx-faq__panel">
+                  <p>Fornecemos cabines, receptores, transmissores, headsets e microfones com instalação, testes prévios e suporte técnico durante todo o evento. A quantidade de equipamentos é calculada com base no número de participantes e idiomas.</p>
+                </div>
+              </div>
+              <div class="ispx-faq__item">
+                <button type="button" class="ispx-faq__trigger" aria-expanded="false">
+                  É possível atender eventos híbridos?
+                  <span class="ispx-faq__chevron" data-icon="chevron-down" data-icon-size="sm" aria-hidden="true"></span>
+                </button>
+                <div class="ispx-faq__panel">
+                  <p>Sim. Integramos interpretação presencial com transmissão para participantes remotos, garantindo que todos — presenciais e online — recebam a comunicação multilíngue com a mesma qualidade.</p>
+                </div>
+              </div>
+              <div class="ispx-faq__item">
+                <button type="button" class="ispx-faq__trigger" aria-expanded="false">
+                  Quantos idiomas podem ser utilizados?
+                  <span class="ispx-faq__chevron" data-icon="chevron-down" data-icon-size="sm" aria-hidden="true"></span>
+                </button>
+                <div class="ispx-faq__panel">
+                  <p>Atendemos mais de 15 idiomas, incluindo português, inglês, espanhol, francês, alemão, italiano, japonês, mandarim e línguas indígenas. A combinação exata depende da disponibilidade de intérpretes especializados no tema do evento.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12. CTA -->
+      <section class="ispx-cta" aria-labelledby="ispx-cta-title">
+        <div class="ispx-wrap ispx-cta__inner">
+          <h2 id="ispx-cta-title" class="ispx-cta__title ispx-reveal">Pronto para o seu próximo evento multilíngue?</h2>
+          <p class="ispx-cta__desc ispx-reveal ispx-reveal--delay-1">Solicite um orçamento personalizado e nossa equipe analisará as condições do seu evento para propor a melhor solução de interpretação simultânea presencial.</p>
+          <div class="ispx-cta__actions ispx-reveal ispx-reveal--delay-2">
+            <a href="contato.html" class="ispx-btn ispx-btn--white">Solicitar Orçamento</a>
+            <a href="contato.html" class="ispx-btn ispx-btn--outline">Entrar em Contato</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 13. FAIXA DE CONTATO -->
+    <section class="ispx-contact-bar" aria-label="Informações de contato">
+      <div class="ispx-wrap">
+        <div class="ispx-contact-bar__grid">
+          <div class="ispx-contact-bar__item">
+            <span class="ispx-contact-bar__icon" data-icon="phone" data-icon-size="sm" aria-hidden="true"></span>
+            <a href="tel:+5591991005523">(91) 99100-5523</a>
+          </div>
+          <div class="ispx-contact-bar__item">
+            <span class="ispx-contact-bar__icon" data-icon="mail" data-icon-size="sm" aria-hidden="true"></span>
+            <a href="mailto:contato@humanatraducao.com.br">contato@humanatraducao.com.br</a>
+          </div>
+          <div class="ispx-contact-bar__item">
+            <span class="ispx-contact-bar__icon" data-icon="whatsapp" data-icon-size="sm" aria-hidden="true"></span>
+            <a href="https://wa.me/559191005523" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </div>
+          <div class="ispx-contact-bar__item">
+            <span class="ispx-contact-bar__icon" data-icon="map-pinned" data-icon-size="sm" aria-hidden="true"></span>
+            <span>Belém/PA — Amazônia, Brasil</span>
+          </div>
+          <div class="ispx-contact-bar__socials">
+            <a href="https://www.linkedin.com/company/humanacom%26trad/" class="ispx-contact-bar__social" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <span data-icon="linkedin" data-icon-size="sm" aria-hidden="true"></span>
+            </a>
+            <a href="https://www.instagram.com/humanacomtrad/" class="ispx-contact-bar__social" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <span data-icon="instagram" data-icon-size="sm" aria-hidden="true"></span>
+            </a>
+            <a href="https://www.facebook.com/humanacometrad/" class="ispx-contact-bar__social" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <span data-icon="facebook" data-icon-size="sm" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
 
 </div>
@@ -154,51 +639,40 @@
     <div class="site-footer__main">
       <div class="site-footer__inner">
         <div class="site-footer__brand">
-          <a href="index.html" class="site-footer__logo">
-            <span class="site-footer__logo-mark"><svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="6" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="6" r="3" fill="#00AEEF"/>
-            <circle cx="6" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="18" r="3" fill="#00AEEF"/>
-            <circle cx="6" cy="30" r="3" fill="#00AEEF"/>
-            <circle cx="18" cy="30" r="3" fill="#00AEEF"/>
-            <circle cx="30" cy="30" r="3" fill="#00AEEF"/>
-          </svg></span>
+          <a href="index.html" class="site-footer__logo" aria-label="HUMANA com &amp; trad">
+            <img src="assets/images/logo-humana.png" alt="" class="site-footer__logo-img" width="76" height="36" decoding="async" aria-hidden="true">
             <span class="site-footer__logo-copy">
-              <span class="site-footer__logo-name">Humana</span>
-              <span class="site-footer__logo-tag">Com &amp; Trad</span>
-            </span>
+        <span class="site-footer__logo-name">Humana</span>
+        <span class="site-footer__logo-tag">com &amp; trad</span>
+      </span>
           </a>
-          <p class="site-footer__about">Empresa amazônica de serviços linguísticos com atuação em tradução, interpretação e formação — conectando pessoas, culturas e idiomas desde 1995.</p>
         </div>
 
         <nav class="site-footer__col" aria-label="Navegação do site">
-          <h3 class="site-footer__heading">Navegação</h3>
+          <h3 class="site-footer__heading" data-i18n="footer.nav">Navegação</h3>
           <ul class="site-footer__list">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="sobre.html">Sobre Nós</a></li>
+            <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+            <li><a href="sobre.html" data-i18n="nav.about">Sobre Nós</a></li>
             <li><a href="cop30.html">COP30</a></li>
-            <li><a href="parceiros.html">Parceiros</a></li>
-            <li><a href="isp.html">Serviços</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contato.html">Contato</a></li>
+            <li><a href="parceiros.html" data-i18n="nav.partners">Parceiros</a></li>
+            <li><a href="isp.html" data-i18n="nav.services">Serviços</a></li>
+            <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="contato.html" data-i18n="nav.contact">Contato</a></li>
           </ul>
         </nav>
 
         <nav class="site-footer__col" aria-label="Serviços">
-          <h3 class="site-footer__heading">Serviços</h3>
+          <h3 class="site-footer__heading" data-i18n="footer.services">Serviços</h3>
           <ul class="site-footer__list">
-            <li><a href="traducao.html">Tradução</a></li>
-            <li><a href="isp.html">Interpretação Presencial</a></li>
-            <li><a href="isr.html">Interpretação Remota</a></li>
-            <li><a href="cursos-formativos.html">Cursos Formativos</a></li>
+            <li><a href="traducao.html" data-i18n="nav.translation">Tradução</a></li>
+            <li><a href="isp.html" data-i18n="footer.ispShort">Interpretação Presencial</a></li>
+            <li><a href="isr.html" data-i18n="footer.isrShort">Interpretação Remota</a></li>
+            <li><a href="cursos-formativos.html" data-i18n="nav.courses">Cursos Formativos</a></li>
           </ul>
         </nav>
 
         <div class="site-footer__col">
-          <h3 class="site-footer__heading">Contato</h3>
+          <h3 class="site-footer__heading" data-i18n="footer.contact">Contato</h3>
           <ul class="site-footer__contact">
             <li>
               <a href="tel:+5591991005523">
@@ -221,7 +695,7 @@
             <li>
               <span class="site-footer__contact-static">
                 <span class="site-footer__contact-icon" data-icon="map-pinned" data-icon-size="sm" aria-hidden="true"></span>
-                <span>Travessa Jupira s/n Lt 05-06 Qd 18, Jardim Tropicália — Marahú, Belém/PA</span>
+                <span data-i18n="footer.address">Travessa Jupira s/n Lt 05-06 Qd 18, Jardim Tropicália — Marahú, Belém/PA</span>
               </span>
             </li>
           </ul>
@@ -231,17 +705,24 @@
 
     <div class="site-footer__bottom">
       <div class="site-footer__bottom-inner">
-        <p class="site-footer__copy">&copy; 2026 HUMANA COM &amp; TRAD. Todos os direitos reservados.</p>
+        <p class="site-footer__copy" data-i18n="footer.copyright" data-i18n-year="2026">&copy; 2026 HUMANA COM &amp; TRAD. Todos os direitos reservados.</p>
         <ul class="site-footer__legal">
-          <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
-          <li><a href="termos-de-uso.html">Termos de Uso</a></li>
+          <li><a href="politica-privacidade.html" data-i18n="footer.privacy">Política de Privacidade</a></li>
+          <li><a href="termos-de-uso.html" data-i18n="footer.terms">Termos de Uso</a></li>
         </ul>
       </div>
     </div>
   </footer>
+  <script src="js/i18n-common.js"></script>
+  <script src="js/i18n-pages.js"></script>
+  <script src="js/i18n.js"></script>
+
 
   <script src="js/nav-dropdown.js"></script>
-  <script src="js/hero-features.js"></script>
+  <script src="js/navbar-scroll.js"></script>
   <script src="js/icons.js"></script>
+  <script src="js/isp-page.js"></script>
+  <script type="module" src="js/isp-trust.js"></script>
+  <script type="module" src="js/isp-infra.js"></script>
 </body>
 </html>

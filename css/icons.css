@@ -8,6 +8,16 @@
   color: currentColor;
 }
 
+.page-nav__dropdown-icon {
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.62);
+  transition: color 0.2s ease;
+}
+
+.page-nav__dropdown a:hover .page-nav__dropdown-icon {
+  color: var(--brand-blue);
+}
+
 [data-icon]:not([data-icon-mounted='true']) {
   min-width: 1em;
   min-height: 1em;
