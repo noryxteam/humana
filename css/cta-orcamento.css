@@ -1,0 +1,95 @@
+/**
+ * CTA de orçamento — seção compartilhada pelas páginas de serviço
+ * (ISP, ISR, Tradução, Cursos Formativos).
+ * Depende de css/contato.css para o card do formulário (.contato-*).
+ */
+
+.ctaorc {
+  position: relative;
+  padding-block: 66px;
+  overflow: hidden;
+  color: #fff;
+}
+
+.ctaorc__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(6px);
+  transform: scale(1.06);
+}
+
+.ctaorc__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, rgba(7, 21, 34, 0.94) 0%, rgba(11, 40, 64, 0.88) 55%, rgba(0, 61, 85, 0.82) 100%);
+}
+
+.ctaorc__inner {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 5%;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+.ctaorc__eyebrow {
+  margin: 0 0 1rem;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #00aeef;
+}
+
+.ctaorc__title {
+  margin: 0 0 1.25rem;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-size: clamp(1.85rem, 3.4vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #fff;
+}
+
+.ctaorc__desc {
+  margin: 0;
+  max-width: 42ch;
+  font-family: 'Open Sans', system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* Card do formulário (mesmo componente da página Contato) */
+.ctaorc .contato-form-card {
+  padding: clamp(1.125rem, 2vw, 1.5rem) clamp(1.125rem, 2vw, 1.625rem) clamp(1.25rem, 2vw, 1.5rem);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 1024px) {
+  .ctaorc {
+    padding-block: 50px;
+  }
+}
+
+@media (max-width: 900px) {
+  .ctaorc__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .ctaorc {
+    padding-block: 39px;
+  }
+}

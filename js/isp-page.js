@@ -1,31 +1,8 @@
 /**
- * ISP — página premium (reveal, FAQ, lightbox, carrosséis)
+ * ISP — counters, carousel, reveal fallback
  */
 (function () {
   'use strict';
-
-  function initReveal() {
-    var nodes = document.querySelectorAll('.ispx-reveal');
-    if (!nodes.length) return;
-
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      nodes.forEach(function (el) { el.classList.add('is-visible'); });
-      return;
-    }
-
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        });
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -48px 0px' }
-    );
-
-    nodes.forEach(function (el) { observer.observe(el); });
-  }
 
   function initStats() {
     document.querySelectorAll('[data-ispx-count]').forEach(function (el) {
@@ -60,151 +37,138 @@
     });
   }
 
-  function initFaq() {
-    document.querySelectorAll('.ispx-faq__item').forEach(function (item) {
-      var btn = item.querySelector('.ispx-faq__trigger');
-      if (!btn) return;
+  function initCarousel() {
+    var root = document.querySelector('[data-ispx-carousel]');
+    if (!root) return;
 
-      btn.addEventListener('click', function () {
-        var isOpen = item.classList.contains('is-open');
-        document.querySelectorAll('.ispx-faq__item.is-open').forEach(function (open) {
-          open.classList.remove('is-open');
-          var trigger = open.querySelector('.ispx-faq__trigger');
-          if (trigger) trigger.setAttribute('aria-expanded', 'false');
-        });
-        if (!isOpen) {
-          item.classList.add('is-open');
-          btn.setAttribute('aria-expanded', 'true');
-        }
-      });
-    });
-  }
-
-  function initLightbox() {
-    var lb = document.getElementById('ispx-lightbox');
-    if (!lb) return;
-
-    var img = lb.querySelector('.ispx-lightbox__img');
-    var closeBtn = lb.querySelector('.ispx-lightbox__close');
-
-    function open(src, alt) {
-      img.src = src;
-      img.alt = alt || '';
-      lb.classList.add('is-open');
-      lb.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function close() {
-      lb.classList.remove('is-open');
-      lb.setAttribute('aria-hidden', 'true');
-      img.src = '';
-      document.body.style.overflow = '';
-    }
-
-    document.querySelectorAll('[data-ispx-lightbox]').forEach(function (trigger) {
-      trigger.addEventListener('click', function () {
-        var full = trigger.getAttribute('data-ispx-lightbox');
-        var altEl = trigger.querySelector('img');
-        var alt = altEl ? altEl.getAttribute('alt') || '' : '';
-        if (full) open(full, alt);
-      });
-    });
-
-    if (closeBtn) closeBtn.addEventListener('click', close);
-    lb.addEventListener('click', function (e) {
-      if (e.target === lb) close();
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') close();
-    });
-  }
-
-  function initCarousel(trackId, prevSel, nextSel) {
-    var track = document.getElementById(trackId);
+    var track = root.querySelector('[data-ispx-carousel-track]');
+    var dotsWrap = root.querySelector('[data-ispx-carousel-dots]');
+    var prev = root.querySelector('[data-ispx-carousel-prev]');
+    var next = root.querySelector('[data-ispx-carousel-next]');
     if (!track) return;
 
-    var viewport = track.parentElement;
-    var prevBtn = document.querySelector(prevSel);
-    var nextBtn = document.querySelector(nextSel);
-    var gap = 20;
+    var cards = Array.prototype.slice.call(track.children);
+    var total = cards.length;
+    if (!total) return;
+
     var index = 0;
+    var locked = false;
 
-    function visible() {
-      var w = window.innerWidth;
-      if (w <= 576) return 1;
-      if (w <= 900) return 1;
-      return 1;
+    function buildDots() {
+      if (!dotsWrap || dotsWrap.children.length) return;
+      for (var i = 0; i < total; i++) {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'ispx-projects__dot';
+        btn.setAttribute('aria-label', 'Ir para o projeto ' + (i + 1));
+        btn.dataset.index = String(i);
+        dotsWrap.appendChild(btn);
+      }
     }
 
-    function step() {
-      return viewport.clientWidth;
+    function paint() {
+      cards.forEach(function (card, i) {
+        var rel = (i - index + total) % total;
+        card.classList.remove('is-front', 'is-next', 'is-reserve', 'is-out');
+        if (rel === 0) card.classList.add('is-front');
+        else if (rel === 1) card.classList.add('is-next');
+        else if (rel === total - 1) card.classList.add('is-out');
+        else card.classList.add('is-reserve');
+        card.setAttribute('aria-hidden', rel === 0 ? 'false' : 'true');
+      });
+
+      if (dotsWrap) {
+        Array.prototype.forEach.call(dotsWrap.children, function (dot, i) {
+          dot.classList.toggle('is-active', i === index);
+        });
+      }
     }
 
-    function maxIndex() {
-      return Math.max(0, track.children.length - visible());
+    function goTo(i) {
+      if (locked) return;
+      var target = ((i % total) + total) % total;
+      if (target === index) return;
+      locked = true;
+      index = target;
+      paint();
+      setTimeout(function () { locked = false; }, 380);
     }
 
-    function update() {
-      track.style.transform = 'translateX(' + (-index * step()) + 'px)';
+    function step(dir) {
+      goTo(index + dir);
     }
 
-    function go(d) {
-      index = Math.min(maxIndex(), Math.max(0, index + d));
-      update();
+    if (prev) prev.addEventListener('click', function () { step(-1); });
+    if (next) next.addEventListener('click', function () { step(1); });
+
+    if (dotsWrap) {
+      dotsWrap.addEventListener('click', function (e) {
+        var btn = e.target.closest('[data-index]');
+        if (!btn) return;
+        goTo(parseInt(btn.dataset.index, 10));
+      });
     }
 
-    if (prevBtn) prevBtn.addEventListener('click', function () { go(-1); });
-    if (nextBtn) nextBtn.addEventListener('click', function () { go(1); });
-    window.addEventListener('resize', function () {
-      index = Math.min(index, maxIndex());
-      update();
+    // Clicar no card de trás traz ele para a frente
+    cards.forEach(function (card) {
+      card.addEventListener('click', function () {
+        if (card.classList.contains('is-next')) step(1);
+      });
     });
 
-    Array.from(track.children).forEach(function (slide) {
-      slide.style.minWidth = '100%';
-      slide.style.flex = '0 0 100%';
+    // Swipe no touch
+    var startX = null;
+    track.addEventListener('touchstart', function (e) {
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+    track.addEventListener('touchend', function (e) {
+      if (startX === null) return;
+      var dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 40) step(dx < 0 ? 1 : -1);
+      startX = null;
     });
 
-    update();
+    buildDots();
+    paint();
+    requestAnimationFrame(function () {
+      track.classList.add('is-ready');
+    });
   }
 
-  function initTimelineScroll() {
-    var track = document.querySelector('.ispx-process__track');
-    if (!track || window.innerWidth > 900) return;
-
-    var isDown = false;
-    var startX = 0;
-    var scrollLeft = 0;
-
-    track.addEventListener('mousedown', function (e) {
-      isDown = true;
-      startX = e.pageX - track.offsetLeft;
-      scrollLeft = track.scrollLeft;
-    });
-    track.addEventListener('mouseleave', function () { isDown = false; });
-    track.addEventListener('mouseup', function () { isDown = false; });
-    track.addEventListener('mousemove', function (e) {
-      if (!isDown) return;
-      e.preventDefault();
-      var x = e.pageX - track.offsetLeft;
-      track.scrollLeft = scrollLeft - (x - startX) * 1.2;
-    });
+  function initRevealFallback() {
+    /* Se Motion não carregar (ex.: file:// bloqueado), revela via IntersectionObserver */
+    window.setTimeout(function () {
+      var pending = document.querySelectorAll('.ispx-motion:not(.is-visible)');
+      if (!pending.length) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        pending.forEach(function (el) { el.classList.add('is-visible'); });
+        return;
+      }
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-visible');
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'none';
+            observer.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+      );
+      pending.forEach(function (el) { observer.observe(el); });
+    }, 1200);
   }
 
-  function init() {
-    initReveal();
+  function boot() {
     initStats();
-    initFaq();
-    initLightbox();
-    initCarousel('ispx-testimonials-track', '[data-ispx-test-prev]', '[data-ispx-test-next]');
-    initTimelineScroll();
-    if (window.HumanaIcons && window.HumanaIcons.mount) window.HumanaIcons.mount();
+    initCarousel();
+    initRevealFallback();
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', boot);
   } else {
-    init();
+    boot();
   }
 })();

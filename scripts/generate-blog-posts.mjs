@@ -676,7 +676,7 @@ function renderPost(post) {
             <span class="page-nav__link-icon" data-icon="chevron-down" data-icon-size="sm"></span>
           </a>
           <ul class="page-nav__dropdown">
-            <li><a href="../parceiros.html">Nossos Parceiros</a></li>
+            <li><a href="../parceiros.html">Nossos Colaboradores</a></li>
             <li><a href="../tao-filmes.html">TAO Filmes</a></li>
           </ul>
         </li>

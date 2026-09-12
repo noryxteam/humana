@@ -81,7 +81,7 @@ function buildNav(prefix, active, overlay) {
             <span class="page-nav__link-icon" data-icon="chevron-down" data-icon-size="sm"></span>
           </a>
           <ul class="page-nav__dropdown">
-            <li><a href="${prefix}parceiros.html" data-i18n="nav.partnersAll">Nossos Parceiros</a></li>
+            <li><a href="${prefix}parceiros.html" data-i18n="nav.partnersAll">Nossos Colaboradores</a></li>
             <li><a href="${prefix}tao-filmes.html">TAO Filmes</a></li>
           </ul>
         </li>

@@ -41,11 +41,11 @@
         <li class="page-nav__item is-active"><a href="cop30.html">COP30</a></li>
         <li class="page-nav__item page-nav__item--dropdown">
           <a href="#" class="page-nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-            <span data-i18n="nav.partners">Parceiros</span>
+            <span data-i18n="nav.partners">Colaboradores</span>
             <span class="page-nav__link-icon" data-icon="chevron-down" data-icon-size="sm"></span>
           </a>
           <ul class="page-nav__dropdown">
-            <li><a href="parceiros.html" data-i18n="nav.partnersAll">Nossos Parceiros</a></li>
+            <li><a href="parceiros.html" data-i18n="nav.partnersAll">Nossos Colaboradores</a></li>
             <li><a href="tao-filmes.html">TAO Filmes</a></li>
           </ul>
         </li>
@@ -104,7 +104,7 @@
             <img src="assets/images/humana-com-trad.jpg" alt="Equipe HUMANA em atuação institucional" width="1080" height="715" loading="lazy">
             <span class="cop30-about__badge">Atuação institucional na Amazônia</span>
           </div>
-          <div class="cop30-reveal">
+          <div class="cop30-about__copy cop30-reveal">
             <p class="cop30-eyebrow">Sobre a participação</p>
             <h2 class="cop30-heading" id="cop30-about-title">Presença estratégica na preparação do maior evento climático do mundo</h2>
             <p class="cop30-lead">A HUMANA COM &amp; TRAD integra o ecossistema de preparação da COP30 com serviços linguísticos especializados, apoiando visitas técnicas, reuniões preparatórias e a comunicação entre delegações nacionais e internacionais.</p>
@@ -216,7 +216,7 @@
             <img src="assets/images/blog/post-apresentacao.jpg" alt="Reuniões preparatórias da COP30" width="800" height="500" loading="lazy">
             <img src="assets/images/blog/post-trajetoria.jpg" alt="Equipe HUMANA em evento institucional" width="800" height="500" loading="lazy">
           </div>
-          <div class="cop30-reveal">
+          <div class="cop30-missions__copy cop30-reveal">
             <p class="cop30-eyebrow">Missões e visitas técnicas</p>
             <h2 class="cop30-heading" id="cop30-missions-title">No terreno, onde o planejamento da COP30 ganha forma</h2>
             <p class="cop30-lead">As visitas técnicas e reuniões preparatórias são momentos decisivos para alinhar logística, protocolos e comunicação entre os atores envolvidos. A HUMANA esteve presente nesses ambientes, garantindo fluidez linguística e compreensão mútua.</p>
@@ -233,7 +233,7 @@
     <section class="cop30-justice" id="cop30-justice" aria-labelledby="cop30-justice-title">
       <div class="cop30-wrap">
         <div class="cop30-justice__grid">
-          <div class="cop30-reveal">
+          <div class="cop30-justice__copy cop30-reveal">
             <p class="cop30-eyebrow">Justiça linguística</p>
             <h2 class="cop30-heading" id="cop30-justice-title">Comunicação inclusiva como compromisso institucional</h2>
             <p class="cop30-lead">A COP30 é um espaço de diálogo global. Para que esse diálogo seja legítimo, é preciso garantir que diferentes vozes — inclusive as dos povos amazônicos — sejam compreendidas com respeito e qualidade técnica.</p>
@@ -259,7 +259,7 @@
           <div class="cop30-training__media cop30-reveal">
             <img src="assets/images/blog/post-indigenas.jpg" alt="Formação de intérpretes da Amazônia" width="800" height="500" loading="lazy">
           </div>
-          <div class="cop30-reveal">
+          <div class="cop30-training__copy cop30-reveal">
             <p class="cop30-eyebrow">Formação de intérpretes</p>
             <h2 class="cop30-heading" id="cop30-training-title">Fortalecendo talentos locais para grandes eventos internacionais</h2>
             <p class="cop30-lead">A HUMANA investe na capacitação de intérpretes da Amazônia, preparando profissionais para atuar com segurança em contextos multilíngues, com terminologia especializada e ética profissional.</p>
@@ -300,30 +300,248 @@
 
     <section class="cop30-gallery" id="cop30-gallery" aria-labelledby="cop30-gallery-title">
       <div class="cop30-wrap">
-        <div class="cop30-reveal" style="margin-bottom: 22px;">
+        <header class="cop30-gallery__head cop30-reveal">
           <p class="cop30-eyebrow">Galeria</p>
-          <h2 class="cop30-heading" id="cop30-gallery-title">Registros da nossa atuação</h2>
+          <h2 class="cop30-gallery__title" id="cop30-gallery-title">Registros da nossa atuação</h2>
+          <p class="cop30-gallery__lead">Conheça alguns momentos em que a Humana esteve presente,<br>conectando pessoas, culturas e soluções.</p>
+        </header>
+
+        <div class="cop30-gallery__stage cop30-reveal" data-cop30-gallery>
+          <div class="cop30-gallery__viewport">
+            <img class="cop30-gallery__shot is-active" src="assets/images/blog/post-cop30.jpg" alt="Interpretação simultânea da HUMANA na COP30 em Belém" width="1200" height="750" data-cop30-shot="0">
+            <img class="cop30-gallery__shot" src="assets/images/blog/post-indigenas.jpg" alt="Formação de intérpretes indígenas com entrega de certificados" width="1024" height="640" loading="lazy" data-cop30-shot="1">
+            <img class="cop30-gallery__shot" src="assets/images/humana-com-trad.jpg" alt="Equipe da HUMANA em campo na floresta amazônica" width="1024" height="680" loading="lazy" data-cop30-shot="2">
+            <img class="cop30-gallery__shot" src="assets/images/blog/post-instituto.jpg" alt="Sede do Instituto Humana na Ilha do Mosqueiro" width="1024" height="640" loading="lazy" data-cop30-shot="3">
+            <img class="cop30-gallery__shot" src="assets/images/blog/post-trajetoria.jpg" alt="Encontro institucional com parceiros locais" width="1024" height="640" loading="lazy" data-cop30-shot="4">
+            <img class="cop30-gallery__shot" src="assets/images/amazonia.jpg" alt="Reunião técnica com comunidades da Amazônia" width="1024" height="680" loading="lazy" data-cop30-shot="5">
+
+            <button class="cop30-gallery__nav cop30-gallery__nav--prev" type="button" aria-label="Registro anterior" data-cop30-prev>
+              <span data-icon="chevron-left" data-icon-size="sm" aria-hidden="true"></span>
+            </button>
+            <button class="cop30-gallery__nav cop30-gallery__nav--next" type="button" aria-label="Próximo registro" data-cop30-next>
+              <span data-icon="chevron-right" data-icon-size="sm" aria-hidden="true"></span>
+            </button>
+            <p class="cop30-gallery__counter" aria-hidden="true"><span data-cop30-current>1</span> / 6</p>
+          </div>
+
+          <div class="cop30-gallery__panels">
+            <article class="cop30-gallery__panel is-active" data-cop30-panel="0">
+              <p class="cop30-gallery__meta">
+                <span class="cop30-gallery__year">2025</span>
+                <span class="cop30-gallery__meta-sep" aria-hidden="true"></span>
+                <span class="cop30-gallery__place"><span class="cop30-gallery__place-icon" data-icon="map-pin" data-icon-size="sm" aria-hidden="true"></span>Belém, Pará</span>
+              </p>
+              <h3 class="cop30-gallery__panel-title">COP30 – Amazônia</h3>
+              <span class="cop30-gallery__panel-rule" aria-hidden="true"></span>
+              <p class="cop30-gallery__panel-text">Atuação em interpretação simultânea durante um dos maiores eventos globais sobre mudanças climáticas, reunindo representantes de diversos países para discussões sobre o futuro do planeta.</p>
+              <ul class="cop30-gallery__features">
+                <li>
+                  <span class="cop30-gallery__feature-icon" data-icon="headphones" data-icon-size="sm" aria-hidden="true"></span>
+                  <strong>Interpretação Simultânea</strong>
+                  <span>Multilingue</span>
+                </li>
+                <li>
+                  <span class="cop30-gallery__feature-icon" data-icon="users" data-icon-size="sm" aria-hidden="true"></span>
+                  <strong>Conexão Global</strong>
+                  <span>Diversas delegações</span>
+                </li>
+                <li>
+                  <span class="cop30-gallery__feature-icon" data-icon="globe" data-icon-size="sm" aria-hidden="true"></span>
+                  <strong>Impacto Real</strong>
+                  <span>Soluções sustentáveis</span>
+                </li>
+              </ul>
+              <a class="cop30-btn cop30-btn--primary cop30-gallery__panel-btn" href="blog/cop30-belem.html">Ver projeto <span data-icon="arrow-right" data-icon-size="sm" aria-hidden="true"></span></a>
+            </article>
+
+            <article class="cop30-gallery__panel" data-cop30-panel="1">
+              <p class="cop30-gallery__meta">
+                <span class="cop30-gallery__year">2024</span>
+                <span class="cop30-gallery__meta-sep" aria-hidden="true"></span>
+                <span class="cop30-gallery__place"><span class="cop30-gallery__place-icon" data-icon="map-pin" data-icon-size="sm" aria-hidden="true"></span>Belém, Pará</span>
+              </p>
+              <h3 class="cop30-gallery__panel-title">Formação de Intérpretes</h3>
+              <span class="cop30-gallery__panel-rule" aria-hidden="true"></span>
+              <p class="cop30-gallery__panel-text">Capacitação de novos intérpretes da região Norte, com prática guiada em cabine, terminologia climática e preparação para agendas internacionais de alta exigência.</p>
+              <ul class="cop30-gallery__features">
+                <li>
+                  <span class="cop30-gallery__feature-icon" data-icon="graduation-cap" data-icon-size="sm" aria-hidden="true"></span>
+                  <strong>Formação Técnica</strong>
+                  <span>Turmas presenciais</span>
+                </li>
+                <li>
+                  <span class="cop30-gallery__feature-icon" data-icon="mic" data-icon-size="sm" aria-hidden="true"></span>
+                  <strong>Prática em Cabine</strong>
+                  <span>Simulações reais</span>
+                </li>
+                <li>
+                  <span class="cop30-gallery__feature-icon" data-icon="award" data-icon-size="sm" aria-hidden="true"></span>
+                  <strong>Certificação</strong>
+                  <span>Novos profissionais</span>
+                </li>
+              </ul>
+              <a class="cop30-btn cop30-btn--primary cop30-gallery__panel-btn" href="blog/capacitacao-indigenas-cop30.html">Ver projeto <span data-icon="arrow-right" data-icon-size="sm" aria-hidden="true"></span></a>
+            </article>
+
+            <article class="cop30-gallery__panel" data-cop30-panel="2">
+              <p class="cop30-gallery__meta">
+                <span class="cop30-gallery__year">2023</span>
+                <span class="cop30-gallery__meta-sep" aria-hidden="true"></span>
+                <span class="cop30-gallery__place"><span class="cop30-gallery__place-icon" data-icon="map-pin" data-icon-size="sm" aria-hidden="true"></span>Ilha do Mosqueiro</span>
+              </p>
+              <h3 class="cop30-gallery__panel-title">Projetos Ambientais</h3>
+              <span class="cop30-gallery__panel-rule" aria-hidden="true"></span>
+              <p class="cop30-gallery__panel-text">Apoio linguístico a pesquisas e projetos de campo na Amazônia, aproximando equipes científicas, comunidades locais e instituições internacionais.</p>
+              <ul class="cop30-gallery__features">
+                <li>
+                  <span class="cop30-gallery__feature-icon" data-icon="leaf" data-icon-size="sm" aria-hidden="true"></span>
+                  <strong>Agenda Ambiental</strong>
+                  <span>Pesquisa de campo</span>
+                </li>
+                <li>
+                  <span class="cop30-gallery__feature-icon" data-icon="users" data-icon-size="sm" aria-hidden="true"></span>
+                  <strong>Comunidades</strong>
+                  <span>Escuta e diálogo</span>
+                </li>
+                <li>
+                  <span class="cop30-gallery__feature-icon" data-icon="file-text" data-icon-size="sm" aria-hidden="true"></span>
+                  <strong>Tradução Técnica</strong>
+                  <span>Relatórios e estudos</span>
+                </li>
+              </ul>
+              <a class="cop30-btn cop30-btn--primary cop30-gallery__panel-btn" href="blog/atividades-instituto.html">Ver projeto <span data-icon="arrow-right" data-icon-size="sm" aria-hidden="true"></span></a>
+            </article>
+
+            <article class="cop30-gallery__panel" data-cop30-panel="3">
+              <p class="cop30-gallery__meta">
+                <span class="cop30-gallery__year">2022</span>
+                <span class="cop30-gallery__meta-sep" aria-hidden="true"></span>
+                <span class="cop30-gallery__place"><span class="cop30-gallery__place-icon" data-icon="map-pin" data-icon-size="sm" aria-hidden="true"></span>Ilha do Mosqueiro</span>
+              </p>
+              <h3 class="cop30-gallery__panel-title">Biblioteca de Intercâmbio</h3>
+              <span class="cop30-gallery__panel-rule" aria-hidden="true"></span>
+              <p class="cop30-gallery__panel-text">Criação da Biblioteca Pública de Intercâmbio Social do Instituto Humana, um espaço de acesso livre ao conhecimento no coração da floresta amazônica.</p>
+              <ul class="cop30-gallery__features">
+                <li>
+                  <span class="cop30-gallery__feature-icon" data-icon="book-open" data-icon-size="sm" aria-hidden="true"></span>
+                  <strong>Acervo Aberto</strong>
+                  <span>Intercâmbio de livros</span>
+                </li>
+                <li>
+                  <span class="cop30-gallery__feature-icon" data-icon="heart-handshake" data-icon-size="sm" aria-hidden="true"></span>
+                  <strong>Impacto Social</strong>
+                  <span>Comunidade local</span>
+                </li>
+                <li>
+                  <span class="cop30-gallery__feature-icon" data-icon="building-2" data-icon-size="sm" aria-hidden="true"></span>
+                  <strong>Sede Própria</strong>
+                  <span>Bioarquitetura</span>
+                </li>
+              </ul>
+              <a class="cop30-btn cop30-btn--primary cop30-gallery__panel-btn" href="blog/atividades-instituto.html">Ver projeto <span data-icon="arrow-right" data-icon-size="sm" aria-hidden="true"></span></a>
+            </article>
+
+            <article class="cop30-gallery__panel" data-cop30-panel="4">
+              <p class="cop30-gallery__meta">
+                <span class="cop30-gallery__year">2021</span>
+                <span class="cop30-gallery__meta-sep" aria-hidden="true"></span>
+                <span class="cop30-gallery__place"><span class="cop30-gallery__place-icon" data-icon="map-pin" data-icon-size="sm" aria-hidden="true"></span>Belém, Pará</span>
+              </p>
+              <h3 class="cop30-gallery__panel-title">Parcerias Institucionais</h3>
+              <span class="cop30-gallery__panel-rule" aria-hidden="true"></span>
+              <p class="cop30-gallery__panel-text">Alianças com organismos internacionais, universidades e instituições públicas que ampliam nossa capacidade técnica e o alcance dos projetos multilíngues.</p>
+              <ul class="cop30-gallery__features">
+                <li>
+                  <span class="cop30-gallery__feature-icon" data-icon="handshake" data-icon-size="sm" aria-hidden="true"></span>
+                  <strong>Colaboração</strong>
+                  <span>Redes de confiança</span>
+                </li>
+                <li>
+                  <span class="cop30-gallery__feature-icon" data-icon="globe" data-icon-size="sm" aria-hidden="true"></span>
+                  <strong>Alcance Global</strong>
+                  <span>Projetos conjuntos</span>
+                </li>
+                <li>
+                  <span class="cop30-gallery__feature-icon" data-icon="shield-check" data-icon-size="sm" aria-hidden="true"></span>
+                  <strong>Credibilidade</strong>
+                  <span>Entrega consistente</span>
+                </li>
+              </ul>
+              <a class="cop30-btn cop30-btn--primary cop30-gallery__panel-btn" href="parceiros.html">Ver projeto <span data-icon="arrow-right" data-icon-size="sm" aria-hidden="true"></span></a>
+            </article>
+
+            <article class="cop30-gallery__panel" data-cop30-panel="5">
+              <p class="cop30-gallery__meta">
+                <span class="cop30-gallery__year">2020</span>
+                <span class="cop30-gallery__meta-sep" aria-hidden="true"></span>
+                <span class="cop30-gallery__place"><span class="cop30-gallery__place-icon" data-icon="map-pin" data-icon-size="sm" aria-hidden="true"></span>Belém, Pará</span>
+              </p>
+              <h3 class="cop30-gallery__panel-title">Visitas Técnicas</h3>
+              <span class="cop30-gallery__panel-rule" aria-hidden="true"></span>
+              <p class="cop30-gallery__panel-text">Encontros técnicos e reuniões multilíngues com delegações, pesquisadores e lideranças locais, garantindo compreensão precisa em cada etapa do diálogo.</p>
+              <ul class="cop30-gallery__features">
+                <li>
+                  <span class="cop30-gallery__feature-icon" data-icon="map" data-icon-size="sm" aria-hidden="true"></span>
+                  <strong>Trabalho de Campo</strong>
+                  <span>Belém e região</span>
+                </li>
+                <li>
+                  <span class="cop30-gallery__feature-icon" data-icon="languages" data-icon-size="sm" aria-hidden="true"></span>
+                  <strong>Multilíngue</strong>
+                  <span>Diálogo direto</span>
+                </li>
+                <li>
+                  <span class="cop30-gallery__feature-icon" data-icon="clipboard-list" data-icon-size="sm" aria-hidden="true"></span>
+                  <strong>Suporte Completo</strong>
+                  <span>Do plano à execução</span>
+                </li>
+              </ul>
+              <a class="cop30-btn cop30-btn--primary cop30-gallery__panel-btn" href="blog/trabalhos-isp.html">Ver projeto <span data-icon="arrow-right" data-icon-size="sm" aria-hidden="true"></span></a>
+            </article>
+          </div>
         </div>
-        <div class="cop30-gallery__grid">
-          <a class="cop30-gallery__item cop30-gallery__item--a cop30-reveal" href="assets/images/blog/post-cop30.jpg" target="_blank" rel="noopener noreferrer">
-            <img src="assets/images/blog/post-cop30.jpg" alt="Participação da HUMANA na COP30" width="1200" height="750" loading="lazy">
-          </a>
-          <a class="cop30-gallery__item cop30-gallery__item--b cop30-reveal" href="assets/images/blog/post-indigenas.jpg" target="_blank" rel="noopener noreferrer">
-            <img src="assets/images/blog/post-indigenas.jpg" alt="Capacitação de intérpretes" width="800" height="500" loading="lazy">
-          </a>
-          <a class="cop30-gallery__item cop30-gallery__item--c cop30-reveal" href="assets/images/humana-com-trad.jpg" target="_blank" rel="noopener noreferrer">
-            <img src="assets/images/humana-com-trad.jpg" alt="Equipe HUMANA" width="1080" height="715" loading="lazy">
-          </a>
-          <a class="cop30-gallery__item cop30-gallery__item--d cop30-reveal" href="assets/images/blog/post-apresentacao.jpg" target="_blank" rel="noopener noreferrer">
-            <img src="assets/images/blog/post-apresentacao.jpg" alt="Evento institucional" width="800" height="500" loading="lazy">
-          </a>
-          <a class="cop30-gallery__item cop30-gallery__item--e cop30-reveal" href="assets/images/blog/post-trajetoria.jpg" target="_blank" rel="noopener noreferrer">
-            <img src="assets/images/blog/post-trajetoria.jpg" alt="Trajetória HUMANA" width="800" height="500" loading="lazy">
-          </a>
-          <a class="cop30-gallery__item cop30-gallery__item--f cop30-reveal" href="assets/images/blog/post-instituto.jpg" target="_blank" rel="noopener noreferrer">
-            <img src="assets/images/blog/post-instituto.jpg" alt="Atividades formativas" width="800" height="500" loading="lazy">
-          </a>
+
+        <div class="cop30-gallery__thumbs cop30-reveal" role="tablist" aria-label="Registros da nossa atuação">
+          <button class="cop30-gallery__thumb is-active" type="button" role="tab" aria-selected="true" data-cop30-thumb="0">
+            <span class="cop30-gallery__thumb-media"><img src="assets/images/blog/post-cop30.jpg" alt="" width="400" height="250" loading="lazy"></span>
+            <span class="cop30-gallery__thumb-title">COP30 – Amazônia</span>
+            <span class="cop30-gallery__thumb-meta">Belém, Pará • 2025</span>
+          </button>
+          <button class="cop30-gallery__thumb" type="button" role="tab" aria-selected="false" data-cop30-thumb="1">
+            <span class="cop30-gallery__thumb-media"><img src="assets/images/blog/post-indigenas.jpg" alt="" width="400" height="250" loading="lazy"></span>
+            <span class="cop30-gallery__thumb-title">Formação de Intérpretes</span>
+            <span class="cop30-gallery__thumb-meta">Belém, Pará • 2024</span>
+          </button>
+          <button class="cop30-gallery__thumb" type="button" role="tab" aria-selected="false" data-cop30-thumb="2">
+            <span class="cop30-gallery__thumb-media"><img src="assets/images/humana-com-trad.jpg" alt="" width="400" height="250" loading="lazy"></span>
+            <span class="cop30-gallery__thumb-title">Projetos Ambientais</span>
+            <span class="cop30-gallery__thumb-meta">Ilha do Mosqueiro • 2023</span>
+          </button>
+          <button class="cop30-gallery__thumb" type="button" role="tab" aria-selected="false" data-cop30-thumb="3">
+            <span class="cop30-gallery__thumb-media"><img src="assets/images/blog/post-instituto.jpg" alt="" width="400" height="250" loading="lazy"></span>
+            <span class="cop30-gallery__thumb-title">Biblioteca de Intercâmbio</span>
+            <span class="cop30-gallery__thumb-meta">Ilha do Mosqueiro • 2022</span>
+          </button>
+          <button class="cop30-gallery__thumb" type="button" role="tab" aria-selected="false" data-cop30-thumb="4">
+            <span class="cop30-gallery__thumb-media"><img src="assets/images/blog/post-trajetoria.jpg" alt="" width="400" height="250" loading="lazy"></span>
+            <span class="cop30-gallery__thumb-title">Parcerias Institucionais</span>
+            <span class="cop30-gallery__thumb-meta">Belém, Pará • 2021</span>
+          </button>
+          <button class="cop30-gallery__thumb" type="button" role="tab" aria-selected="false" data-cop30-thumb="5">
+            <span class="cop30-gallery__thumb-media"><img src="assets/images/amazonia.jpg" alt="" width="400" height="250" loading="lazy"></span>
+            <span class="cop30-gallery__thumb-title">Visitas Técnicas</span>
+            <span class="cop30-gallery__thumb-meta">Belém, Pará • 2020</span>
+          </button>
         </div>
+
+        <aside class="cop30-gallery__note cop30-reveal">
+          <span class="cop30-gallery__note-icon" data-icon="camera" data-icon-size="sm" aria-hidden="true"></span>
+          <div class="cop30-gallery__note-copy">
+            <strong>Fazemos parte de iniciativas que transformam realidades.</strong>
+            <span>Tradução, interpretação e educação a serviço de um mundo mais conectado.</span>
+          </div>
+          <a class="cop30-gallery__note-btn" href="contato.html">Fale com a Humana <span data-icon="arrow-right" data-icon-size="sm" aria-hidden="true"></span></a>
+        </aside>
       </div>
     </section>
 
@@ -414,7 +632,7 @@
             <li><a href="index.html" data-i18n="nav.home">Início</a></li>
             <li><a href="sobre.html" data-i18n="nav.about">Sobre Nós</a></li>
             <li><a href="cop30.html">COP30</a></li>
-            <li><a href="parceiros.html" data-i18n="nav.partners">Parceiros</a></li>
+            <li><a href="parceiros.html" data-i18n="nav.partners">Colaboradores</a></li>
             <li><a href="isp.html" data-i18n="nav.services">Serviços</a></li>
             <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
             <li><a href="contato.html" data-i18n="nav.contact">Contato</a></li>

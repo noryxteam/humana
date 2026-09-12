@@ -46,49 +46,10 @@ import { animate, inView, stagger } from 'https://cdn.jsdelivr.net/npm/motion@12
     fadeUp(el, { y: 20, amount: 0.35 });
   });
 
-  var specs = page.querySelectorAll('[data-tradx-motion="specialty"]');
-  if (specs.length) {
-    inView(page.querySelector('.tradx-specialties__grid'), function () {
-      animate(specs, { opacity: [0, 1], y: [22, 0] }, {
-        delay: stagger(0.12),
-        duration: 0.65,
-        easing: ease,
-      });
-    }, { amount: 0.2 });
-  }
-
-  var steps = page.querySelectorAll('[data-tradx-motion="process-step"]');
-  if (steps.length) {
-    inView(page.querySelector('.tradx-process__track'), function () {
-      animate(steps, { opacity: [0, 1], y: [18, 0] }, {
-        delay: stagger(0.1),
-        duration: 0.6,
-        easing: ease,
-      });
-    }, { amount: 0.15 });
-  }
-
-  page.querySelectorAll('[data-tradx-motion="why-item"]').forEach(function (el, i) {
-    inView(el, function () {
-      animate(el, { opacity: [0, 1], x: [-14, 0] }, {
-        duration: 0.55,
-        delay: i * 0.06,
-        easing: ease,
-      });
-    }, { amount: 0.4 });
-  });
-
-  var areas = page.querySelectorAll('[data-tradx-motion="area-item"]');
-  if (areas.length) {
-    inView(page.querySelector('.tradx-areas__grid'), function () {
-      animate(areas, { opacity: [0, 1], y: [16, 0] }, {
-        delay: stagger(0.07),
-        duration: 0.55,
-        easing: ease,
-      });
-    }, { amount: 0.12 });
-  }
-
-  fadeUp(page.querySelector('[data-tradx-motion="video"]'), { y: 20, amount: 0.3 });
+  fadeUp(page.querySelector('[data-tradx-motion="projects"]'), { y: 22, amount: 0.2 });
+  fadeUp(page.querySelector('[data-tradx-motion="main-types"]'), { y: 20, amount: 0.25 });
+  fadeUp(page.querySelector('[data-tradx-motion="main-panel"]'), { y: 24, amount: 0.15 });
+  fadeUp(page.querySelector('[data-tradx-motion="how-top"]'), { y: 22, amount: 0.2 });
+  fadeUp(page.querySelector('[data-tradx-motion="how-process"]'), { y: 22, amount: 0.15 });
   fadeUp(page.querySelector('[data-tradx-motion="cta"]'), { y: 20, amount: 0.35 });
 })();

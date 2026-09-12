@@ -39,50 +39,20 @@ import { animate, inView, stagger } from 'https://cdn.jsdelivr.net/npm/motion@12
     fadeUp(el, { y: 20, amount: 0.35 });
   });
 
-  page.querySelectorAll('[data-instx-motion="timeline-item"]').forEach(function (el, i) {
-    inView(el, function () {
-      animate(el, { opacity: [0, 1], x: [i % 2 === 0 ? -20 : 20, 0] }, {
-        duration: 0.65,
-        delay: 0.05,
-        easing: ease,
-      });
-    }, { amount: 0.35 });
+  page.querySelectorAll('[data-instx-motion="story"]').forEach(function (el) {
+    fadeUp(el, { y: 22, amount: 0.18 });
   });
+  fadeUp(page.querySelector('[data-instx-motion="story-note"]'), { y: 14, amount: 0.6 });
 
-  page.querySelectorAll('[data-instx-motion="training-item"]').forEach(function (el, i) {
-    inView(el, function () {
-      animate(el, { opacity: [0, 1], y: [14, 0] }, {
-        duration: 0.55,
-        delay: i * 0.07,
-        easing: ease,
-      });
-    }, { amount: 0.4 });
-  });
-
-  var projects = page.querySelectorAll('[data-instx-motion="project"]');
-  var projectRoot = page.querySelector('.instx-projects__layout');
-  if (projects.length && projectRoot) {
-    inView(projectRoot, function () {
-      animate(projects, { opacity: [0, 1], y: [22, 0] }, {
-        delay: stagger(0.1),
-        duration: 0.65,
+  var activities = page.querySelectorAll('[data-instx-motion="activity"]');
+  var activitiesRoot = page.querySelector('.instx-activities__grid');
+  if (activities.length && activitiesRoot) {
+    inView(activitiesRoot, function () {
+      animate(activities, { opacity: [0, 1], y: [24, 0] }, {
+        delay: stagger(0.12),
+        duration: 0.7,
         easing: ease,
       });
     }, { amount: 0.15 });
   }
-
-  var gallery = page.querySelectorAll('[data-instx-motion="gallery-item"]');
-  if (gallery.length) {
-    inView(page.querySelector('.instx-gallery__grid'), function () {
-      animate(gallery, { opacity: [0, 1], scale: [0.97, 1] }, {
-        delay: stagger(0.08),
-        duration: 0.6,
-        easing: ease,
-      });
-    }, { amount: 0.12 });
-  }
-
-  fadeUp(page.querySelector('[data-instx-motion="video-a"]'), { y: 20, amount: 0.3 });
-  fadeUp(page.querySelector('[data-instx-motion="video-b"]'), { y: 20, amount: 0.3 });
-  fadeUp(page.querySelector('[data-instx-motion="cta"]'), { y: 20, amount: 0.35 });
 })();

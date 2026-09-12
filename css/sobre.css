@@ -490,12 +490,9 @@
   will-change: transform, opacity;
 }
 
-.empresa-blocks--js .empresa-block:nth-child(odd) {
-  transform: translate3d(-80px, 0, 0);
-}
-
+.empresa-blocks--js .empresa-block:nth-child(odd),
 .empresa-blocks--js .empresa-block:nth-child(even) {
-  transform: translate3d(80px, 0, 0);
+  transform: translate3d(0, 36px, 0);
 }
 
 .empresa-blocks--js .empresa-block.is-visible {
