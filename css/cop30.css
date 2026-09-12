@@ -51,6 +51,7 @@
   font-weight: 700;
   line-height: 1.25;
   color: var(--cp-navy);
+  overflow-wrap: break-word;
 }
 
 .cop30-lead {
@@ -1125,6 +1126,11 @@
 
 /* Responsivo */
 @media (max-width: 960px) {
+  /* Transform cria containing block e no iOS vaza imagem por cima do texto */
+  .cop30-reveal {
+    transform: none;
+  }
+
   .cop30-about__grid,
   .cop30-missions__grid,
   .cop30-justice__grid,
@@ -1139,18 +1145,40 @@
     aspect-ratio: 16 / 10;
   }
 
+  .cop30-missions__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .cop30-missions__mosaic {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
     height: auto;
     min-height: 0;
-    grid-template-rows: auto auto;
+    overflow: hidden;
   }
 
   .cop30-missions__mosaic img {
-    min-height: 150px;
+    height: auto;
+    min-height: 0;
+    max-height: 160px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
   }
 
   .cop30-missions__mosaic img:first-child {
-    min-height: 260px;
+    grid-column: 1 / -1;
+    grid-row: auto;
+    max-height: 200px;
+    aspect-ratio: 16 / 10;
+  }
+
+  .cop30-missions__copy {
+    position: relative;
+    z-index: 1;
+    background: var(--cp-surface);
   }
 
   .cop30-justice__tags {
@@ -1178,11 +1206,29 @@
 
   .cop30-gallery__stage {
     grid-template-columns: 1fr;
+    overflow: hidden;
   }
 
   .cop30-gallery__viewport {
+    height: auto;
     min-height: 0;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: auto;
+    overflow: hidden;
+  }
+
+  .cop30-gallery__shot {
+    display: none;
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    opacity: 1;
+    transform: none;
+  }
+
+  .cop30-gallery__shot.is-active {
+    display: block;
   }
 
   .cop30-gallery__thumbs {
@@ -1218,15 +1264,6 @@
     grid-template-columns: 1fr;
   }
 
-  .cop30-missions__mosaic {
-    grid-template-columns: 1fr;
-  }
-
-  .cop30-missions__mosaic img:first-child {
-    grid-row: auto;
-    min-height: 200px;
-  }
-
   .cop30-gallery__panel {
     padding: 22px 20px 24px;
   }
@@ -1244,6 +1281,10 @@
     padding-top: 10px;
     border-left: 0;
     border-top: 1px solid var(--cp-line);
+  }
+
+  .cop30-gallery__lead br {
+    display: none;
   }
 
   .cop30-gallery__thumbs {
