@@ -18,7 +18,7 @@ ${buildFooterLogo(p)}
             <li><a href="${p}sobre.html" data-i18n="nav.about">Sobre Nós</a></li>
             <li><a href="${p}cop30.html">COP30</a></li>
             <li><a href="${p}parceiros.html" data-i18n="nav.partners">Parceiros</a></li>
-            <li><a href="${p}isp.html" data-i18n="nav.services">Serviços</a></li>
+            <li><a href="${p}servicos.html" data-i18n="nav.services">Serviços</a></li>
             <li><a href="${p}blog.html" data-i18n="nav.blog">Blog</a></li>
             <li><a href="${p}contato.html" data-i18n="nav.contact">Contato</a></li>
           </ul>

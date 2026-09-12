@@ -649,6 +649,10 @@
   color: #333;
 }
 
+.services-official__controls {
+  display: none;
+}
+
 /* Onde estamos */
 .section--location {
   background-color: #fff;

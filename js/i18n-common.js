@@ -15,6 +15,8 @@ window.HUMANA_I18N_KEYS = {
   'nav.blog': { en: 'Blog', es: 'Blog' },
   'nav.contact': { en: 'Contact', es: 'Contacto' },
   'nav.cta': { en: 'Request a Quote', es: 'Solicitar Presupuesto' },
+  'nav.menuOpen': { en: 'Open menu', es: 'Abrir menú' },
+  'nav.menuClose': { en: 'Close menu', es: 'Cerrar menú' },
 
   'footer.nav': { en: 'Navigation', es: 'Navegación' },
   'footer.services': { en: 'Services', es: 'Servicios' },

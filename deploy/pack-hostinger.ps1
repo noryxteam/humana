@@ -16,6 +16,7 @@ $copy = @(
   "index.html", "sobre.html", "historia.html", "contato.html", "blog.html",
   "cop30.html", "parceiros.html", "tao-filmes.html",
   "isp.html", "isr.html", "traducao.html", "cursos-formativos.html",
+  "servicos.html",
   "politica-privacidade.html", "termos-de-uso.html"
 )
 

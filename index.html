@@ -22,15 +22,17 @@
         <span class="page-nav__logo-tag">com &amp; trad</span>
       </span>
       </a>
+      <div class="page-nav__panel" id="page-nav-menu">
       <ul class="page-nav__list">
         <li class="page-nav__item is-active"><a href="index.html" data-i18n="nav.home">Início</a></li>
         <li class="page-nav__item"><a href="sobre.html" data-i18n="nav.about">Sobre Nós</a></li>
         <li class="page-nav__item page-nav__item--dropdown">
-          <a href="#" class="page-nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          <a href="servicos.html" class="page-nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
             <span data-i18n="nav.services">Serviços</span>
             <span class="page-nav__link-icon" data-icon="chevron-down" data-icon-size="sm"></span>
           </a>
           <ul class="page-nav__dropdown">
+            <li><a href="servicos.html" data-i18n="nav.services">Nossos Serviços</a></li>
             <li><a href="isp.html" data-i18n="nav.isp">Interpretação Simultânea Presencial</a></li>
             <li><a href="isr.html" data-i18n="nav.isr">Interpretação Simultânea Remota</a></li>
             <li><a href="traducao.html" data-i18n="nav.translation">Tradução</a></li>
@@ -40,7 +42,7 @@
         <li class="page-nav__item"><a href="cop30.html">COP30</a></li>
         <li class="page-nav__item page-nav__item--dropdown">
           <a href="#" class="page-nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-            <span data-i18n="nav.partners">Colaboradores</span>
+            <span data-i18n="nav.partners">Parceiros</span>
             <span class="page-nav__link-icon" data-icon="chevron-down" data-icon-size="sm"></span>
           </a>
           <ul class="page-nav__dropdown">
@@ -55,6 +57,7 @@
         <span data-i18n="nav.cta">Solicitar Orçamento</span>
         <span class="page-nav__cta-icon" data-icon="arrow-right" data-icon-size="sm"></span>
       </a>
+      </div>
             <div class="lang-switcher" data-lang-switcher role="group" aria-label="Idioma / Language">
         <button type="button" class="lang-switcher__btn is-active" data-lang="pt" aria-label="Português" title="Português">
           <img src="assets/images/flags/br.svg" alt="" width="20" height="14" decoding="async">
@@ -66,6 +69,10 @@
           <img src="assets/images/flags/es.svg" alt="" width="20" height="14" decoding="async">
         </button>
       </div>
+      <button type="button" class="page-nav__toggle" aria-controls="page-nav-menu" aria-expanded="false" data-i18n-aria-label="nav.menuOpen" aria-label="Abrir menu">
+        <span class="page-nav__toggle-open" data-icon="menu" data-icon-size="md" aria-hidden="true"></span>
+        <span class="page-nav__toggle-close" data-icon="x" data-icon-size="md" aria-hidden="true"></span>
+      </button>
     </div>
   </nav>
 
@@ -198,30 +205,40 @@
             </div>
           </div>
 
-          <div class="services-official__grid">
-            <a href="isp.html" class="services-official__item">
-              <div class="services-official__media">
-                <img class="services-official__graphic" src="imagem/1%20icone.png" alt="Interpretação Simultânea" width="553" height="259" loading="lazy">
-              </div>
-              <p class="services-official__name">INTERPRETAÇÃO SIMULTÂNEA</p>
-              <p class="services-official__text">A HUMANA é especializada em <strong>interpretação simultânea de alto nível</strong>, tanto em eventos presenciais quanto virtuais. Seja em conferências internacionais, seminários acadêmicos ou reuniões multilíngues, garantimos fluidez, clareza e profissionalismo na comunicação entre idiomas.</p>
-            </a>
+          <div class="services-official__stage" data-services-carousel>
+            <div class="services-official__grid">
+              <a href="isp.html" class="services-official__item is-front">
+                <div class="services-official__media">
+                  <img class="services-official__graphic" src="imagem/1%20icone.png" alt="Interpretação Simultânea" width="553" height="259" loading="lazy">
+                </div>
+                <p class="services-official__name">INTERPRETAÇÃO SIMULTÂNEA</p>
+                <p class="services-official__text">A HUMANA é especializada em <strong>interpretação simultânea de alto nível</strong>, tanto em eventos presenciais quanto virtuais. Seja em conferências internacionais, seminários acadêmicos ou reuniões multilíngues, garantimos fluidez, clareza e profissionalismo na comunicação entre idiomas.</p>
+              </a>
 
-            <a href="traducao.html" class="services-official__item">
-              <div class="services-official__media">
-                <img class="services-official__graphic" src="imagem/2%20icone.png" alt="Tradução" width="553" height="259" loading="lazy">
-              </div>
-              <p class="services-official__name">TRADUÇÃO</p>
-              <p class="services-official__text"><strong>Traduções precisas e culturalmente adaptadas</strong> em diversas áreas do conhecimento: jurídico, acadêmico, científico, institucional e cultural. Nosso compromisso é entregar textos com <strong>linguagem adequada, fidelidade ao conteúdo</strong> e cuidado com os mínimos detalhes.</p>
-            </a>
+              <a href="traducao.html" class="services-official__item is-right">
+                <div class="services-official__media">
+                  <img class="services-official__graphic" src="imagem/2%20icone.png" alt="Tradução" width="553" height="259" loading="lazy">
+                </div>
+                <p class="services-official__name">TRADUÇÃO</p>
+                <p class="services-official__text"><strong>Traduções precisas e culturalmente adaptadas</strong> em diversas áreas do conhecimento: jurídico, acadêmico, científico, institucional e cultural. Nosso compromisso é entregar textos com <strong>linguagem adequada, fidelidade ao conteúdo</strong> e cuidado com os mínimos detalhes.</p>
+              </a>
 
-            <a href="cursos-formativos.html" class="services-official__item">
-              <div class="services-official__media">
-                <img class="services-official__graphic" src="imagem/3%20icone.png" alt="Cursos Formativos — Instituto HUMANA" width="640" height="259" loading="lazy">
-              </div>
-              <p class="services-official__name">CURSOS FORMATIVOS</p>
-              <p class="services-official__text">Desde 2009, oferecemos <strong>cursos de formação em tradução e interpretação</strong>, com foco no desenvolvimento técnico e ético de novos profissionais. Investimos na <strong>capacitação de talentos locais</strong>, ampliando oportunidades de trabalho na Amazônia e contribuindo para o fortalecimento do setor.</p>
-            </a>
+              <a href="cursos-formativos.html" class="services-official__item is-left">
+                <div class="services-official__media">
+                  <img class="services-official__graphic" src="imagem/3%20icone.png" alt="Cursos Formativos — Instituto HUMANA" width="640" height="259" loading="lazy">
+                </div>
+                <p class="services-official__name">CURSOS FORMATIVOS</p>
+                <p class="services-official__text">Desde 2009, oferecemos <strong>cursos de formação em tradução e interpretação</strong>, com foco no desenvolvimento técnico e ético de novos profissionais. Investimos na <strong>capacitação de talentos locais</strong>, ampliando oportunidades de trabalho na Amazônia e contribuindo para o fortalecimento do setor.</p>
+              </a>
+            </div>
+            <div class="services-official__controls">
+              <button type="button" class="services-official__arrow" data-services-prev aria-label="Serviço anterior">
+                <span data-icon="chevron-left" data-icon-size="md" aria-hidden="true"></span>
+              </button>
+              <button type="button" class="services-official__arrow" data-services-next aria-label="Próximo serviço">
+                <span data-icon="chevron-right" data-icon-size="md" aria-hidden="true"></span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -600,7 +617,7 @@
       <div class="site-footer__inner">
         <div class="site-footer__brand">
           <a href="index.html" class="site-footer__logo" aria-label="HUMANA com &amp; trad">
-            <img src="assets/images/logo-humana.png" alt="" class="site-footer__logo-img" width="76" height="36" decoding="async" aria-hidden="true">
+            <img src="assets/images/logo-humana.png" alt="" class="site-footer__logo-img" width="106" height="50" decoding="async" aria-hidden="true">
             <span class="site-footer__logo-copy">
         <span class="site-footer__logo-name">Humana</span>
         <span class="site-footer__logo-tag">com &amp; trad</span>
@@ -614,8 +631,8 @@
             <li><a href="index.html" data-i18n="nav.home">Início</a></li>
             <li><a href="sobre.html" data-i18n="nav.about">Sobre Nós</a></li>
             <li><a href="cop30.html">COP30</a></li>
-            <li><a href="parceiros.html" data-i18n="nav.partners">Colaboradores</a></li>
-            <li><a href="isp.html" data-i18n="nav.services">Serviços</a></li>
+            <li><a href="parceiros.html" data-i18n="nav.partners">Parceiros</a></li>
+            <li><a href="servicos.html" data-i18n="nav.services">Serviços</a></li>
             <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
             <li><a href="contato.html" data-i18n="nav.contact">Contato</a></li>
           </ul>
@@ -687,6 +704,7 @@
   <script src="js/navbar-scroll.js"></script>
   <script src="js/icons.js"></script>
   <script src="js/carousel.js"></script>
+  <script src="js/services-carousel.js"></script>
   <script src="js/stats-counter.js"></script>
   <script src="js/contact-section.js"></script>
   <script src="js/drawer.js"></script>

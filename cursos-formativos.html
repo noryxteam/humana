@@ -17,22 +17,24 @@
 
   <nav class="page-nav page-nav--overlay" aria-label="Navegação principal">
     <div class="page-nav__inner">
-      <a href="index.html" class="page-nav__logo page-nav__logo--hero">
+            <a href="index.html" class="page-nav__logo page-nav__logo--hero">
         <img src="assets/images/logo-humana.png" alt="" class="page-nav__logo-img" width="84" height="40" decoding="async" aria-hidden="true">
         <span class="page-nav__logo-copy">
-          <span class="page-nav__logo-name">Humana</span>
-          <span class="page-nav__logo-tag">com &amp; trad</span>
-        </span>
+        <span class="page-nav__logo-name">Humana</span>
+        <span class="page-nav__logo-tag">com &amp; trad</span>
+      </span>
       </a>
+      <div class="page-nav__panel" id="page-nav-menu">
       <ul class="page-nav__list">
         <li class="page-nav__item"><a href="index.html" data-i18n="nav.home">Início</a></li>
         <li class="page-nav__item"><a href="sobre.html" data-i18n="nav.about">Sobre Nós</a></li>
         <li class="page-nav__item page-nav__item--dropdown is-active">
-          <a href="#" class="page-nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          <a href="servicos.html" class="page-nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
             <span data-i18n="nav.services">Serviços</span>
             <span class="page-nav__link-icon" data-icon="chevron-down" data-icon-size="sm"></span>
           </a>
           <ul class="page-nav__dropdown">
+            <li><a href="servicos.html" data-i18n="nav.services">Nossos Serviços</a></li>
             <li><a href="isp.html" data-i18n="nav.isp">Interpretação Simultânea Presencial</a></li>
             <li><a href="isr.html" data-i18n="nav.isr">Interpretação Simultânea Remota</a></li>
             <li><a href="traducao.html" data-i18n="nav.translation">Tradução</a></li>
@@ -42,7 +44,7 @@
         <li class="page-nav__item"><a href="cop30.html">COP30</a></li>
         <li class="page-nav__item page-nav__item--dropdown">
           <a href="#" class="page-nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
-            <span data-i18n="nav.partners">Colaboradores</span>
+            <span data-i18n="nav.partners">Parceiros</span>
             <span class="page-nav__link-icon" data-icon="chevron-down" data-icon-size="sm"></span>
           </a>
           <ul class="page-nav__dropdown">
@@ -57,7 +59,8 @@
         <span data-i18n="nav.cta">Solicitar Orçamento</span>
         <span class="page-nav__cta-icon" data-icon="arrow-right" data-icon-size="sm"></span>
       </a>
-      <div class="lang-switcher" data-lang-switcher role="group" aria-label="Idioma / Language">
+      </div>
+            <div class="lang-switcher" data-lang-switcher role="group" aria-label="Idioma / Language">
         <button type="button" class="lang-switcher__btn is-active" data-lang="pt" aria-label="Português" title="Português">
           <img src="assets/images/flags/br.svg" alt="" width="20" height="14" decoding="async">
         </button>
@@ -68,6 +71,10 @@
           <img src="assets/images/flags/es.svg" alt="" width="20" height="14" decoding="async">
         </button>
       </div>
+      <button type="button" class="page-nav__toggle" aria-controls="page-nav-menu" aria-expanded="false" data-i18n-aria-label="nav.menuOpen" aria-label="Abrir menu">
+        <span class="page-nav__toggle-open" data-icon="menu" data-icon-size="md" aria-hidden="true"></span>
+        <span class="page-nav__toggle-close" data-icon="x" data-icon-size="md" aria-hidden="true"></span>
+      </button>
     </div>
   </nav>
 
@@ -195,11 +202,11 @@
       <div class="site-footer__inner">
         <div class="site-footer__brand">
           <a href="index.html" class="site-footer__logo" aria-label="HUMANA com &amp; trad">
-            <img src="assets/images/logo-humana.png" alt="" class="site-footer__logo-img" width="76" height="36" decoding="async" aria-hidden="true">
+            <img src="assets/images/logo-humana.png" alt="" class="site-footer__logo-img" width="106" height="50" decoding="async" aria-hidden="true">
             <span class="site-footer__logo-copy">
-              <span class="site-footer__logo-name">Humana</span>
-              <span class="site-footer__logo-tag">com &amp; trad</span>
-            </span>
+        <span class="site-footer__logo-name">Humana</span>
+        <span class="site-footer__logo-tag">com &amp; trad</span>
+      </span>
           </a>
         </div>
 
@@ -209,8 +216,8 @@
             <li><a href="index.html" data-i18n="nav.home">Início</a></li>
             <li><a href="sobre.html" data-i18n="nav.about">Sobre Nós</a></li>
             <li><a href="cop30.html">COP30</a></li>
-            <li><a href="parceiros.html" data-i18n="nav.partners">Colaboradores</a></li>
-            <li><a href="isp.html" data-i18n="nav.services">Serviços</a></li>
+            <li><a href="parceiros.html" data-i18n="nav.partners">Parceiros</a></li>
+            <li><a href="servicos.html" data-i18n="nav.services">Serviços</a></li>
             <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
             <li><a href="contato.html" data-i18n="nav.contact">Contato</a></li>
           </ul>

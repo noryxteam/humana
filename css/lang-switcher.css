@@ -69,3 +69,19 @@
     width: 18px;
   }
 }
+
+@media (max-width: 480px) {
+  .lang-switcher {
+    gap: 1px;
+    padding: 2px;
+  }
+
+  .lang-switcher__btn {
+    width: 26px;
+    height: 22px;
+  }
+
+  .lang-switcher__btn img {
+    width: 16px;
+  }
+}

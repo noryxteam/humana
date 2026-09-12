@@ -29,6 +29,7 @@ const OVERLAY_PAGES = new Set([
   'isr.html',
   'traducao.html',
   'cursos-formativos.html',
+  'servicos.html',
 ]);
 
 function activeFor(filePath) {
@@ -41,7 +42,7 @@ function activeFor(filePath) {
   if (name === 'contato.html') return { contato: true };
   if (name === 'cop30.html') return { cop30: true };
   if (name === 'parceiros.html' || name === 'tao-filmes.html') return { parceiros: true };
-  if (['isp.html', 'isr.html', 'traducao.html', 'cursos-formativos.html'].includes(name)) {
+  if (['servicos.html', 'isp.html', 'isr.html', 'traducao.html', 'cursos-formativos.html'].includes(name)) {
     return { servicos: true };
   }
   return {};
@@ -59,15 +60,17 @@ function buildNav(prefix, active, overlay) {
   return `  <nav class="${navClass}" aria-label="Navegação principal">
     <div class="page-nav__inner">
       ${buildNavLogo(prefix)}
+      <div class="page-nav__panel" id="page-nav-menu">
       <ul class="page-nav__list">
         <li class="page-nav__item${a('inicio')}"><a href="${prefix}index.html" data-i18n="nav.home">Início</a></li>
         <li class="page-nav__item${a('sobre')}"><a href="${prefix}sobre.html" data-i18n="nav.about">Sobre Nós</a></li>
         <li class="page-nav__item page-nav__item--dropdown${a('servicos')}">
-          <a href="#" class="page-nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          <a href="${prefix}servicos.html" class="page-nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
             <span data-i18n="nav.services">Serviços</span>
             <span class="page-nav__link-icon" data-icon="chevron-down" data-icon-size="sm"></span>
           </a>
           <ul class="page-nav__dropdown">
+            <li><a href="${prefix}servicos.html" data-i18n="nav.services">Nossos Serviços</a></li>
             <li><a href="${prefix}isp.html" data-i18n="nav.isp">Interpretação Simultânea Presencial</a></li>
             <li><a href="${prefix}isr.html" data-i18n="nav.isr">Interpretação Simultânea Remota</a></li>
             <li><a href="${prefix}traducao.html" data-i18n="nav.translation">Tradução</a></li>
@@ -92,7 +95,12 @@ function buildNav(prefix, active, overlay) {
         <span data-i18n="nav.cta">Solicitar Orçamento</span>
         <span class="page-nav__cta-icon" data-icon="arrow-right" data-icon-size="sm"></span>
       </a>
+      </div>
       ${buildLangSwitcher(prefix)}
+      <button type="button" class="page-nav__toggle" aria-controls="page-nav-menu" aria-expanded="false" data-i18n-aria-label="nav.menuOpen" aria-label="Abrir menu">
+        <span class="page-nav__toggle-open" data-icon="menu" data-icon-size="md" aria-hidden="true"></span>
+        <span class="page-nav__toggle-close" data-icon="x" data-icon-size="md" aria-hidden="true"></span>
+      </button>
     </div>
   </nav>`;
 }

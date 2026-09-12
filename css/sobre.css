@@ -846,6 +846,7 @@
   .empresa-intro__content {
     width: min(58%, 520px);
     padding-left: clamp(24px, 4vw, 48px);
+    padding-top: calc(var(--nav-height) + 20px);
   }
 
   .empresa-intro__title {
