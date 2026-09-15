@@ -39,7 +39,7 @@
     ],
     cursos: [
       { icon: 'graduation-cap', title: 'Capacitação', text: 'Formação de tradutores e intérpretes' },
-      { icon: 'users', title: 'Fortalecimento regional', text: 'Mais de 50 profissionais formados' },
+      { icon: 'users', title: 'Fortalecimento regional', text: 'Mais de 70 profissionais formados' },
       { icon: 'award', title: 'Excelência técnica', text: 'Cursos especializados desde 2009' },
     ],
     'blog-post': [

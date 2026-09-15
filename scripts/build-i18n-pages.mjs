@@ -45,8 +45,8 @@ const contact = {
     es: 'HUMANA Comunicación y Traducción',
   },
   '.contact-section__address-text': {
-    en: 'Travessa Jupira s/n Lt 05-06 Qd 18 Jardim Tropicália<br>CEP: 66931-010 - Marahú - Mosqueiro - Belém - PA',
-    es: 'Travessa Jupira s/n Lt 05-06 Qd 18 Jardim Tropicália<br>CEP: 66931-010 - Marahú - Mosqueiro - Belém - PA',
+    en: 'Parque Tecnológico do Guamá — Entrepreneur Space<br>Belém/PA',
+    es: 'Parque Tecnológico do Guamá — Espacio Emprendedor<br>Belém/PA',
   },
   '.contact-section__feature:nth-child(1) .contact-section__feature-title': {
     en: 'Humanized Service',

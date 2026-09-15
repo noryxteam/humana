@@ -199,7 +199,7 @@
 .instx-story__note-icon svg circle { display: none; }
 
 /* 4) Atividades do Instituto */
-.instx-activities { padding: var(--instx-gap) 0; background: #fff; }
+.instx-activities { padding: var(--instx-gap) 0 0; background: #fff; }
 .instx-activities__head { text-align: left; margin-bottom: clamp(1.6rem, 3vw, 2.4rem); }
 .instx-activities__head .instx-section-lead { margin-inline: 0; }
 /* Cards em sangria total: sem limite lateral e sem respiro entre eles */

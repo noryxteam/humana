@@ -24,8 +24,8 @@ window.HUMANA_I18N_KEYS = {
   'footer.ispShort': { en: 'On-site Interpretation', es: 'Interpretación Presencial' },
   'footer.isrShort': { en: 'Remote Interpretation', es: 'Interpretación Remota' },
   'footer.address': {
-    en: 'Travessa Jupira s/n Lt 05-06 Qd 18, Jardim Tropicália — Marahú, Belém/PA',
-    es: 'Travessa Jupira s/n Lt 05-06 Qd 18, Jardim Tropicália — Marahú, Belém/PA',
+    en: 'Parque Tecnológico do Guamá — Entrepreneur Space, Belém/PA',
+    es: 'Parque Tecnológico do Guamá — Espacio Emprendedor, Belém/PA',
   },
   'footer.copyright': {
     en: '&copy; {year} HUMANA COM &amp; TRAD. All rights reserved.',

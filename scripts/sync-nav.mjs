@@ -14,6 +14,7 @@ const SKIP = new Set([
   'temp-traducao.html',
   'temp-isr.html',
   'reference-sobre.html',
+  'servicos.html',
 ]);
 
 const OVERLAY_PAGES = new Set([
@@ -29,7 +30,6 @@ const OVERLAY_PAGES = new Set([
   'isr.html',
   'traducao.html',
   'cursos-formativos.html',
-  'servicos.html',
 ]);
 
 function activeFor(filePath) {
@@ -42,7 +42,7 @@ function activeFor(filePath) {
   if (name === 'contato.html') return { contato: true };
   if (name === 'cop30.html') return { cop30: true };
   if (name === 'parceiros.html' || name === 'tao-filmes.html') return { parceiros: true };
-  if (['servicos.html', 'isp.html', 'isr.html', 'traducao.html', 'cursos-formativos.html'].includes(name)) {
+  if (['isp.html', 'isr.html', 'traducao.html', 'cursos-formativos.html'].includes(name)) {
     return { servicos: true };
   }
   return {};
@@ -65,12 +65,11 @@ function buildNav(prefix, active, overlay) {
         <li class="page-nav__item${a('inicio')}"><a href="${prefix}index.html" data-i18n="nav.home">Início</a></li>
         <li class="page-nav__item${a('sobre')}"><a href="${prefix}sobre.html" data-i18n="nav.about">Sobre Nós</a></li>
         <li class="page-nav__item page-nav__item--dropdown${a('servicos')}">
-          <a href="${prefix}servicos.html" class="page-nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          <a href="#" class="page-nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
             <span data-i18n="nav.services">Serviços</span>
             <span class="page-nav__link-icon" data-icon="chevron-down" data-icon-size="sm"></span>
           </a>
           <ul class="page-nav__dropdown">
-            <li><a href="${prefix}servicos.html" data-i18n="nav.services">Nossos Serviços</a></li>
             <li><a href="${prefix}isp.html" data-i18n="nav.isp">Interpretação Simultânea Presencial</a></li>
             <li><a href="${prefix}isr.html" data-i18n="nav.isr">Interpretação Simultânea Remota</a></li>
             <li><a href="${prefix}traducao.html" data-i18n="nav.translation">Tradução</a></li>

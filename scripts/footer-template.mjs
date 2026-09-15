@@ -18,7 +18,7 @@ ${buildFooterLogo(p)}
             <li><a href="${p}sobre.html" data-i18n="nav.about">Sobre Nós</a></li>
             <li><a href="${p}cop30.html">COP30</a></li>
             <li><a href="${p}parceiros.html" data-i18n="nav.partners">Parceiros</a></li>
-            <li><a href="${p}servicos.html" data-i18n="nav.services">Serviços</a></li>
+            <li><a href="${p}isp.html" data-i18n="nav.services">Serviços</a></li>
             <li><a href="${p}blog.html" data-i18n="nav.blog">Blog</a></li>
             <li><a href="${p}contato.html" data-i18n="nav.contact">Contato</a></li>
           </ul>
@@ -58,7 +58,7 @@ ${buildFooterLogo(p)}
             <li>
               <span class="site-footer__contact-static">
                 <span class="site-footer__contact-icon" data-icon="map-pinned" data-icon-size="sm" aria-hidden="true"></span>
-                <span data-i18n="footer.address">Travessa Jupira s/n Lt 05-06 Qd 18, Jardim Tropicália — Marahú, Belém/PA</span>
+                <span data-i18n="footer.address">Parque Tecnológico do Guamá — Espaço Empreendedor, Belém/PA</span>
               </span>
             </li>
           </ul>

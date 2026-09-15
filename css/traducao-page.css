@@ -343,8 +343,18 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.75rem 1rem;
-  margin: 0 0 clamp(1.25rem, 2vw, 1.75rem);
+  margin: 0;
   padding: 0;
+}
+
+.tradx-langs__all {
+  margin: 1rem 0 clamp(1.25rem, 2vw, 1.75rem);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tradx-accent);
 }
 
 .tradx-langs__grid li {
@@ -384,7 +394,7 @@
 .tradx-langs__count {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-size: clamp(1.5rem, 3vw, 2.125rem);
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.03em;
@@ -923,6 +933,10 @@
 @media (max-width: 640px) {
   .tradx-main__features {
     grid-template-columns: 1fr;
+  }
+
+  .tradx-langs__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   /* No celular só o card da frente aparece, ocupando toda a largura */

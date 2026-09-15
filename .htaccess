@@ -28,6 +28,7 @@ DirectoryIndex index.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteRule ^temp- - [F,L]
+  RewriteRule ^servicos\.html$ /isp.html [R=301,L]
 </IfModule>
 
 Options -Indexes

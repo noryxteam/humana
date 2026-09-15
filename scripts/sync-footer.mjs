@@ -13,6 +13,7 @@ const SKIP = new Set([
   'temp-traducao.html',
   'temp-isr.html',
   'reference-sobre.html',
+  'servicos.html',
 ]);
 
 const FOOTER_BLOCK_RE =

@@ -224,7 +224,7 @@
   display: grid;
   grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
   gap: clamp(2rem, 4vw, 3.5rem);
-  align-items: center;
+  align-items: stretch;
 }
 
 .ispx-about__rule {
@@ -268,6 +268,11 @@
 }
 
 .ispx-metrics {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  box-sizing: border-box;
   background: #fff;
   border-radius: var(--ispx-radius-lg);
   box-shadow: var(--ispx-shadow);
