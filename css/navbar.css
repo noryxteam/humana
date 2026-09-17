@@ -122,8 +122,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
   gap: 2px;
   line-height: 1;
+  width: max-content;
   max-height: 40px;
 }
 
@@ -132,21 +134,23 @@
   display: block;
   font-family: "Montserrat", "Open Sans", sans-serif;
   font-size: 15px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
+  font-weight: 500;
   line-height: 1;
-  margin-right: -0.04em;
   white-space: nowrap;
 }
 
 .page-nav__logo-name {
+  letter-spacing: 0.266em;
+  margin-right: -0.266em;
   text-transform: uppercase;
   color: #fff;
 }
 
 .page-nav__logo-tag {
-  text-transform: lowercase;
-  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.06em;
+  margin-right: -0.06em;
+  text-transform: capitalize;
+  color: #fff;
 }
 
 .page-nav:not(.page-nav--overlay) .page-nav__logo-name {
@@ -154,8 +158,7 @@
 }
 
 .page-nav:not(.page-nav--overlay) .page-nav__logo-tag {
-  color: #666;
-  opacity: 0.9;
+  color: #0b2840;
 }
 
 .page-nav--overlay .page-nav__item a {
