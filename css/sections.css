@@ -11,6 +11,7 @@
   flex-direction: column;
   overflow: hidden;
   font-family: "Montserrat", "Open Sans", sans-serif;
+  background: #000;
 }
 
 /* Primeira seção das demais páginas — mesma altura do Início */
@@ -42,6 +43,7 @@
   position: absolute;
   inset: 0;
   z-index: 0;
+  background: #000;
 }
 
 .hero__video {
@@ -49,6 +51,12 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  opacity: 0;
+  background: #000;
+}
+
+.hero__video.is-ready {
+  opacity: 1;
 }
 
 .hero__overlay {
