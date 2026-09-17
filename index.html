@@ -8,7 +8,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20260917c">
+  <link rel="stylesheet" href="css/styles.css?v=20260917n">
+  <script>
+    (function () {
+      var isMobile = window.matchMedia('(max-width: 900px)').matches;
+      var src = isMobile
+        ? 'assets/images/hero-video-mobile.mp4?v=20260917n'
+        : 'assets/images/hero-video.mp4?v=20260917n';
+      window.__heroVideoSrc = src;
+      var preload = document.createElement('link');
+      preload.rel = 'preload';
+      preload.as = 'video';
+      preload.href = src;
+      preload.type = 'video/mp4';
+      preload.setAttribute('fetchpriority', 'high');
+      document.head.appendChild(preload);
+    })();
+  </script>
   <script src="js/page-transition.js?v=20260912b"></script>
 </head>
 <body class="page-home">
@@ -80,9 +96,31 @@
     <!-- 1. Hero Banner -->
     <section class="hero section-fullwidth" id="hero">
       <div class="hero__media" aria-hidden="true">
-        <video class="hero__video" autoplay muted loop playsinline poster="assets/images/hero-poster.jpg">
-          <source src="assets/images/hero-video.mp4" type="video/mp4">
-        </video>
+        <video class="hero__video" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="assets/images/hero-poster.jpg" fetchpriority="high" disablepictureinpicture></video>
+        <script>
+          (function () {
+            var video = document.currentScript.previousElementSibling;
+            if (!video || video.tagName !== 'VIDEO') {
+              return;
+            }
+            video.muted = true;
+            video.defaultMuted = true;
+            video.playsInline = true;
+            video.src = window.__heroVideoSrc || 'assets/images/hero-video.mp4?v=20260917n';
+            video.load();
+            var start = function () {
+              video.classList.add('is-ready');
+              video.play().catch(function () {});
+            };
+            if (video.readyState >= 2) {
+              start();
+            } else {
+              video.addEventListener('loadeddata', start, { once: true });
+              video.addEventListener('canplay', start, { once: true });
+            }
+            video.play().catch(function () {});
+          })();
+        </script>
       </div>
       <div class="hero__overlay" aria-hidden="true"></div>
 
@@ -707,6 +745,6 @@
   <script src="js/stats-counter.js?v=20260912b"></script>
   <script src="js/contact-section.js?v=20260912b"></script>
   <script src="js/drawer.js?v=20260912b"></script>
-  <script src="js/main.js?v=20260912b"></script>
+  <script src="js/main.js?v=20260917n"></script>
 </body>
 </html>
