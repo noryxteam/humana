@@ -110,24 +110,37 @@
 }
 
 .hero__title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: max-content;
   margin: 0;
-  font-weight: 800;
+  font-family: "Montserrat", "Open Sans", sans-serif;
+  font-weight: 500;
   font-size: clamp(36px, 4.2vw, 58px);
   color: #fff;
-  text-transform: uppercase;
-  line-height: 0.95;
-  letter-spacing: -1px;
+  line-height: 1;
+  gap: 0.12em;
 }
 
 .hero__title-line {
   display: block;
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
 }
 
-.hero__title-line + .hero__title-line {
-  font-size: 0.5em;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  margin-top: 0.14em;
+.hero__title-line:first-child {
+  letter-spacing: 0.266em;
+  margin-right: -0.266em;
+  text-transform: uppercase;
+}
+
+.hero__title-line:last-child {
+  letter-spacing: 0.06em;
+  margin-right: -0.06em;
+  text-transform: capitalize;
 }
 
 .hero__subtitle {
