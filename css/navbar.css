@@ -108,7 +108,7 @@
 }
 
 .page-nav__logo--hero {
-  gap: 11px;
+  gap: 10px;
   text-decoration: none;
   align-items: center;
 }
@@ -121,23 +121,30 @@
 .page-nav__logo-copy {
   display: flex;
   flex-direction: column;
-  line-height: 1.05;
+  justify-content: center;
+  gap: 2px;
+  line-height: 1;
+  max-height: 40px;
+}
+
+.page-nav__logo-name,
+.page-nav__logo-tag {
+  display: block;
+  font-family: "Montserrat", "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  margin-right: -0.04em;
+  white-space: nowrap;
 }
 
 .page-nav__logo-name {
-  font-family: "Montserrat", "Open Sans", sans-serif;
-  font-size: 21px;
-  font-weight: 800;
-  letter-spacing: 0.4px;
   text-transform: uppercase;
   color: #fff;
 }
 
 .page-nav__logo-tag {
-  font-family: "Montserrat", "Open Sans", sans-serif;
-  font-size: 10.5px;
-  font-weight: 500;
-  letter-spacing: 1.2px;
   text-transform: lowercase;
   color: rgba(255, 255, 255, 0.9);
 }
@@ -437,6 +444,15 @@
     min-width: 0;
   }
 
+  .page-nav__logo--hero {
+    gap: 8px;
+  }
+
+  .page-nav__logo-name,
+  .page-nav__logo-tag {
+    font-size: 15px;
+  }
+
   .lang-switcher {
     grid-area: lang;
     justify-self: end;
@@ -621,8 +637,22 @@
 }
 
 @media (max-width: 480px) {
+  .page-nav__logo--hero {
+    gap: 6px;
+  }
+
+  .page-nav__logo-img {
+    height: 32px;
+  }
+
   .page-nav__logo-copy {
-    display: none;
+    display: flex;
+    max-height: 32px;
+  }
+
+  .page-nav__logo-name,
+  .page-nav__logo-tag {
+    font-size: 12px;
   }
 }
 

@@ -15,6 +15,7 @@ const SKIP = new Set([
   'temp-isr.html',
   'reference-sobre.html',
   'servicos.html',
+  'instituto.html',
 ]);
 
 const OVERLAY_PAGES = new Set([

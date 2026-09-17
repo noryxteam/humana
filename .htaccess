@@ -29,6 +29,7 @@ DirectoryIndex index.html
   RewriteEngine On
   RewriteRule ^temp- - [F,L]
   RewriteRule ^servicos\.html$ /isp.html [R=301,L]
+  RewriteRule ^instituto(\.html)?$ /cursos-formativos.html [R=301,L]
 </IfModule>
 
 Options -Indexes

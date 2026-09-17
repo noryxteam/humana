@@ -12,6 +12,7 @@ const SKIP = new Set([
   'temp-traducao.html',
   'temp-isr.html',
   'reference-sobre.html',
+  'instituto.html',
 ]);
 
 const I18N_SCRIPTS = (prefix) =>

@@ -14,6 +14,7 @@ const SKIP = new Set([
   'temp-isr.html',
   'reference-sobre.html',
   'servicos.html',
+  'instituto.html',
 ]);
 
 const FOOTER_BLOCK_RE =
